@@ -1,5 +1,7 @@
+import {Guns} from './iconInterfaces';
+
 export interface Gun {
-  name: string;
+  name: Guns['value'];
   type: 'Rifle' | 'Sniper Rifle' | 'Pistol';
   price: number;
   killAward: number;

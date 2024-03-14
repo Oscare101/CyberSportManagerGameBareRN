@@ -1,5 +1,7 @@
+import {Nades} from './iconInterfaces';
+
 export interface Nade {
-  name: string;
+  name: Nades['value'];
   type: 'damage' | 'delay';
   price: number;
   killAward: number;
