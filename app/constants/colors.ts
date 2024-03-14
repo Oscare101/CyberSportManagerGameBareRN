@@ -1,4 +1,6 @@
-export default {
+import {Theme} from './interfaces/iconInterfaces';
+
+const colors: Record<Theme['value'], any> = {
   light: {
     bg: '#F2F4F5',
     card: '#FFFFFF',
@@ -68,3 +70,5 @@ export default {
     TSide: '#897432',
   },
 };
+
+export default colors;

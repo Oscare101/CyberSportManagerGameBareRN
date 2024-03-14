@@ -8,4 +8,5 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  center: {alignItems: 'center', justifyContent: 'center'},
 });

@@ -1,28 +1,16 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import 'react-native-gesture-handler';
 import React from 'react';
-import StatImage from './app/components/icons/StatImage';
-import CupsImage from './app/components/icons/CupsImage';
-import TeamImage from './app/components/icons/TeamImage';
-import GunImage from './app/components/icons/GunImage';
-import NadeImage from './app/components/icons/NadeImage';
-import ArmorImage from './app/components/icons/ArmorImage';
-
-const {width, height} = Dimensions.get('screen');
+import {NavigationContainer} from '@react-navigation/native';
+import MainNavigation from './app/navigation/MainNavigation';
+import {Provider} from 'react-redux';
+import {store} from './app/redux/store';
 
 export default function App() {
   return (
-    <View>
-      <Text>
-        {width} * {height}
-      </Text>
-      <StatImage stat="tactic" theme="light" size={50} />
-      <CupsImage cup="Crown" size={400} />
-      <TeamImage team="Quazars" size={50} />
-      <GunImage gun="SCAR-20" size={150} />
-      <NadeImage nade="Incendiary Grenade" size={50} />
-      <ArmorImage armor="kevlarHemlet" theme="light" size={50} />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <MainNavigation />
+      </NavigationContainer>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({});
