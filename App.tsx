@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View>
       <StatImage stat="spray" theme="light" size={50} />
-      <CupsImage cup="Prestige3" size={400} />
+      <CupsImage cup="Crown" size={400} />
       <TeamImage team="Quazars" size={50} />
       <GunImage gun="SCAR-20" size={150} />
     </View>
