@@ -1,4 +1,4 @@
-import {Cup} from '../../constants/interfaces';
+import {Cup} from '../../constants/interfaces/iconInterfaces';
 import {
   Winter,
   Spring,

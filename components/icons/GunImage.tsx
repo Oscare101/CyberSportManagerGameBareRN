@@ -1,5 +1,5 @@
 import {Image} from 'react-native';
-import {Guns} from '../../constants/interfaces';
+import {Guns} from '../../constants/interfaces/iconInterfaces';
 
 const gunsImagePath: any = {
   'Desert Eagle': require(`../../icons/guns/Desert Eagle.png`),

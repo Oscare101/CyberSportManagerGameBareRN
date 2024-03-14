@@ -1,4 +1,4 @@
-import {Teams} from '../../constants/interfaces';
+import {Teams} from '../../constants/interfaces/iconInterfaces';
 import {
   IslandTeam,
   JupiterTeam,

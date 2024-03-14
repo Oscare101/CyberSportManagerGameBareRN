@@ -1,4 +1,4 @@
-import {Stat} from '../../constants/interfaces';
+import {Stat} from '../../constants/interfaces/iconInterfaces';
 import {
   ReactionLight,
   AccuracyLight,
