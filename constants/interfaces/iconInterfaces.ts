@@ -73,3 +73,7 @@ export interface Guns {
     | 'SSG 08'
     | 'SCAR-20';
 }
+
+export interface Nades {
+  value: 'Smoke' | 'HE Grenade' | 'Incendiary Grenade' | 'Flash Bang';
+}

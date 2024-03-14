@@ -25,7 +25,7 @@ const gunsImagePath: any = {
   'SCAR-20': require(`../../icons/guns/SCAR-20.png`),
 };
 
-export default function GunImage(props: {gun: Guns['value']; size?: number}) {
+export default function GunImage(props: {gun: Guns['value']; size: number}) {
   return (
     <Image
       source={gunsImagePath[props.gun]}

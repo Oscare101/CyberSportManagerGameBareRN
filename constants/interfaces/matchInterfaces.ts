@@ -1,4 +1,4 @@
-import {Guns, Teams} from './iconInterfaces';
+import {Guns, Nades, Teams} from './iconInterfaces';
 import {Player, PlayerStatistic} from './playerTeamInterfaces';
 
 export interface InRoundPlayer {
@@ -9,7 +9,7 @@ export interface InRoundPlayer {
   armor: boolean;
   cash: number;
   gun: Guns['value'];
-  nades: string[];
+  nades: Nades['value'][];
   health: number;
   name: Player['name'];
   team: Teams['value'];
