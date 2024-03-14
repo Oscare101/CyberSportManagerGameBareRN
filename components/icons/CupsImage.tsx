@@ -17,7 +17,7 @@ import {
   Prestige3,
 } from '../../icons/cups';
 
-export default function CupsImage(props: {cup: Cup['value']; size?: number}) {
+export default function CupsImage(props: {cup: Cup['value']; size: number}) {
   const cups: any = {
     Winter: <Winter width={props.size} height={props.size} />,
     Spring: <Spring width={props.size} height={props.size} />,

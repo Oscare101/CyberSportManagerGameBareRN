@@ -22,7 +22,7 @@ import {
 export default function StatImage(props: {
   stat: Stat['value'];
   theme: 'dark' | 'light';
-  size?: number;
+  size: number;
 }) {
   const stats: any = {
     light: {
