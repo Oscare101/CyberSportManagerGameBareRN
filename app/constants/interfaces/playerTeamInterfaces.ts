@@ -29,5 +29,6 @@ export interface Player {
 
 export interface Team {
   name: Teams['value'];
+  yourTeam: boolean;
   players: Player[];
 }

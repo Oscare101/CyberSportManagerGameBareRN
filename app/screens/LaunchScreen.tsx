@@ -32,7 +32,7 @@ const deviceLanguage =
     : NativeModules.I18nManager.localeIdentifier;
 
 export default function LaunchScreen({navigation}: any) {
-  const theme: any = useColorScheme();
+  const themeColor: any = useColorScheme();
   const dispatch = useDispatch();
 
   function GetStorage() {
@@ -52,7 +52,7 @@ export default function LaunchScreen({navigation}: any) {
 
     const themeStorage = storage.getString('theme');
     if (themeStorage && themeStorage.length) {
-      dispatch(updateTheme(theme));
+      dispatch(updateTheme(themeStorage));
     } else {
       dispatch(updateTheme('system'));
     }
@@ -72,12 +72,12 @@ export default function LaunchScreen({navigation}: any) {
       style={[
         globalStyles.container,
         globalStyles.center,
-        {backgroundColor: colors[theme].bg},
+        {backgroundColor: colors[themeColor].bg},
       ]}>
       <StatImage
         stat="accuracy"
         size={width}
-        theme={theme === 'light' ? 'dark' : 'light'}
+        theme={themeColor === 'light' ? 'dark' : 'light'}
       />
     </SafeAreaView>
   );

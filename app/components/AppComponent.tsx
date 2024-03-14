@@ -18,14 +18,23 @@ export default function AppComponent() {
     (state: RootState) => state.tournaments,
   );
 
-  useEffect(() => storage.set('theme', theme), [theme]);
+  useEffect(() => {
+    if (theme) {
+      storage.set('theme', theme);
+    }
+  }, [theme]);
 
-  useEffect(() => storage.set('teams', JSON.stringify(teams)), [teams]);
+  useEffect(() => {
+    if (teams.length) {
+      storage.set('teams', JSON.stringify(teams));
+    }
+  }, [teams]);
 
-  useEffect(
-    () => storage.set('tournaments', JSON.stringify(tournaments)),
-    [tournaments],
-  );
+  useEffect(() => {
+    if (tournaments.length) {
+      storage.set('tournaments', JSON.stringify(tournaments));
+    }
+  }, [tournaments]);
 
   return (
     <>

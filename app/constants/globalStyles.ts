@@ -9,4 +9,15 @@ export default StyleSheet.create({
     justifyContent: 'flex-start',
   },
   center: {alignItems: 'center', justifyContent: 'center'},
+  rowBetween: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  columnEnd: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  },
 });

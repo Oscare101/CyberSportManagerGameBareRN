@@ -3,6 +3,7 @@ import {Team} from '../interfaces/playerTeamInterfaces';
 const teamsDefault: Team[] = [
   {
     name: 'NOVA',
+    yourTeam: true,
     players: [
       {
         name: 'Oscare',
@@ -88,6 +89,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Vangard',
+    yourTeam: false,
     players: [
       {
         name: 'Collector',
@@ -173,6 +175,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Quazars',
+    yourTeam: false,
     players: [
       {
         name: 'Octopus',
@@ -258,6 +261,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Eagles',
+    yourTeam: false,
     players: [
       {
         name: 'Cloudy',
@@ -343,6 +347,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Guardians',
+    yourTeam: false,
     players: [
       {
         name: 'Macro',
@@ -428,6 +433,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'University',
+    yourTeam: false,
     players: [
       {
         name: 'Dach',
@@ -513,6 +519,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Five',
+    yourTeam: false,
     players: [
       {
         name: 'Gepard',
@@ -598,6 +605,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Dream',
+    yourTeam: false,
     players: [
       {
         name: 'Soul',
@@ -683,6 +691,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Moon',
+    yourTeam: false,
     players: [
       {
         name: 'Bad',
@@ -768,6 +777,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Youth',
+    yourTeam: false,
     players: [
       {
         name: '1Lery',
@@ -853,6 +863,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Canoe',
+    yourTeam: false,
     players: [
       {
         name: 'Rosh',
@@ -938,6 +949,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Sempra',
+    yourTeam: false,
     players: [
       {
         name: 'FGod',
@@ -1023,6 +1035,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Solid',
+    yourTeam: false,
     players: [
       {
         name: 'Omega',
@@ -1108,6 +1121,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Island',
+    yourTeam: false,
     players: [
       {
         name: 'Peace',
@@ -1193,6 +1207,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Kadagan',
+    yourTeam: false,
     players: [
       {
         name: 'Uppper',
@@ -1278,6 +1293,7 @@ const teamsDefault: Team[] = [
   },
   {
     name: 'Jupiter',
+    yourTeam: false,
     players: [
       {
         name: 'Leon',

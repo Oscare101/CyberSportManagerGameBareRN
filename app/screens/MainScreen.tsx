@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -10,6 +11,10 @@ import globalStyles from '../constants/globalStyles';
 import {useSelector} from 'react-redux';
 import {RootState} from '../redux';
 import colors from '../constants/colors';
+import CardsBlock from '../components/main/CardsBlock';
+import TeamCard from '../components/main/TeamCard';
+
+const width = Dimensions.get('screen').width;
 
 export default function MainScreen({navigation}: any) {
   const systemTheme = useColorScheme();
@@ -22,8 +27,9 @@ export default function MainScreen({navigation}: any) {
         globalStyles.container,
         {backgroundColor: colors[themeColor].bg},
       ]}>
-      {/* <Header /> */}
-      <Text>MainScreen</Text>
+      <CardsBlock>
+        <TeamCard />
+      </CardsBlock>
     </SafeAreaView>
   );
 }
