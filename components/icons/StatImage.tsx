@@ -17,7 +17,6 @@ import {
   TacticsDark,
   StaminaDark,
 } from '../../icons/stats';
-// import { StatName } from '../../constants/interfaces'
 
 export default function StatImage(props: {
   stat: Stat['value'];
@@ -46,5 +45,5 @@ export default function StatImage(props: {
       stamina: <StaminaDark width={props.size} height={props.size} />,
     },
   };
-  return stats[props.theme][props.stat] || <></>;
+  return stats[props.theme][props.stat];
 }

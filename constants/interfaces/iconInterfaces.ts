@@ -6,7 +6,7 @@ export interface Stat {
     | 'flick'
     | 'nade'
     | 'aggression'
-    | 'tactics'
+    | 'tactic'
     | 'stamina';
 }
 
@@ -76,4 +76,8 @@ export interface Guns {
 
 export interface Nades {
   value: 'Smoke' | 'HE Grenade' | 'Incendiary Grenade' | 'Flash Bang';
+}
+
+export interface Armor {
+  value: 'kevlar' | 'kevlarHemlet';
 }
