@@ -48,3 +48,28 @@ export interface Teams {
     | 'Sempra'
     | 'Guardians';
 }
+
+export interface Guns {
+  value:
+    | 'Desert Eagle'
+    | 'R8 Revolver'
+    | 'Five-SeveN'
+    | 'Tec-9'
+    | 'CZ75-Auto'
+    | 'Dual Berettas'
+    | 'P250'
+    | 'Glock-18'
+    | 'P2000'
+    | 'USP-S'
+    | 'Galil'
+    | 'AK-47'
+    | 'M4A1-S'
+    | 'M4A4'
+    | 'SG 553'
+    | 'AUG'
+    | 'FAMAS'
+    | 'AWP'
+    | 'G3SG1'
+    | 'SSG 08'
+    | 'SCAR-20';
+}
