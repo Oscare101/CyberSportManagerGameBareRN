@@ -42,7 +42,7 @@ export default function TeamCard() {
       onPress={() => navigation.navigate('MyTeamScreen')}
       style={[styles.card, {backgroundColor: colors[themeColor].card}]}>
       <View style={globalStyles.rowBetween}>
-        <TeamImage team={myTeam.name} size={width * 0.15} />
+        <TeamImage team={myTeam.name} size={width * 0.14} />
         <View style={globalStyles.columnEnd}>
           <TeamPlayers
             title={text.MainPlayers}
@@ -75,12 +75,21 @@ export default function TeamCard() {
 }
 
 const styles = StyleSheet.create({
-  card: {padding: width * 0.03, width: '60%', borderRadius: width * 0.03},
+  card: {
+    padding: width * 0.02,
+    width: '55%',
+    height: width * 0.27,
+    borderRadius: width * 0.03,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   teamTitle: {
-    fontSize: width * 0.07,
+    fontSize: width * 0.06,
   },
   teamPlayers: {
-    fontSize: width * 0.05,
+    fontSize: width * 0.045,
+    fontWeight: '300',
   },
   money: {
     fontSize: width * 0.05,

@@ -6,6 +6,7 @@ import {
 import LaunchScreen from '../screens/LaunchScreen';
 import MainScreen from '../screens/MainScreen';
 import MyTeamScreen from '../screens/MyTeamScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,18 @@ export default function MainNavigation() {
         }}
         name="MyTeamScreen"
         component={MyTeamScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+          headerLeft: () => null,
+          animationEnabled: true,
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="SettingsScreen"
+        component={SettingsScreen}
       />
     </Stack.Navigator>
   );
