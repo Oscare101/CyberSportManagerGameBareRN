@@ -1,7 +1,7 @@
 import {Image} from 'react-native';
 import {Guns} from '../../constants/interfaces/iconInterfaces';
 
-const gunsImagePath: any = {
+const gunsImagePath: Record<Guns['value'], any> = {
   'Desert Eagle': require(`../../icons/guns/Desert Eagle.png`),
   'R8 Revolver': require(`../../icons/guns/R8 Revolver.png`),
   'Five-SeveN': require(`../../icons/guns/Five-SeveN.png`),

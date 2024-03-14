@@ -18,7 +18,7 @@ import {
 } from '../../icons/cups';
 
 export default function CupsImage(props: {cup: Cup['value']; size: number}) {
-  const cups: any = {
+  const cups: Record<Cup['value'], any> = {
     Winter: <Winter width={props.size} height={props.size} />,
     Spring: <Spring width={props.size} height={props.size} />,
     Summer: <Summer width={props.size} height={props.size} />,

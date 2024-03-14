@@ -19,7 +19,7 @@ import {
 } from '../../icons/teams';
 
 export default function TeamImage(props: {team: Teams['value']; size: number}) {
-  const teams: any = {
+  const teams: Record<string, any> = {
     NOVA: <NOVATeam width={props.size} height={props.size} />,
     Quazars: <QuazarsTeam width={props.size} height={props.size} />,
     Eagles: <EaglesTeam width={props.size} height={props.size} />,

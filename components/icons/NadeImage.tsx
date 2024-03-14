@@ -1,7 +1,7 @@
 import {Image} from 'react-native';
 import {Nades} from '../../constants/interfaces/iconInterfaces';
 
-const nadesImagePath: any = {
+const nadesImagePath: Record<Nades['value'], any> = {
   Smoke: require(`../../icons/nades/Smoke.png`),
   'HE Grenade': require(`../../icons/nades/HEGrenade.png`),
   'Incendiary Grenade': require(`../../icons/nades/IncendiaryGrenade.png`),

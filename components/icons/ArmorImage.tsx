@@ -1,4 +1,4 @@
-import {Armor} from '../../constants/interfaces/iconInterfaces';
+import {Armor, Theme} from '../../constants/interfaces/iconInterfaces';
 import {
   KevlarDark,
   KevlarHemletDark,
@@ -11,7 +11,7 @@ export default function ArmorImage(props: {
   theme: 'dark' | 'light';
   size: number;
 }) {
-  const stats: any = {
+  const armors: Record<Theme['value'], Record<Armor['value'], any>> = {
     light: {
       kevlar: <KevlarLight width={props.size} height={props.size} />,
       kevlarHemlet: (
@@ -23,5 +23,5 @@ export default function ArmorImage(props: {
       kevlarHemlet: <KevlarHemletDark width={props.size} height={props.size} />,
     },
   };
-  return stats[props.theme][props.armor];
+  return armors[props.theme][props.armor];
 }

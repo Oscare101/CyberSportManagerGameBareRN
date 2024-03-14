@@ -1,4 +1,4 @@
-import {Stat} from '../../constants/interfaces/iconInterfaces';
+import {Stat, Theme} from '../../constants/interfaces/iconInterfaces';
 import {
   ReactionLight,
   AccuracyLight,
@@ -23,7 +23,7 @@ export default function StatImage(props: {
   theme: 'dark' | 'light';
   size: number;
 }) {
-  const stats: any = {
+  const stats: Record<Theme['value'], Record<Stat['value'], any>> = {
     light: {
       reaction: <ReactionLight width={props.size} height={props.size} />,
       accuracy: <AccuracyLight width={props.size} height={props.size} />,

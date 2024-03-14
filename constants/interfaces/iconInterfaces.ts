@@ -81,3 +81,7 @@ export interface Nades {
 export interface Armor {
   value: 'kevlar' | 'kevlarHemlet';
 }
+
+export interface Theme {
+  value: 'dark' | 'light';
+}
