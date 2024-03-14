@@ -5,6 +5,7 @@ import {
 } from '@react-navigation/stack';
 import LaunchScreen from '../screens/LaunchScreen';
 import MainScreen from '../screens/MainScreen';
+import MyTeamScreen from '../screens/MyTeamScreen';
 
 const Stack = createStackNavigator();
 
@@ -27,20 +28,18 @@ export default function MainNavigation() {
         component={MainScreen}
       />
       {/* other screens then must apear without bottom tab navigation */}
-      {/* <Stack.Screen
-        options={{
-          headerShown: false,
-        }}
-        name="TournamentScreen"
-        component={TournamentScreen}
-      />
       <Stack.Screen
         options={{
           headerShown: false,
+          headerLeft: () => null,
+          animationEnabled: true,
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}
-        name="ArchivedTournamentsScreen"
-        component={ArchivedTournamentsScreen}
-      /> */}
+        name="MyTeamScreen"
+        component={MyTeamScreen}
+      />
     </Stack.Navigator>
   );
 

@@ -1,4 +1,5 @@
 import {Teams} from './iconInterfaces';
+import {Tournament} from './tournamentInterfaces';
 
 export interface PlayerStatistic {
   role: 'sniper' | 'rifler' | 'support' | 'capitan';
@@ -30,5 +31,9 @@ export interface Player {
 export interface Team {
   name: Teams['value'];
   yourTeam: boolean;
+  bank: {
+    cash: number;
+  };
+  ratingHistory: any[];
   players: Player[];
 }
