@@ -28,3 +28,23 @@ export interface Cup {
     | 'Prestige2'
     | 'Prestige3';
 }
+
+export interface Teams {
+  value:
+    | 'Island'
+    | 'Jupiter'
+    | 'NOVA'
+    | 'Quazars'
+    | 'Solid'
+    | 'Vangard'
+    | 'Eagles'
+    | 'Kadagan'
+    | 'Youth'
+    | 'University'
+    | 'Canoe'
+    | 'Moon'
+    | 'Dream'
+    | 'Five'
+    | 'Sempra'
+    | 'Guardians';
+}
