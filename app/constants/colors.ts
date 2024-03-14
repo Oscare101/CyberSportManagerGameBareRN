@@ -1,6 +1,6 @@
 import {Theme} from './interfaces/iconInterfaces';
 
-const colors: Record<Theme['value'], any> = {
+const colors: any = {
   light: {
     bg: '#F2F4F5',
     card: '#FFFFFF',

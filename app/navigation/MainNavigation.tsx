@@ -4,6 +4,7 @@ import {
   CardStyleInterpolators,
 } from '@react-navigation/stack';
 import LaunchScreen from '../screens/LaunchScreen';
+import MainScreen from '../screens/MainScreen';
 
 const Stack = createStackNavigator();
 
@@ -17,14 +18,14 @@ export default function MainNavigation() {
         name="LaunchScreen"
         component={LaunchScreen}
       />
-      {/* <Stack.Screen
+      <Stack.Screen
         options={{
           headerShown: false,
           headerLeft: () => null,
         }}
-        name="NavigationApp"
-        component={NavigationApp}
-      /> */}
+        name="MainScreen"
+        component={MainScreen}
+      />
       {/* other screens then must apear without bottom tab navigation */}
       {/* <Stack.Screen
         options={{
