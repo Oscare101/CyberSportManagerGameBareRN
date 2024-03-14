@@ -1,11 +1,11 @@
 import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import StatImage from './components/icons/StatImage';
-import CupsImage from './components/icons/CupsImage';
-import TeamImage from './components/icons/TeamImage';
-import GunImage from './components/icons/GunImage';
-import NadeImage from './components/icons/NadeImage';
-import ArmorImage from './components/icons/ArmorImage';
+import StatImage from './app/components/icons/StatImage';
+import CupsImage from './app/components/icons/CupsImage';
+import TeamImage from './app/components/icons/TeamImage';
+import GunImage from './app/components/icons/GunImage';
+import NadeImage from './app/components/icons/NadeImage';
+import ArmorImage from './app/components/icons/ArmorImage';
 
 const {width, height} = Dimensions.get('screen');
 

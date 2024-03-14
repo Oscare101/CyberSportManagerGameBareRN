@@ -6,6 +6,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Oscare',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.345,
@@ -20,6 +22,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Header',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.454,
@@ -34,6 +38,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Modest',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.269,
@@ -48,6 +54,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Olaph',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.346,
@@ -62,6 +70,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Roller',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.499,
@@ -81,6 +91,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Collector',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.437,
@@ -95,6 +107,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Nelo',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.217,
@@ -109,6 +123,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Brad',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.485,
@@ -123,6 +139,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Silver',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.285,
@@ -137,6 +155,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Colour',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.412,
@@ -156,6 +176,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Octopus',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.321,
@@ -170,6 +192,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Rossan',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.327,
@@ -184,6 +208,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Awesome',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.259,
@@ -198,6 +224,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'NBF',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.265,
@@ -212,6 +240,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Scelt',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.317,
@@ -231,6 +261,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Cloudy',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.273,
@@ -245,6 +277,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'B8Loo',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.307,
@@ -259,6 +293,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Newton',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.288,
@@ -273,6 +309,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Serpe',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.331,
@@ -287,6 +325,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Lancar',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.273,
@@ -306,6 +346,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Macro',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.23,
@@ -320,6 +362,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Zoom',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.21,
@@ -334,6 +378,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Smith',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.404,
@@ -348,6 +394,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Focus',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.441,
@@ -362,6 +410,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Invincible',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.428,
@@ -381,6 +431,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Dach',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.251,
@@ -395,6 +447,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Theater',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.47,
@@ -409,6 +463,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Salivan',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.278,
@@ -423,6 +479,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Faker',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.421,
@@ -437,6 +495,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Boxer',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.435,
@@ -456,6 +516,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Gepard',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.355,
@@ -470,6 +532,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Super',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.322,
@@ -484,6 +548,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Bait',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.313,
@@ -498,6 +564,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Fury',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.411,
@@ -512,6 +580,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Pretios',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.408,
@@ -531,6 +601,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Soul',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.233,
@@ -545,6 +617,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Faris',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.222,
@@ -559,6 +633,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Electron',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.366,
@@ -573,6 +649,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Crowley',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.358,
@@ -587,6 +665,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Right',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.352,
@@ -606,6 +686,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Bad',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.281,
@@ -620,6 +702,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Phantom',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.451,
@@ -634,6 +718,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Titan',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.466,
@@ -648,6 +734,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Swan',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.258,
@@ -662,6 +750,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tenor',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.48,
@@ -681,6 +771,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: '1Lery',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.462,
@@ -695,6 +787,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Wong',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.399,
@@ -709,6 +803,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Melon',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.297,
@@ -723,6 +819,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Forest',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.488,
@@ -737,6 +835,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'LoseIt',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.39,
@@ -756,6 +856,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Rosh',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.365,
@@ -770,6 +872,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chellen',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.21,
@@ -784,6 +888,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chin',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.416,
@@ -798,6 +904,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tatam',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.408,
@@ -812,6 +920,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Aziraphale',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.303,
@@ -831,6 +941,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'FGod',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.357,
@@ -845,6 +957,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Cicada',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.472,
@@ -859,6 +973,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Stoic',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.412,
@@ -873,6 +989,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Somewhere',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.492,
@@ -887,6 +1005,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tabar',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.329,
@@ -906,6 +1026,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Omega',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.382,
@@ -920,6 +1042,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Timely',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.374,
@@ -934,6 +1058,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Rock',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.485,
@@ -948,6 +1074,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Sound',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.258,
@@ -962,6 +1090,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Firemane',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.476,
@@ -981,6 +1111,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Peace',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.438,
@@ -995,6 +1127,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chicago',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.314,
@@ -1009,6 +1143,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Percent',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.491,
@@ -1023,6 +1159,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Invisible',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.214,
@@ -1037,6 +1175,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Ouroboros',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.319,
@@ -1056,6 +1196,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Uppper',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.338,
@@ -1070,6 +1212,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'SuperFrag',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.279,
@@ -1084,6 +1228,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Catcher',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.323,
@@ -1098,6 +1244,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Kipito',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.292,
@@ -1112,6 +1260,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Salute',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.332,
@@ -1131,6 +1281,8 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Leon',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'capitan',
           reaction: 0.355,
@@ -1145,6 +1297,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Kosus',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.213,
@@ -1159,6 +1313,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'TheOwl',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'rifler',
           reaction: 0.221,
@@ -1173,6 +1329,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Mandarin',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'sniper',
           reaction: 0.431,
@@ -1187,6 +1345,8 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Raven',
+        contract: {salary: 0, start: '', finish: ''},
+        status: 'active',
         stat: {
           role: 'support',
           reaction: 0.359,
