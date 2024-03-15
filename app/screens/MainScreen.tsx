@@ -35,7 +35,7 @@ export default function MainScreen({navigation}: any) {
         <View style={{width: width * 0.015}} />
         <VerticalMainCard>
           <SecondaryButtonCard
-            title={text.Settings}
+            title={text.Practice}
             icon=""
             action={() => {
               navigation.navigate('SettingsScreen');

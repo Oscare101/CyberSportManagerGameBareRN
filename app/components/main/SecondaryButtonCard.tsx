@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: '7%',
   },
   title: {
-    fontSize: width * 0.04,
+    fontSize: width * 0.045,
   },
 });
