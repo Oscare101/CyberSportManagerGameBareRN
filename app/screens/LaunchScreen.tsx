@@ -79,7 +79,7 @@ export default function LaunchScreen({navigation}: any) {
       <StatImage
         stat="accuracy"
         size={width}
-        theme={themeColor === 'light' ? 'dark' : 'light'}
+        color={themeColor === 'light' ? colors.dark.main : colors.light.main}
       />
     </SafeAreaView>
   );

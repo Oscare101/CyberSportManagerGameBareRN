@@ -36,9 +36,8 @@ export default function StatBlock(props: {
       ]}>
       <StatImage
         stat={props.title}
-        color={GetTopStatColor(stat)}
+        color={colors[props.theme][GetTopStatColor(stat)].main}
         size={width * 0.06}
-        theme={props.theme}
       />
       {/* <Text
         style={[

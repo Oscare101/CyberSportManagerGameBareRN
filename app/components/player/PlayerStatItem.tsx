@@ -1,11 +1,18 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
-import {Theme} from '../../constants/interfaces/iconInterfaces';
+import {Stat, Theme} from '../../constants/interfaces/iconInterfaces';
 import colors from '../../constants/colors';
 import globalStyles from '../../constants/globalStyles';
 import text from '../../constants/text';
 import {GetTopPlayerStat} from '../../functions/function';
 import rules from '../../constants/rules';
+import StatImage from '../icons/StatImage';
 
 const width = Dimensions.get('screen').width;
 
@@ -15,7 +22,7 @@ export default function PlayerStatItem(props: {
   index: number;
 }) {
   const stat =
-    props.item.title === text.Reaction
+    props.item.icon === 'reaction'
       ? GetTopPlayerStat(
           rules.reactionMargin - rules.reactionMax,
           rules.reactionMargin - rules.reactionMin,
@@ -24,7 +31,9 @@ export default function PlayerStatItem(props: {
       : GetTopPlayerStat(rules.statMax, rules.statMin, props.item.value);
 
   return (
-    <View
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={props.item.action}
       style={[
         styles.card,
         {
@@ -33,6 +42,11 @@ export default function PlayerStatItem(props: {
         },
       ]}>
       <View style={globalStyles.rowBetween}>
+        <StatImage
+          stat={props.item.icon}
+          color={colors[props.theme].main}
+          size={width * 0.05}
+        />
         <Text style={[styles.title, {color: colors[props.theme].main}]}>
           {props.item.title}
         </Text>
@@ -91,7 +105,7 @@ export default function PlayerStatItem(props: {
           ]}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -104,9 +118,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: width * 0.04,
+    flex: 1,
+    marginLeft: width * 0.01,
   },
   value: {
-    fontSize: width * 0.04,
+    fontSize: width * 0.035,
   },
   pointer: {width: width * 0.02, height: width * 0.07, position: 'absolute'},
 });
