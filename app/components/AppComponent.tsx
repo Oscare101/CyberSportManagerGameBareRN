@@ -19,12 +19,6 @@ export default function AppComponent() {
   );
 
   useEffect(() => {
-    if (theme) {
-      storage.set('theme', theme);
-    }
-  }, [theme]);
-
-  useEffect(() => {
     if (teams.length) {
       storage.set('teams', JSON.stringify(teams));
     }

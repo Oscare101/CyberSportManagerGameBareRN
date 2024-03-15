@@ -23,7 +23,7 @@ import tournamentsDefault from '../constants/defaultValues/tournaments';
 import {updateTheme} from '../redux/theme';
 export const storage = new MMKV();
 
-const {width, height} = Dimensions.get('screen');
+const width = Dimensions.get('screen').width;
 
 const deviceLanguage =
   Platform.OS === 'ios'
@@ -53,8 +53,10 @@ export default function LaunchScreen({navigation}: any) {
     const themeStorage = storage.getString('theme');
     if (themeStorage && themeStorage.length) {
       dispatch(updateTheme(themeStorage));
+      storage.set('theme', themeStorage);
     } else {
       dispatch(updateTheme('system'));
+      storage.set('theme', 'system');
     }
 
     navigation.reset({

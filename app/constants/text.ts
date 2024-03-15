@@ -12,4 +12,5 @@ export default {
   YourTeam: 'Your team',
   Tournaments: 'Tournaments',
   More: 'More',
+  Theme: 'Theme',
 };

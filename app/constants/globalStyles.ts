@@ -15,6 +15,12 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  rowAround: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
   columnCenter: {
     flexDirection: 'column',
     justifyContent: 'center',
