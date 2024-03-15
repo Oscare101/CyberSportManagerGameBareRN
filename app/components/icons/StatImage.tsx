@@ -1,17 +1,5 @@
-import colors from '../../constants/colors';
-import {Stat, Theme} from '../../constants/interfaces/iconInterfaces';
-import {
-  Reaction,
-  Accuracy,
-  Spray,
-  Flick,
-  Nade,
-  Aggression,
-  Tactics,
-  Stamina,
-} from '../../icons/stats';
-
-import {Svg, SvgXml} from 'react-native-svg';
+import {Stat} from '../../constants/interfaces/iconInterfaces';
+import {SvgXml} from 'react-native-svg';
 
 function ReactionIcon(color: string) {
   return `
