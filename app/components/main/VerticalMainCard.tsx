@@ -21,7 +21,6 @@ export default function VerticalMainCard({children}: any) {
 const styles = StyleSheet.create({
   card: {
     padding: width * 0.015,
-    height: width * 0.33,
     borderRadius: width * 0.03,
     flex: 1,
   },

@@ -4,4 +4,8 @@ export default {
   Settings: 'Settings',
   GlobalRating: 'Rating',
   Practice: 'Practice',
+  Current: 'Current',
+  Prize: 'Prize',
+  Season: 'Season',
+  Archived: 'Archived',
 };

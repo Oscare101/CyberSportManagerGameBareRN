@@ -15,6 +15,11 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
+  columnCenter: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   columnEnd: {
     flexDirection: 'column',
     justifyContent: 'center',

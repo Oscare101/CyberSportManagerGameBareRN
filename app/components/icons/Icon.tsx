@@ -10,6 +10,8 @@ import {
   HalfStarLight,
   SettingsDark,
   SettingsLight,
+  ArchiveLight,
+  ArchiveDark,
 } from '../../icons/icons';
 
 export default function Icon(props: {
@@ -24,6 +26,7 @@ export default function Icon(props: {
       practice: <PracticeLight width={props.size} height={props.size} />,
       halfStar: <HalfStarLight width={props.size} height={props.size} />,
       settings: <SettingsLight width={props.size} height={props.size} />,
+      archive: <ArchiveLight width={props.size} height={props.size} />,
     },
     dark: {
       back: <BackDark width={props.size} height={props.size} />,
@@ -31,6 +34,7 @@ export default function Icon(props: {
       practice: <PracticeDark width={props.size} height={props.size} />,
       halfStar: <HalfStarDark width={props.size} height={props.size} />,
       settings: <SettingsDark width={props.size} height={props.size} />,
+      archive: <ArchiveDark width={props.size} height={props.size} />,
     },
   };
 

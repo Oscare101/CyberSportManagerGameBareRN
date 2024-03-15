@@ -12,6 +12,7 @@ import {RootState} from '../../redux';
 import colors from '../../constants/colors';
 import {IconName} from '../../constants/interfaces/iconInterfaces';
 import Icon from '../icons/Icon';
+import babelConfig from '../../../babel.config';
 
 const width = Dimensions.get('screen').width;
 
@@ -19,6 +20,7 @@ export default function SecondaryButtonCard(props: {
   title: string;
   icon: IconName['value'];
   action: any;
+  iconViewNumber?: number;
 }) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
@@ -31,7 +33,16 @@ export default function SecondaryButtonCard(props: {
       <Text style={[styles.title, {color: colors[themeColor].main}]}>
         {props.title}
       </Text>
-      <Icon icon={props.icon} size={width * 0.06} theme={themeColor} />
+      {props.iconViewNumber ? (
+        <View
+          style={[styles.circle, {backgroundColor: colors[themeColor].main}]}>
+          <Text style={[styles.circleTitle, {color: colors[themeColor].bg}]}>
+            {props.iconViewNumber}
+          </Text>
+        </View>
+      ) : (
+        <Icon icon={props.icon} size={width * 0.05} theme={themeColor} />
+      )}
     </TouchableOpacity>
   );
 }
@@ -46,6 +57,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: '7%',
   },
   title: {
-    fontSize: width * 0.045,
+    fontSize: width * 0.04,
   },
+  circle: {
+    width: width * 0.05,
+    borderRadius: width * 0.06,
+    aspectRatio: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  circleTitle: {fontSize: width * 0.03},
 });

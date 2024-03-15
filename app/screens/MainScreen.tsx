@@ -16,6 +16,8 @@ import TeamCard from '../components/main/TeamCard';
 import VerticalMainCard from '../components/main/VerticalMainCard';
 import SecondaryButtonCard from '../components/main/SecondaryButtonCard';
 import text from '../constants/text';
+import TournamentCard from '../components/main/TournamentCard';
+import {Tournament} from '../constants/interfaces/tournamentInterfaces';
 
 const width = Dimensions.get('screen').width;
 
@@ -23,6 +25,9 @@ export default function MainScreen({navigation}: any) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
+  const tournaments: Tournament[] = useSelector(
+    (state: RootState) => state.tournaments,
+  );
 
   return (
     <SafeAreaView
@@ -37,14 +42,30 @@ export default function MainScreen({navigation}: any) {
           <SecondaryButtonCard
             title={text.Practice}
             icon="practice"
-            action={() => {
-              navigation.navigate('SettingsScreen');
-            }}
+            action={() => {}}
           />
           <View style={{height: width * 0.015}} />
           <SecondaryButtonCard
             title={text.GlobalRating}
             icon="halfStar"
+            action={() => {}}
+          />
+        </VerticalMainCard>
+      </CardsBlock>
+      <CardsBlock>
+        <TournamentCard />
+        <View style={{width: width * 0.015}} />
+        <VerticalMainCard>
+          <SecondaryButtonCard
+            title={text.Season}
+            icon="practice"
+            iconViewNumber={tournaments[tournaments.length - 1].season}
+            action={() => {}}
+          />
+          <View style={{height: width * 0.015}} />
+          <SecondaryButtonCard
+            title={text.Archived}
+            icon="archive"
             action={() => {}}
           />
         </VerticalMainCard>

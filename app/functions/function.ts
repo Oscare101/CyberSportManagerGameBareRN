@@ -1,5 +1,6 @@
 export function GetMoneyAmount(money: number) {
   const grades = [
+    {value: 10 ** 3, title: ' K'},
     {value: 10 ** 6, title: ' M'},
     {value: 10 ** 9, title: ' B'},
     {value: 10 ** 12, title: ' T'},

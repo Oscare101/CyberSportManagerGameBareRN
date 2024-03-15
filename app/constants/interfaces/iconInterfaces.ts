@@ -87,5 +87,5 @@ export interface Theme {
 }
 
 export interface IconName {
-  value: 'back' | 'settings' | 'halfStar' | 'grid' | 'practice';
+  value: 'back' | 'settings' | 'halfStar' | 'grid' | 'practice' | 'archive';
 }
