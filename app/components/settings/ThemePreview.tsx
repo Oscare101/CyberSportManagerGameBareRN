@@ -102,7 +102,7 @@ export default function ThemePreview(props: {
           },
         ]}>
         <TouchableOpacity
-          activeOpacity={0.8}
+          activeOpacity={1}
           onPress={props.action}
           style={{width: width * 0.17, aspectRatio: 0.5}}>
           {props.theme === 'system' ? (

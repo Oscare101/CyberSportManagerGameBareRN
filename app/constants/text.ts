@@ -13,4 +13,6 @@ export default {
   Tournaments: 'Tournaments',
   More: 'More',
   Theme: 'Theme',
+  Players: 'Players',
+  Team: 'Team',
 };

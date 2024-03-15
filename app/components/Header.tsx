@@ -6,7 +6,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React from 'react';
+import React, {memo} from 'react';
 import Icon from './icons/Icon';
 import {RootState} from '../redux';
 import {useSelector} from 'react-redux';
@@ -16,10 +16,7 @@ import {useNavigation} from '@react-navigation/native';
 
 const width = Dimensions.get('screen').width;
 
-export default function Header(props: {
-  title: string;
-  action: 'back' | 'none';
-}) {
+function Header(props: {title: string; action: 'back' | 'none'}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
@@ -69,3 +66,5 @@ const styles = StyleSheet.create({
   },
   title: {fontSize: width * 0.07},
 });
+
+export default memo(Header);
