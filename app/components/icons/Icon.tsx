@@ -12,6 +12,10 @@ import {
   SettingsLight,
   ArchiveLight,
   ArchiveDark,
+  PeopleDark,
+  PersonAddDark,
+  PeopleLight,
+  PersonAddLight,
 } from '../../icons/icons';
 
 export default function Icon(props: {
@@ -27,6 +31,8 @@ export default function Icon(props: {
       halfStar: <HalfStarLight width={props.size} height={props.size} />,
       settings: <SettingsLight width={props.size} height={props.size} />,
       archive: <ArchiveLight width={props.size} height={props.size} />,
+      people: <PeopleLight width={props.size} height={props.size} />,
+      personAdd: <PersonAddLight width={props.size} height={props.size} />,
     },
     dark: {
       back: <BackDark width={props.size} height={props.size} />,
@@ -35,6 +41,8 @@ export default function Icon(props: {
       halfStar: <HalfStarDark width={props.size} height={props.size} />,
       settings: <SettingsDark width={props.size} height={props.size} />,
       archive: <ArchiveDark width={props.size} height={props.size} />,
+      people: <PeopleDark width={props.size} height={props.size} />,
+      personAdd: <PersonAddDark width={props.size} height={props.size} />,
     },
   };
 

@@ -8,4 +8,8 @@ export default {
   Prize: 'Prize',
   Season: 'Season',
   Archived: 'Archived',
+  TransferAgency: 'Transfer agency',
+  YourTeam: 'Your team',
+  Tournaments: 'Tournaments',
+  More: 'More',
 };

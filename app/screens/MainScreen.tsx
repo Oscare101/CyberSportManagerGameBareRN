@@ -18,6 +18,7 @@ import SecondaryButtonCard from '../components/main/SecondaryButtonCard';
 import text from '../constants/text';
 import TournamentCard from '../components/main/TournamentCard';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
+import TransferCard from '../components/main/TransferCard';
 
 const width = Dimensions.get('screen').width;
 
@@ -35,7 +36,7 @@ export default function MainScreen({navigation}: any) {
         globalStyles.container,
         {backgroundColor: colors[themeColor].bg},
       ]}>
-      <CardsBlock>
+      <CardsBlock title={text.YourTeam}>
         <TeamCard />
         <View style={{width: width * 0.015}} />
         <VerticalMainCard>
@@ -52,7 +53,7 @@ export default function MainScreen({navigation}: any) {
           />
         </VerticalMainCard>
       </CardsBlock>
-      <CardsBlock>
+      <CardsBlock title={text.Tournaments}>
         <TournamentCard />
         <View style={{width: width * 0.015}} />
         <VerticalMainCard>
@@ -69,6 +70,17 @@ export default function MainScreen({navigation}: any) {
             action={() => {}}
           />
         </VerticalMainCard>
+      </CardsBlock>
+      <CardsBlock title={text.More}>
+        <VerticalMainCard>
+          <SecondaryButtonCard
+            title={text.Settings}
+            icon="settings"
+            action={() => {}}
+          />
+        </VerticalMainCard>
+        <View style={{width: width * 0.015}} />
+        <TransferCard />
       </CardsBlock>
     </SafeAreaView>
   );
