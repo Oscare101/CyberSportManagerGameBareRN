@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '92%',
-    marginTop: width * 0.015,
   },
   title: {
     fontSize: width * 0.05,
+    marginVertical: width * 0.015,
   },
 });

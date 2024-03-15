@@ -60,9 +60,10 @@ const styles = StyleSheet.create({
     fontSize: width * 0.04,
   },
   circle: {
-    width: width * 0.05,
+    height: width * 0.05,
+    minWidth: width * 0.05,
+    paddingHorizontal: width * 0.005,
     borderRadius: width * 0.06,
-    aspectRatio: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
