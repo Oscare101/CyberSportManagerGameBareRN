@@ -13,6 +13,7 @@ import {Theme} from '../../constants/interfaces/iconInterfaces';
 import {Player} from '../../constants/interfaces/playerTeamInterfaces';
 import colors from '../../constants/colors';
 import StatBlock from './StatBlock';
+import {useNavigation} from '@react-navigation/native';
 
 const width = Dimensions.get('screen').width;
 
@@ -22,11 +23,13 @@ export default function PlayerItem(props: {
   players: Player[];
 }) {
   const player: Player = props.item;
-
+  const navigation: any = useNavigation();
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      onPress={() => {}}
+      onPress={() => {
+        navigation.navigate('PlayerInfoScreen', {player: player});
+      }}
       style={[styles.card, {backgroundColor: colors[props.theme].card}]}>
       <Text
         numberOfLines={1}

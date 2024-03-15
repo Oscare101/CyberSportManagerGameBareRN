@@ -33,9 +33,14 @@ export default function MyTeamScreen({navigation}: any) {
         page={page}
         setPage={(value: 'players' | 'team') => setPage(value)}
       />
-      {page === 'players' ? <PlayersPage /> : <TeamPage />}
+      <View style={page === 'players' ? {width: '100%'} : styles.hide}>
+        <PlayersPage />
+      </View>
+      <View style={page === 'team' ? {width: '100%'} : styles.hide}>
+        <TeamPage />
+      </View>
     </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({hide: {height: 0}});

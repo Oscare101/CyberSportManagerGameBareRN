@@ -7,6 +7,7 @@ import LaunchScreen from '../screens/LaunchScreen';
 import MainScreen from '../screens/MainScreen';
 import MyTeamScreen from '../screens/MyTeamScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import PlayerInfoScreen from '../screens/PlayerInfoScreen';
 
 const Stack = createStackNavigator();
 
@@ -52,6 +53,18 @@ export default function MainNavigation() {
         }}
         name="SettingsScreen"
         component={SettingsScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+          headerLeft: () => null,
+          animationEnabled: true,
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="PlayerInfoScreen"
+        component={PlayerInfoScreen}
       />
     </Stack.Navigator>
   );

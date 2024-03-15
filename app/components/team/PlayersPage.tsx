@@ -1,10 +1,24 @@
-import {FlatList, StyleSheet, Text, View, useColorScheme} from 'react-native';
+import {
+  Dimensions,
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  useColorScheme,
+} from 'react-native';
 import React, {memo} from 'react';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
-import {Team} from '../../constants/interfaces/playerTeamInterfaces';
+import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import PlayerItem from './PlayerItem';
 import {GetPlayersFromTeams} from '../../functions/function';
+import globalStyles from '../../constants/globalStyles';
+import text from '../../constants/text';
+import Icon from '../icons/Icon';
+import colors from '../../constants/colors';
+
+const width = Dimensions.get('screen').width;
 
 function PlayersPage() {
   const systemTheme = useColorScheme();
@@ -17,16 +31,81 @@ function PlayersPage() {
 
   return (
     <>
-      <FlatList
-        style={{width: '100%'}}
-        data={myTeam.players}
-        renderItem={({item}) => (
-          <PlayerItem item={item} theme={themeColor} players={allPlayers} />
-        )}
-      />
+      <View
+        style={[
+          globalStyles.rowBetween,
+          {width: '92%', alignSelf: 'center', marginVertical: width * 0.02},
+        ]}>
+        <Icon icon="people" theme={themeColor} size={width * 0.07} />
+        <Text style={[styles.title, {color: colors[themeColor].main}]}>
+          {text.MainRoaster}
+        </Text>
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: colors[themeColor].card}]}>
+          <Text>{text.Open}</Text>
+        </TouchableOpacity>
+      </View>
+      {myTeam.players.some((p: Player) => p.status === 'active') ? (
+        <FlatList
+          style={{width: '100%'}}
+          data={myTeam.players.filter((p: Player) => p.status === 'active')}
+          renderItem={({item}) => (
+            <PlayerItem item={item} theme={themeColor} players={allPlayers} />
+          )}
+        />
+      ) : (
+        <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+          {text.NoActivePlayers}
+        </Text>
+      )}
+
+      <View
+        style={[
+          globalStyles.rowBetween,
+          {width: '92%', alignSelf: 'center', marginVertical: width * 0.02},
+        ]}>
+        <Icon icon="people" theme={themeColor} size={width * 0.07} />
+        <Text style={[styles.title, {color: colors[themeColor].main}]}>
+          {text.BenchedPlayers}
+        </Text>
+        <TouchableOpacity
+          style={[styles.button, {backgroundColor: colors[themeColor].card}]}>
+          <Text>{text.Open}</Text>
+        </TouchableOpacity>
+      </View>
+      {myTeam.players.some((p: Player) => p.status === 'benched') ? (
+        <FlatList
+          style={{width: '100%'}}
+          data={myTeam.players.filter((p: Player) => p.status === 'benched')}
+          renderItem={({item}) => (
+            <PlayerItem item={item} theme={themeColor} players={allPlayers} />
+          )}
+        />
+      ) : (
+        <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+          {text.NoBenchedPlayersYet}
+        </Text>
+      )}
     </>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  title: {
+    fontSize: width * 0.05,
+    flex: 1,
+    marginLeft: width * 0.02,
+  },
+  button: {
+    height: width * 0.07,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: width * 0.02,
+    borderRadius: width * 0.02,
+  },
+  comment: {
+    fontSize: width * 0.05,
+    textAlign: 'center',
+  },
+});
 export default memo(PlayersPage);
