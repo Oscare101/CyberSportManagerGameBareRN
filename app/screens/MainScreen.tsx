@@ -36,7 +36,7 @@ export default function MainScreen({navigation}: any) {
         <VerticalMainCard>
           <SecondaryButtonCard
             title={text.Practice}
-            icon=""
+            icon="practice"
             action={() => {
               navigation.navigate('SettingsScreen');
             }}
@@ -44,7 +44,7 @@ export default function MainScreen({navigation}: any) {
           <View style={{height: width * 0.015}} />
           <SecondaryButtonCard
             title={text.GlobalRating}
-            icon=""
+            icon="halfStar"
             action={() => {}}
           />
         </VerticalMainCard>

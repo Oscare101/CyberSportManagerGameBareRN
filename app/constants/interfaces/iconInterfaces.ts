@@ -85,3 +85,7 @@ export interface Armor {
 export interface Theme {
   value: 'dark' | 'light';
 }
+
+export interface IconName {
+  value: 'back' | 'settings' | 'halfStar' | 'grid' | 'practice';
+}

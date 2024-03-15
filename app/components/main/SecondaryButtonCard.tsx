@@ -10,12 +10,14 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../redux';
 import colors from '../../constants/colors';
+import {IconName} from '../../constants/interfaces/iconInterfaces';
+import Icon from '../icons/Icon';
 
 const width = Dimensions.get('screen').width;
 
 export default function SecondaryButtonCard(props: {
   title: string;
-  icon: string;
+  icon: IconName['value'];
   action: any;
 }) {
   const systemTheme = useColorScheme();
@@ -29,6 +31,7 @@ export default function SecondaryButtonCard(props: {
       <Text style={[styles.title, {color: colors[themeColor].main}]}>
         {props.title}
       </Text>
+      <Icon icon={props.icon} size={width * 0.06} theme={themeColor} />
     </TouchableOpacity>
   );
 }
