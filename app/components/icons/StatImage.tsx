@@ -1,49 +1,80 @@
+import colors from '../../constants/colors';
 import {Stat, Theme} from '../../constants/interfaces/iconInterfaces';
 import {
-  ReactionLight,
-  AccuracyLight,
-  SprayLight,
-  FlickLight,
-  NadeLight,
-  AggressionLight,
-  TacticsLight,
-  StaminaLight,
-  ReactionDark,
-  AccuracyDark,
-  SprayDark,
-  FlickDark,
-  NadeDark,
-  AggressionDark,
-  TacticsDark,
-  StaminaDark,
+  Reaction,
+  Accuracy,
+  Spray,
+  Flick,
+  Nade,
+  Aggression,
+  Tactics,
+  Stamina,
 } from '../../icons/stats';
 
 export default function StatImage(props: {
   stat: Stat['value'];
-  theme: 'dark' | 'light';
+  color: 'green' | 'lightGreen' | 'yellow' | 'orange' | 'red';
+  theme: Theme['value'];
   size: number;
 }) {
-  const stats: Record<Theme['value'], Record<Stat['value'], any>> = {
-    light: {
-      reaction: <ReactionLight width={props.size} height={props.size} />,
-      accuracy: <AccuracyLight width={props.size} height={props.size} />,
-      spray: <SprayLight width={props.size} height={props.size} />,
-      flick: <FlickLight width={props.size} height={props.size} />,
-      nade: <NadeLight width={props.size} height={props.size} />,
-      aggression: <AggressionLight width={props.size} height={props.size} />,
-      tactic: <TacticsLight width={props.size} height={props.size} />,
-      stamina: <StaminaLight width={props.size} height={props.size} />,
-    },
-    dark: {
-      reaction: <ReactionDark width={props.size} height={props.size} />,
-      accuracy: <AccuracyDark width={props.size} height={props.size} />,
-      spray: <SprayDark width={props.size} height={props.size} />,
-      flick: <FlickDark width={props.size} height={props.size} />,
-      nade: <NadeDark width={props.size} height={props.size} />,
-      aggression: <AggressionDark width={props.size} height={props.size} />,
-      tactic: <TacticsDark width={props.size} height={props.size} />,
-      stamina: <StaminaDark width={props.size} height={props.size} />,
-    },
+  const stats: Record<Stat['value'], any> = {
+    reaction: (
+      <Reaction
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+      />
+    ),
+    accuracy: (
+      <Accuracy
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+      />
+    ),
+    spray: (
+      <Spray
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+        fill={colors[props.theme][props.color]?.main}
+      />
+    ),
+    flick: (
+      <Flick
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+      />
+    ),
+    nade: (
+      <Nade
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+      />
+    ),
+    aggression: (
+      <Aggression
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+      />
+    ),
+    tactic: (
+      <Tactics
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+      />
+    ),
+    stamina: (
+      <Stamina
+        width={props.size}
+        height={props.size}
+        stroke={colors[props.theme][props.color]?.main}
+      />
+    ),
   };
-  return stats[props.theme][props.stat];
+  return stats[props.stat];
 }

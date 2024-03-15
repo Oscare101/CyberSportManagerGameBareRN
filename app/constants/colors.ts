@@ -17,7 +17,7 @@ const colors: any = {
     },
     yellow: {
       bg: '#FFFB8F',
-      main: '#C3BD1E',
+      main: '#A09906',
     },
     orange: {
       bg: '#FFD98F',

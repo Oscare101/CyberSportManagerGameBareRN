@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: width * 0.08,
     borderRadius: width * 0.02,
+    marginTop: width * 0.02,
   },
   button: {
     width: '50%',

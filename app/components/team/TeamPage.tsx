@@ -10,5 +10,4 @@ function TeamPage() {
 }
 
 const styles = StyleSheet.create({});
-
 export default memo(TeamPage);
