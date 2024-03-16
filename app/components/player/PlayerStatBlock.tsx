@@ -21,7 +21,7 @@ import {Stat} from '../../constants/interfaces/iconInterfaces';
 
 const width = Dimensions.get('screen').width;
 
-function PlayerStatBlock(props: {player: Player}) {
+function PlayerStatBlock(props: {player: Player; action: any}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
@@ -29,58 +29,65 @@ function PlayerStatBlock(props: {player: Player}) {
   const allPlayers = GetPlayersFromTeams(teams);
 
   const data: {
-    title: string;
     icon: Stat['value'];
     value: number;
     action: any;
   }[] = [
     {
-      title: text.Reaction,
       icon: 'reaction',
       value: props.player.stat.reaction,
-      action: () => {},
+      action: () => {
+        props.action('reaction');
+      },
     },
     {
-      title: text.Accuracy,
       icon: 'accuracy',
       value: props.player.stat.accuracy,
-      action: () => {},
+      action: () => {
+        props.action('accuracy');
+      },
     },
     {
-      title: text.Flicks,
       icon: 'flicksControl',
       value: props.player.stat.flicksControl,
-      action: () => {},
+      action: () => {
+        props.action('flicksControl');
+      },
     },
     {
-      title: text.Spray,
       icon: 'sprayControl',
       value: props.player.stat.sprayControl,
-      action: () => {},
+      action: () => {
+        props.action('sprayControl');
+      },
     },
     {
-      title: text.Nades,
       icon: 'nades',
       value: props.player.stat.nades,
-      action: () => {},
+      action: () => {
+        props.action('nades');
+      },
     },
     {
-      title: text.Tactics,
       icon: 'tactics',
       value: props.player.stat.tactics,
-      action: () => {},
+      action: () => {
+        props.action('tactics');
+      },
     },
     {
-      title: text.Aggression,
       icon: 'aggression',
       value: props.player.stat.aggression,
-      action: () => {},
+      action: () => {
+        props.action('aggression');
+      },
     },
     {
-      title: text.Stamina,
       icon: 'stamina',
       value: props.player.stat.stamina,
-      action: () => {},
+      action: () => {
+        props.action('stamina');
+      },
     },
   ];
   return (

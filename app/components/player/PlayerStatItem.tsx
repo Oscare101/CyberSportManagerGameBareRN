@@ -51,11 +51,11 @@ export default function PlayerStatItem(props: {
           size={width * 0.05}
         />
         <Text style={[styles.title, {color: colors[props.theme].main}]}>
-          {props.item.title}
+          {text[props.item.icon]}
         </Text>
         <Text style={[styles.value, {color: colors[props.theme].main}]}>
           {props.item.value}
-          {props.item.title === text.Reaction ? ' s' : ''}
+          {props.item.icon === 'reaction' ? ' s' : ''}
         </Text>
       </View>
       <View

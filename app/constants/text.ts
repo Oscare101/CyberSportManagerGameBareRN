@@ -1,4 +1,4 @@
-export default {
+const text: any = {
   MainPlayers: 'Main',
   BenchedPlayers: 'Benched',
   Settings: 'Settings',
@@ -22,13 +22,31 @@ export default {
   Role: 'Role',
   Contract: 'Contract',
   Salary: 'Salary',
-  Reaction: 'Reaction',
-  Accuracy: 'Accuracy',
-  Flicks: 'Flicks',
-  Spray: 'Spray',
-  Nades: 'Nades',
-  Tactics: 'Tactics',
-  Aggression: 'Aggression',
-  Stamina: 'Stamina',
+  reaction: 'Reaction',
+  accuracy: 'Accuracy',
+  flicksControl: 'Flicks',
+  sprayControl: 'Spray',
+  nades: 'Nades',
+  tactics: 'Tactics',
+  aggression: 'Aggression',
+  stamina: 'Stamina',
+  reactionDescription:
+    'The average time a player has time to react to a situation in the game. The less it is, the better',
+  accuracyDescription:
+    'Average player aiming accuracy, the higher the accuracy the better',
+  flicksControlDescription:
+    'Player flick control indicator. Affects the accuracy of aiming at the first shot, when it is necessary to aim at the opponent as quickly as possible. The bigger the better',
+  sprayControlDescription:
+    'Spray control index. Affects the accuracy of mass shots at the opponent when the point is already set on the opponent. The bigger the better',
+  nadesDescription:
+    'Indicator of skill with grenades. It will help in duels with the opponent or if needed by other players. The bigger the better',
+  tacticsDescription:
+    'Indicator of knowledge of tactics and communication with other players. Helps in harmonious teams. More is better',
+  aggressionDescription:
+    "An indicator of the aggressiveness of the player's game. Sometimes it helps to win clutch games, or lose control with careless play",
+  staminaDescription:
+    "A player's stability indicator, emotionless in different situations, Can help by controlling emotions when losing or winning, and make the player more stable",
   Individuals: 'Individuals',
 };
+
+export default text;
