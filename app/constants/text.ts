@@ -28,8 +28,6 @@ const text: any = {
   sprayControl: 'Spray',
   nades: 'Nades',
   tactics: 'Tactics',
-  aggression: 'Aggression',
-  stamina: 'Stamina',
   reactionDescription:
     'The average time a player has time to react to a situation in the game. The less it is, the better',
   accuracyDescription:
@@ -42,10 +40,6 @@ const text: any = {
     'Indicator of skill with grenades. It will help in duels with the opponent or if needed by other players. The bigger the better',
   tacticsDescription:
     'Indicator of knowledge of tactics and communication with other players. Helps in harmonious teams. More is better',
-  aggressionDescription:
-    "An indicator of the aggressiveness of the player's game. Sometimes it helps to win clutch games, or lose control with careless play",
-  staminaDescription:
-    "A player's stability indicator, emotionless in different situations, Can help by controlling emotions when losing or winning, and make the player more stable",
   Individuals: 'Individuals',
 };
 
