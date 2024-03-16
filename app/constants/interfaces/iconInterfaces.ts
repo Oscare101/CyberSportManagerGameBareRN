@@ -5,9 +5,9 @@ export interface Stat {
     | 'sprayControl'
     | 'flicksControl'
     | 'nades'
-    | 'aggression'
-    | 'tactics'
-    | 'stamina';
+    // | 'aggression'
+    | 'tactics';
+  // | 'stamina';
 }
 
 export interface Cup {

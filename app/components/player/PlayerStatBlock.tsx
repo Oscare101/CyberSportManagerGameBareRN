@@ -75,20 +75,20 @@ function PlayerStatBlock(props: {player: Player; action: any}) {
         props.action('tactics');
       },
     },
-    {
-      icon: 'aggression',
-      value: props.player.stat.aggression,
-      action: () => {
-        props.action('aggression');
-      },
-    },
-    {
-      icon: 'stamina',
-      value: props.player.stat.stamina,
-      action: () => {
-        props.action('stamina');
-      },
-    },
+    // {
+    //   icon: 'aggression',
+    //   value: props.player.stat.aggression,
+    //   action: () => {
+    //     props.action('aggression');
+    //   },
+    // },
+    // {
+    //   icon: 'stamina',
+    //   value: props.player.stat.stamina,
+    //   action: () => {
+    //     props.action('stamina');
+    //   },
+    // },
   ];
   return (
     <FlatList

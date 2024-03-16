@@ -7,9 +7,7 @@ const allStats: Stat['value'][] = [
   'sprayControl',
   'flicksControl',
   'nades',
-  'aggression',
   'tactics',
-  'stamina',
 ];
 
 export function NewTeamsDataAfterPlayersPractice(
@@ -21,33 +19,46 @@ export function NewTeamsDataAfterPlayersPractice(
       allStats[Math.floor(Math.random() * allStats.length)];
     const newValue = +(
       p.stat[statToChange] +
-      Math.random() * (0.05 + 0.02) -
-      0.02
+      (statToChange === 'reaction'
+        ? Math.random() * (-0.05 - 0.02) + 0.02
+        : Math.random() * (0.05 + 0.02) - 0.02)
     ).toFixed(3);
     return {
       ...p,
       stat: {
         ...p.stat,
-        [statToChange]: newValue > 1 ? 1 : newValue,
+        [statToChange]:
+          statToChange === 'reaction'
+            ? newValue < 0.1
+              ? 0.1
+              : newValue
+            : newValue > 1
+            ? 1
+            : newValue,
       },
     };
   });
-  // const newPlayerData: Player = {
-  //   ...player,
-  //   stat: {
-  //     ...player.stat,
-  //     [statToChange]: +(
-  //       player.stat[statToChange] +
-  //       Math.random() * (0.02 + 0.02) -
-  //       0.02
-  //     ).toFixed(3),
-  //   },
-  // };
-  // let newMyTeamPlayers: Player[] = playerTeam.players
-  //   .filter((p: Player) => p.name !== player.name)
-  //   .concat(newPlayerData);
   let newTeamsData: Team[] = teams
     .filter((t: Team) => t.name !== playerTeam.name)
     .concat({...playerTeam, players: newMyTeamPlayersData});
   return newTeamsData;
+}
+
+export function GetTeamStatAverage(team: Team) {
+  const stat =
+    team.players.reduce(
+      (sum: number, p: Player) =>
+        sum +
+        Object.values(p.stat)
+          .filter((s: any) => Number(s))
+          .reduce((a: number, s: any) => a + s, 0) /
+          Object.values(p.stat).filter((s: any) => Number(s)).length,
+      0,
+    ) / team.players.length;
+  return +stat.toFixed(3);
+}
+
+export function PracticePrice(team: Team) {
+  const stat = GetTeamStatAverage(team);
+  return +(stat ** 3).toFixed(3);
 }

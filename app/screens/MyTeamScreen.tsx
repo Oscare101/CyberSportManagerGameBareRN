@@ -7,13 +7,19 @@ import {RootState} from '../redux';
 import {useDispatch, useSelector} from 'react-redux';
 import text from '../constants/text';
 import Header from '../components/Header';
-import {Team} from '../constants/interfaces/playerTeamInterfaces';
+import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import PageSelectorBlock from '../components/team/PageSelectorBlock';
 import PlayersPage from '../components/team/PlayersPage';
 import TeamPage from '../components/team/TeamPage';
 import Button from '../components/Button';
-import {NewTeamsDataAfterPlayersPractice} from '../functions/playerFunctions';
+import {
+  GetTeamStatAverage,
+  NewTeamsDataAfterPlayersPractice,
+  PracticePrice,
+} from '../functions/playerFunctions';
 import {updateTeams} from '../redux/teams';
+import {GetMoneyAmountString} from '../functions/function';
+import rules from '../constants/rules';
 
 export default function MyTeamScreen({navigation}: any) {
   const systemTheme = useColorScheme();
@@ -24,8 +30,15 @@ export default function MyTeamScreen({navigation}: any) {
   const myTeam: Team = teams.find((t: Team) => t.yourTeam) as Team;
   const dispatch = useDispatch();
   const [page, setPage] = useState<'players' | 'team'>('players');
+  const [cost, setCost] = useState<number>(0);
+
+  const [count, setCount] = useState<number>(0);
 
   function PracticeFunc() {
+    setCount(prev => prev + 1);
+    setCost(
+      prev => prev + Math.floor(PracticePrice(myTeam) * rules.practicePrice),
+    );
     dispatch(updateTeams(NewTeamsDataAfterPlayersPractice(myTeam, teams)));
   }
 
@@ -46,7 +59,13 @@ export default function MyTeamScreen({navigation}: any) {
       <View style={page === 'team' ? {width: '100%'} : styles.hide}>
         <TeamPage />
       </View>
-      <Button title="change ))))))))" action={PracticeFunc} />
+      <Text>{GetMoneyAmountString(cost)}</Text>
+      <Button
+        title={`(${count}) ${Math.floor(
+          PracticePrice(myTeam) * rules.practicePrice,
+        )} ${GetTeamStatAverage(myTeam)}`}
+        action={PracticeFunc}
+      />
     </SafeAreaView>
   );
 }

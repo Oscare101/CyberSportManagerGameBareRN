@@ -37,7 +37,7 @@ export default function LaunchScreen({navigation}: any) {
 
   function GetStorage() {
     const teamsStorage = storage.getString('teams');
-    if (teamsStorage && teamsStorage.length) {
+    if (teamsStorage && teamsStorage.length && false) {
       dispatch(updateTeams(JSON.parse(teamsStorage)));
     } else {
       dispatch(updateTeams(teamsDefault));

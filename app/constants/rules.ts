@@ -4,4 +4,5 @@ export default {
   reactionMargin: 0.5,
   reactionMax: 0.2,
   reactionMin: 0.5,
+  practicePrice: 100000,
 };
