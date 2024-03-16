@@ -36,20 +36,16 @@ export default function MyTeamScreen({navigation}: any) {
   const dispatch = useDispatch();
   const [page, setPage] = useState<'players' | 'team'>('players');
 
-  const [modalContent, setModalContent] = useState<string>('');
+  const [modalContent, setModalContent] = useState<'Practice'>('Practice');
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-  const snapPoints = useMemo(() => [width], []);
+  const snapPoints = useMemo(() => [width * 0.9], []);
   const onPresentModal = useCallback(() => {
     bottomSheetModalRef.current?.present();
   }, []);
   const onDismisModal = useCallback(() => {
     bottomSheetModalRef.current?.dismiss();
   }, []);
-
-  function PracticeFunc() {
-    dispatch(updateTeams(NewTeamsDataAfterPlayersPractice(myTeam, teams)));
-  }
 
   return (
     <BottomSheetModalProvider>
@@ -83,7 +79,7 @@ export default function MyTeamScreen({navigation}: any) {
         snapPoints={snapPoints}
         dismiss={onDismisModal}
         content={modalContent}
-        data={modalContent}
+        data={{screen: modalContent}}
         // setData={(newDate: Date) => {
         //   setDate(newDate);
         //   SetDates(newDate);

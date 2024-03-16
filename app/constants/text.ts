@@ -41,6 +41,11 @@ const text: any = {
   tacticsDescription:
     'Indicator of knowledge of tactics and communication with other players. Helps in harmonious teams. More is better. Can be practiced',
   Individuals: 'Individuals',
+  PraciceCost: 'Pracice cost',
+  AvailableMoney: 'Available money',
+  PracticeDescription:
+    'You can invest in a team by training players. During such joint training, they practice skills in tactics and nades, which will help them in team play in matches',
+  NotEnoughMoney: 'Not enough money',
 };
 
 export default text;

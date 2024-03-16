@@ -86,3 +86,7 @@ export function GetPlayerTopWithPlayers(
 
   return stat;
 }
+
+export function IsEnoughtMoney(cash: number, price: number) {
+  return cash >= price;
+}

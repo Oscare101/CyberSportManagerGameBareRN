@@ -10,6 +10,7 @@ import colors from '../../constants/colors';
 import InfoModal from './InfoModal';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
+import PracticeModal from './PracticeModal';
 
 const width = Dimensions.get('screen').width;
 
@@ -18,7 +19,7 @@ interface BottomModalBlockProps {
   snapPoints: any;
   dismiss: any;
   content: string;
-  data?: any;
+  data: any;
   setData?: any;
 }
 
@@ -28,7 +29,8 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
   const themeColor: any = theme === 'system' ? systemTheme : theme;
 
   const contentData: any = {
-    Info: <InfoModal date={props.data} />,
+    Info: <InfoModal date={props.data.item} />,
+    Practice: <PracticeModal />,
   };
 
   return (
@@ -60,7 +62,7 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
           alignItems: 'center',
           justifyContent: 'flex-start',
         }}>
-        {contentData['Info']}
+        {contentData[props.data.screen]}
       </View>
     </BottomSheetModal>
   );

@@ -13,17 +13,33 @@ import {useSelector} from 'react-redux';
 
 const width = Dimensions.get('screen').width;
 
-export default function Button(props: {title: string; action: any}) {
+export default function Button(props: {
+  title: string;
+  action: any;
+  disable?: boolean;
+  buttonStyles?: any;
+  titleStyles?: any;
+}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
 
   return (
     <TouchableOpacity
+      disabled={props.disable}
       activeOpacity={0.8}
       onPress={props.action}
-      style={[styles.button, {backgroundColor: colors[themeColor].header1Bg}]}>
-      <Text style={[styles.title, {color: colors[themeColor].header1Main}]}>
+      style={[
+        styles.button,
+        {backgroundColor: colors[themeColor].header1Bg},
+        props.buttonStyles,
+      ]}>
+      <Text
+        style={[
+          styles.title,
+          {color: colors[themeColor].header1Main},
+          props.titleStyles,
+        ]}>
         {props.title}
       </Text>
     </TouchableOpacity>

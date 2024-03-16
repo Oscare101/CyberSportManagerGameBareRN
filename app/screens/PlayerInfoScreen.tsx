@@ -64,7 +64,7 @@ export default function PlayerInfoScreen({navigation, route}: any) {
         snapPoints={snapPoints}
         dismiss={onDismisModal}
         content={modalContent}
-        data={modalContent}
+        data={{screen: 'Info', item: modalContent}}
         // setData={(newDate: Date) => {
         //   setDate(newDate);
         //   SetDates(newDate);

@@ -26,7 +26,14 @@ export function NewTeamsDataAfterPlayersPractice(
   });
   let newTeamsData: Team[] = teams
     .filter((t: Team) => t.name !== playerTeam.name)
-    .concat({...playerTeam, players: newMyTeamPlayersData});
+    .concat({
+      ...playerTeam,
+      players: newMyTeamPlayersData,
+      bank: {
+        ...playerTeam.bank,
+        cash: playerTeam.bank.cash - PracticePrice(playerTeam),
+      },
+    });
   return newTeamsData;
 }
 
@@ -56,5 +63,5 @@ export function GetPlayerStatAverage(player: Player) {
 
 export function PracticePrice(team: Team) {
   const stat = GetTeamStatAverage(team);
-  return +(stat ** 2).toFixed(3);
+  return +(stat ** 2 * rules.practicePrice).toFixed(3);
 }
