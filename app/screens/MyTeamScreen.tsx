@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View, useColorScheme} from 'react-native';
-import React, {useState} from 'react';
+import {Dimensions, StyleSheet, Text, View, useColorScheme} from 'react-native';
+import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyles from '../constants/globalStyles';
 import colors from '../constants/colors';
@@ -21,6 +21,10 @@ import {
 import {updateTeams} from '../redux/teams';
 import {GetMoneyAmountString, GetPlayersFromTeams} from '../functions/function';
 import rules from '../constants/rules';
+import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import BottomModalBlock from '../components/bottomModal/BottomModalBlock';
+
+const width = Dimensions.get('screen').width;
 
 export default function MyTeamScreen({navigation}: any) {
   const systemTheme = useColorScheme();
@@ -31,62 +35,61 @@ export default function MyTeamScreen({navigation}: any) {
   const myTeam: Team = teams.find((t: Team) => t.yourTeam) as Team;
   const dispatch = useDispatch();
   const [page, setPage] = useState<'players' | 'team'>('players');
-  const [cost, setCost] = useState<number>(0);
 
-  const [count, setCount] = useState<number>(0);
+  const [modalContent, setModalContent] = useState<string>('');
+
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+  const snapPoints = useMemo(() => [width], []);
+  const onPresentModal = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
+  const onDismisModal = useCallback(() => {
+    bottomSheetModalRef.current?.dismiss();
+  }, []);
 
   function PracticeFunc() {
-    setCount(prev => prev + 1);
-    setCost(
-      prev => prev + Math.floor(PracticePrice(myTeam) * rules.practicePrice),
-    );
     dispatch(updateTeams(NewTeamsDataAfterPlayersPractice(myTeam, teams)));
   }
 
-  // console.log(
-  //   GetPlayersFromTeams(teams)
-  //     .sort(
-  //       (a: Player, b: Player) =>
-  //         GetPlayerStatAverage(b) - GetPlayerStatAverage(a),
-  //     )
-  //     .map((p: Player) => {
-  //       return teams.find((t: Team) => t.players.includes(p))?.name;
-  //     })
-  //     .map((t: any, index: number) => {
-  //       if (t === 'NOVA') {
-  //         return index.toString();
-  //       } else {
-  //         return false;
-  //       }
-  //     })
-  //     .filter((i: any) => !!i),
-  // );
-
   return (
-    <SafeAreaView
-      style={[
-        globalStyles.container,
-        {backgroundColor: colors[themeColor].bg},
-      ]}>
-      <Header title={myTeam.name} action="back" />
-      <PageSelectorBlock
-        page={page}
-        setPage={(value: 'players' | 'team') => setPage(value)}
-      />
-      <View style={page === 'players' ? {width: '100%'} : styles.hide}>
-        <PlayersPage />
-      </View>
-      <View style={page === 'team' ? {width: '100%'} : styles.hide}>
-        <TeamPage />
-      </View>
-      <Text>{GetMoneyAmountString(cost)}</Text>
-      <Button
+    <BottomSheetModalProvider>
+      <SafeAreaView
+        style={[
+          globalStyles.container,
+          {backgroundColor: colors[themeColor].bg},
+        ]}>
+        <Header title={myTeam.name} action="back" />
+        <PageSelectorBlock
+          page={page}
+          setPage={(value: 'players' | 'team') => setPage(value)}
+        />
+        <View style={page === 'players' ? {width: '100%'} : styles.hide}>
+          <PlayersPage />
+        </View>
+        <View style={page === 'team' ? {width: '100%'} : styles.hide}>
+          <TeamPage />
+        </View>
+        <View style={{flex: 1}} />
+        <Button title={text.Practice} action={onPresentModal} />
+        {/* <Button
         title={`(${count}) ${Math.floor(
           PracticePrice(myTeam) * rules.practicePrice,
         )} ${GetTeamStatAverage(myTeam)}`}
         action={PracticeFunc}
+      /> */}
+      </SafeAreaView>
+      <BottomModalBlock
+        bottomSheetModalRef={bottomSheetModalRef}
+        snapPoints={snapPoints}
+        dismiss={onDismisModal}
+        content={modalContent}
+        data={modalContent}
+        // setData={(newDate: Date) => {
+        //   setDate(newDate);
+        //   SetDates(newDate);
+        // }}
       />
-    </SafeAreaView>
+    </BottomSheetModalProvider>
   );
 }
 

@@ -22,8 +22,8 @@ export default function Button(props: {title: string; action: any}) {
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={props.action}
-      style={[styles.button, {backgroundColor: colors[themeColor].accent}]}>
-      <Text style={[styles.title, {color: colors[themeColor].card}]}>
+      style={[styles.button, {backgroundColor: colors[themeColor].header1Bg}]}>
+      <Text style={[styles.title, {color: colors[themeColor].header1Main}]}>
         {props.title}
       </Text>
     </TouchableOpacity>

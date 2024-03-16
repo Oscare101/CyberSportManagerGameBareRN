@@ -37,9 +37,9 @@ const text: any = {
   sprayControlDescription:
     'Spray control index. Affects the accuracy of mass shots at the opponent when the point is already set on the opponent. The bigger the better',
   nadesDescription:
-    'Indicator of skill with grenades. It will help in duels with the opponent or if needed by other players. The bigger the better',
+    'Indicator of skill with grenades. It will help in duels with the opponent or if needed by other players. The bigger the better. Can be practiced',
   tacticsDescription:
-    'Indicator of knowledge of tactics and communication with other players. Helps in harmonious teams. More is better',
+    'Indicator of knowledge of tactics and communication with other players. Helps in harmonious teams. More is better. Can be practiced',
   Individuals: 'Individuals',
 };
 

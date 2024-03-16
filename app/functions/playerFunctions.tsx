@@ -2,14 +2,7 @@ import {Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import rules from '../constants/rules';
 
-const allStats: Stat['value'][] = [
-  'reaction',
-  'accuracy',
-  'sprayControl',
-  'flicksControl',
-  'nades',
-  'tactics',
-];
+const allStatsToPractice: Stat['value'][] = ['nades', 'tactics'];
 
 export function NewTeamsDataAfterPlayersPractice(
   playerTeam: Team,
@@ -17,26 +10,17 @@ export function NewTeamsDataAfterPlayersPractice(
 ) {
   const newMyTeamPlayersData = playerTeam.players.map((p: Player) => {
     const statToChange: Stat['value'] =
-      allStats[Math.floor(Math.random() * allStats.length)];
+      allStatsToPractice[Math.floor(Math.random() * allStatsToPractice.length)];
     const newValue = +(
       p.stat[statToChange] +
-      (statToChange === 'reaction'
-        ? Math.random() * (-rules.reactionUp - rules.reactionDown) +
-          rules.reactionDown
-        : Math.random() * (rules.statUp + rules.statDown) - rules.statDown)
+      Math.random() * (rules.statUp + rules.statDown) -
+      rules.statDown
     ).toFixed(3);
     return {
       ...p,
       stat: {
         ...p.stat,
-        [statToChange]:
-          statToChange === 'reaction'
-            ? newValue < rules.reactionCeil
-              ? rules.reactionCeil
-              : newValue
-            : newValue > 1
-            ? 1
-            : newValue,
+        [statToChange]: newValue > 1 ? 1 : newValue,
       },
     };
   });
