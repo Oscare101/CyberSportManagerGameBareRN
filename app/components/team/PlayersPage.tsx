@@ -42,7 +42,9 @@ function PlayersPage() {
         </Text>
         <TouchableOpacity
           style={[styles.button, {backgroundColor: colors[themeColor].card}]}>
-          <Text>{text.Open}</Text>
+          <Text style={[styles.buttonTitle, {color: colors[themeColor].main}]}>
+            {text.Open}
+          </Text>
         </TouchableOpacity>
       </View>
       {myTeam.players.some((p: Player) => p.status === 'active') ? (
@@ -70,7 +72,9 @@ function PlayersPage() {
         </Text>
         <TouchableOpacity
           style={[styles.button, {backgroundColor: colors[themeColor].card}]}>
-          <Text>{text.Open}</Text>
+          <Text style={[styles.buttonTitle, {color: colors[themeColor].main}]}>
+            {text.Open}
+          </Text>
         </TouchableOpacity>
       </View>
       {myTeam.players.some((p: Player) => p.status === 'benched') ? (
@@ -103,6 +107,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: width * 0.02,
     borderRadius: width * 0.02,
   },
+  buttonTitle: {fontSize: width * 0.035},
   comment: {
     fontSize: width * 0.05,
     textAlign: 'center',
