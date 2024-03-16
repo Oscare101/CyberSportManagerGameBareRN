@@ -36,11 +36,8 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
       handleIndicatorStyle={{
         backgroundColor: colors[themeColor].comment,
       }}
-      handleStyle={{
+      backgroundStyle={{
         backgroundColor: colors[themeColor].card,
-        flex: 1,
-        borderTopRightRadius: width * 0.05,
-        borderTopLeftRadius: width * 0.05,
       }}
       ref={props.bottomSheetModalRef}
       snapPoints={props.snapPoints}
