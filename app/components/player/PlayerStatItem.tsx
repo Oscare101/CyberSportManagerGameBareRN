@@ -66,9 +66,9 @@ export default function PlayerStatItem(props: {
         <View
           style={{
             height: width * 0.02,
-            width: '33%',
+            width: '20%',
             backgroundColor:
-              stat < 0.33
+              stat <= 0.2
                 ? colors[props.theme].red.bg
                 : colors[props.theme].greys[0],
           }}
@@ -76,21 +76,41 @@ export default function PlayerStatItem(props: {
         <View
           style={{
             height: width * 0.02,
-            width: '35%',
+            width: '20%',
             backgroundColor:
-              stat >= 0.33 && stat <= 0.66
-                ? colors[props.theme].yellow.bg
+              stat <= 0.4 && stat > 0.2
+                ? colors[props.theme].orange.bg
                 : colors[props.theme].greys[1],
           }}
         />
         <View
           style={{
             height: width * 0.02,
-            width: '33%',
+            width: '21%',
             backgroundColor:
-              stat > 0.66
-                ? colors[props.theme].green.bg
+              stat <= 0.6 && stat > 0.4
+                ? colors[props.theme].yellow.bg
                 : colors[props.theme].greys[2],
+          }}
+        />
+        <View
+          style={{
+            height: width * 0.02,
+            width: '20%',
+            backgroundColor:
+              stat <= 0.8 && stat > 0.6
+                ? colors[props.theme].lightGreen.bg
+                : colors[props.theme].greys[3],
+          }}
+        />
+        <View
+          style={{
+            height: width * 0.02,
+            width: '20%',
+            backgroundColor:
+              stat <= 1 && stat > 0.8
+                ? colors[props.theme].green.bg
+                : colors[props.theme].greys[4],
           }}
         />
         <View
@@ -98,14 +118,9 @@ export default function PlayerStatItem(props: {
             styles.pointer,
             {
               backgroundColor:
-                // colors[props.theme][
-                //   GetTopStatColor(stat > 1 ? 1 : stat < 0 ? 0 : stat)
-                // ].main,
-                stat < 0.33
-                  ? colors[props.theme].red.main
-                  : stat <= 0.66
-                  ? colors[props.theme].yellow.main
-                  : colors[props.theme].green.main,
+                colors[props.theme][
+                  GetTopStatColor(stat > 1 ? 1 : stat < 0 ? 0 : stat)
+                ].main,
               left:
                 ((width * 0.9) / 2 - width * 0.06) *
                 (stat > 1 ? 1 : stat < 0 ? 0 : stat),

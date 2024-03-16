@@ -11,7 +11,7 @@ import Header from '../components/Header';
 import globalStyles from '../constants/globalStyles';
 import colors from '../constants/colors';
 import {RootState} from '../redux';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import ShortInfoBlock from '../components/player/ShortInfoBlock';
 import PlayerStatBlock from '../components/player/PlayerStatBlock';
 import text from '../constants/text';
