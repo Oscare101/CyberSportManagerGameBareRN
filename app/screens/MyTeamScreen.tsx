@@ -43,4 +43,4 @@ export default function MyTeamScreen({navigation}: any) {
   );
 }
 
-const styles = StyleSheet.create({hide: {height: 0, display: 'none'}});
+const styles = StyleSheet.create({hide: {display: 'none'}});

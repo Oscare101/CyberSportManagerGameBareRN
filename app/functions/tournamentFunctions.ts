@@ -17,6 +17,7 @@ export function GetTournamentsBySeason(tournaments: Tournament[]) {
   return tArr;
 }
 
+// TODO maybe delete this one (you have ActiveTournaments)
 export function OnlyCurrentSeason(tournaments: Tournament[]) {
   return tournaments.filter(
     (t: Tournament) => t.season === tournaments[tournaments.length - 1].season,

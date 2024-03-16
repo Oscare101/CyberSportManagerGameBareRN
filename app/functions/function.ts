@@ -60,6 +60,7 @@ export function GetTopStatColor(rating: number) {
   }
 }
 
+// returns a KOEF (0-1) depending on the parameters of the PLAYER relative to other PLAYERS
 export function GetPlayerTopWithPlayers(
   players: Player[],
   parameter: Stat['value'],
