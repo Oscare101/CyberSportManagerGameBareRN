@@ -2,11 +2,11 @@ export interface Stat {
   value:
     | 'reaction'
     | 'accuracy'
-    | 'spray'
-    | 'flick'
-    | 'nade'
+    | 'sprayControl'
+    | 'flicksControl'
+    | 'nades'
     | 'aggression'
-    | 'tactic'
+    | 'tactics'
     | 'stamina';
 }
 

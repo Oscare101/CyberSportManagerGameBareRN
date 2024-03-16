@@ -10,9 +10,14 @@ import {Stat, Theme} from '../../constants/interfaces/iconInterfaces';
 import colors from '../../constants/colors';
 import globalStyles from '../../constants/globalStyles';
 import text from '../../constants/text';
-import {GetTopPlayerStat} from '../../functions/function';
+import {
+  GetPlayerTopWithPlayers,
+  GetTopPlayerStat,
+  GetTopStatColor,
+} from '../../functions/function';
 import rules from '../../constants/rules';
 import StatImage from '../icons/StatImage';
+import {Player} from '../../constants/interfaces/playerTeamInterfaces';
 
 const width = Dimensions.get('screen').width;
 
@@ -20,15 +25,13 @@ export default function PlayerStatItem(props: {
   item: any;
   theme: Theme['value'];
   index: number;
+  players: Player[];
 }) {
-  const stat =
-    props.item.icon === 'reaction'
-      ? GetTopPlayerStat(
-          rules.reactionMargin - rules.reactionMax,
-          rules.reactionMargin - rules.reactionMin,
-          rules.reactionMargin - props.item.value,
-        )
-      : GetTopPlayerStat(rules.statMax, rules.statMin, props.item.value);
+  const stat = GetPlayerTopWithPlayers(
+    props.players,
+    props.item.icon,
+    props.item.value,
+  );
 
   return (
     <TouchableOpacity
@@ -52,7 +55,7 @@ export default function PlayerStatItem(props: {
         </Text>
         <Text style={[styles.value, {color: colors[props.theme].main}]}>
           {props.item.value}
-          {props.item.title === text.Reaction ? ' sec' : ''}
+          {props.item.title === text.Reaction ? ' s' : ''}
         </Text>
       </View>
       <View
@@ -95,12 +98,17 @@ export default function PlayerStatItem(props: {
             styles.pointer,
             {
               backgroundColor:
+                // colors[props.theme][
+                //   GetTopStatColor(stat > 1 ? 1 : stat < 0 ? 0 : stat)
+                // ].main,
                 stat < 0.33
                   ? colors[props.theme].red.main
                   : stat <= 0.66
                   ? colors[props.theme].yellow.main
                   : colors[props.theme].green.main,
-              left: ((width * 0.9) / 2 - width * 0.06) * stat,
+              left:
+                ((width * 0.9) / 2 - width * 0.06) *
+                (stat > 1 ? 1 : stat < 0 ? 0 : stat),
             },
           ]}
         />

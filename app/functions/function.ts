@@ -1,3 +1,4 @@
+import {Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 
 export function GetMoneyAmount(money: number) {
@@ -57,4 +58,30 @@ export function GetTopStatColor(rating: number) {
   } else {
     return 'red';
   }
+}
+
+export function GetPlayerTopWithPlayers(
+  players: Player[],
+  parameter: Stat['value'],
+  value: number,
+) {
+  const playersSorted: any = players.sort(
+    (a: any, b: any) => b.stat[parameter] - a.stat[parameter],
+  );
+
+  const stat =
+    parameter === 'reaction'
+      ? 1 -
+        GetTopPlayerStat(
+          playersSorted[0].stat[parameter],
+          playersSorted[playersSorted.length - 1].stat[parameter],
+          value,
+        )
+      : GetTopPlayerStat(
+          playersSorted[0].stat[parameter],
+          playersSorted[playersSorted.length - 1].stat[parameter],
+          value,
+        );
+
+  return stat;
 }

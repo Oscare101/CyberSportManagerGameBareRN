@@ -58,28 +58,28 @@ export default function PlayerItem(props: {
       />
       <StatBlock
         stat={player.stat.flicksControl}
-        title="flick"
+        title="flicksControl"
         better="more"
         theme={props.theme}
         players={props.players}
       />
       <StatBlock
         stat={player.stat.sprayControl}
-        title="spray"
+        title="sprayControl"
         better="more"
         theme={props.theme}
         players={props.players}
       />
       <StatBlock
         stat={player.stat.nades}
-        title="nade"
+        title="nades"
         better="more"
         theme={props.theme}
         players={props.players}
       />
       <StatBlock
         stat={player.stat.tactics}
-        title="tactic"
+        title="tactics"
         better="more"
         theme={props.theme}
         players={props.players}

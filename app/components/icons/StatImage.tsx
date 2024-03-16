@@ -177,21 +177,21 @@ export default function StatImage(props: {
         height={props.size}
       />
     ),
-    spray: (
+    sprayControl: (
       <SvgXml
         xml={SprayIcon(props.color)}
         width={props.size}
         height={props.size}
       />
     ),
-    flick: (
+    flicksControl: (
       <SvgXml
         xml={FlicksIcon(props.color)}
         width={props.size}
         height={props.size}
       />
     ),
-    nade: (
+    nades: (
       <SvgXml
         xml={NadeIcon(props.color)}
         width={props.size}
@@ -205,7 +205,7 @@ export default function StatImage(props: {
         height={props.size}
       />
     ),
-    tactic: (
+    tactics: (
       <SvgXml
         xml={TacticsIcon(props.color)}
         width={props.size}

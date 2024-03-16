@@ -8,9 +8,12 @@ import {
 import React, {memo} from 'react';
 import globalStyles from '../../constants/globalStyles';
 import text from '../../constants/text';
-import {Player} from '../../constants/interfaces/playerTeamInterfaces';
+import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import ShortInfoItem from './ShortInfoItem';
-import {GetMoneyAmountString} from '../../functions/function';
+import {
+  GetMoneyAmountString,
+  GetPlayersFromTeams,
+} from '../../functions/function';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
 import PlayerStatItem from './PlayerStatItem';
@@ -22,6 +25,9 @@ function PlayerStatBlock(props: {player: Player}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
+  const teams: Team[] = useSelector((state: RootState) => state.teams);
+  const allPlayers = GetPlayersFromTeams(teams);
+
   const data: {
     title: string;
     icon: Stat['value'];
@@ -42,25 +48,25 @@ function PlayerStatBlock(props: {player: Player}) {
     },
     {
       title: text.Flicks,
-      icon: 'flick',
+      icon: 'flicksControl',
       value: props.player.stat.flicksControl,
       action: () => {},
     },
     {
       title: text.Spray,
-      icon: 'spray',
+      icon: 'sprayControl',
       value: props.player.stat.sprayControl,
       action: () => {},
     },
     {
       title: text.Nades,
-      icon: 'nade',
+      icon: 'nades',
       value: props.player.stat.nades,
       action: () => {},
     },
     {
       title: text.Tactics,
-      icon: 'tactic',
+      icon: 'tactics',
       value: props.player.stat.tactics,
       action: () => {},
     },
@@ -83,7 +89,12 @@ function PlayerStatBlock(props: {player: Player}) {
       numColumns={2}
       data={data}
       renderItem={({item, index}) => (
-        <PlayerStatItem item={item} index={index} theme={themeColor} />
+        <PlayerStatItem
+          item={item}
+          index={index}
+          theme={themeColor}
+          players={allPlayers}
+        />
       )}
     />
   );

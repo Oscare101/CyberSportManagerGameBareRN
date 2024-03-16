@@ -4,7 +4,11 @@ import {IconName, Stat, Theme} from '../../constants/interfaces/iconInterfaces';
 import {Player} from '../../constants/interfaces/playerTeamInterfaces';
 import Icon from '../icons/Icon';
 import StatImage from '../icons/StatImage';
-import {GetTopPlayerStat, GetTopStatColor} from '../../functions/function';
+import {
+  GetPlayerTopWithPlayers,
+  GetTopPlayerStat,
+  GetTopStatColor,
+} from '../../functions/function';
 import rules from '../../constants/rules';
 import colors from '../../constants/colors';
 
@@ -17,14 +21,7 @@ export default function StatBlock(props: {
   players: Player[];
   title: Stat['value'];
 }) {
-  const stat =
-    props.title === 'reaction'
-      ? GetTopPlayerStat(
-          rules.reactionMargin - rules.reactionMax,
-          rules.reactionMargin - rules.reactionMin,
-          rules.reactionMargin - props.stat,
-        )
-      : GetTopPlayerStat(rules.statMax, rules.statMin, props.stat);
+  const stat = GetPlayerTopWithPlayers(props.players, props.title, props.stat);
 
   return (
     <View
