@@ -13,12 +13,13 @@ import PlayersPage from '../components/team/PlayersPage';
 import TeamPage from '../components/team/TeamPage';
 import Button from '../components/Button';
 import {
+  GetPlayerStatAverage,
   GetTeamStatAverage,
   NewTeamsDataAfterPlayersPractice,
   PracticePrice,
 } from '../functions/playerFunctions';
 import {updateTeams} from '../redux/teams';
-import {GetMoneyAmountString} from '../functions/function';
+import {GetMoneyAmountString, GetPlayersFromTeams} from '../functions/function';
 import rules from '../constants/rules';
 
 export default function MyTeamScreen({navigation}: any) {
@@ -41,6 +42,25 @@ export default function MyTeamScreen({navigation}: any) {
     );
     dispatch(updateTeams(NewTeamsDataAfterPlayersPractice(myTeam, teams)));
   }
+
+  // console.log(
+  //   GetPlayersFromTeams(teams)
+  //     .sort(
+  //       (a: Player, b: Player) =>
+  //         GetPlayerStatAverage(b) - GetPlayerStatAverage(a),
+  //     )
+  //     .map((p: Player) => {
+  //       return teams.find((t: Team) => t.players.includes(p))?.name;
+  //     })
+  //     .map((t: any, index: number) => {
+  //       if (t === 'NOVA') {
+  //         return index.toString();
+  //       } else {
+  //         return false;
+  //       }
+  //     })
+  //     .filter((i: any) => !!i),
+  // );
 
   return (
     <SafeAreaView
