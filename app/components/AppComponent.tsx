@@ -6,7 +6,12 @@ import colors from '../constants/colors';
 import {Team} from '../constants/interfaces/playerTeamInterfaces';
 import {MMKV} from 'react-native-mmkv';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
-
+import {
+  NavigationContainer,
+  DarkTheme,
+  DefaultTheme,
+} from '@react-navigation/native';
+import MainNavigation from '../navigation/MainNavigation';
 export const storage = new MMKV();
 
 export default function AppComponent() {
@@ -36,6 +41,10 @@ export default function AppComponent() {
         barStyle={themeColor === 'light' ? 'dark-content' : 'light-content'}
         backgroundColor={colors[themeColor].bg}
       />
+      <NavigationContainer
+        theme={themeColor === 'dark' ? DarkTheme : DefaultTheme}>
+        <MainNavigation />
+      </NavigationContainer>
     </>
   );
 }

@@ -82,7 +82,6 @@ export default function MyTeamScreen({navigation}: any) {
           <TeamPage />
         </ScrollView>
         <Button title={text.Practice} action={onPresentModal} />
-        <Button title={`chaaaaaange`} action={StatChangeFunc} />
       </SafeAreaView>
       <BottomModalBlock
         bottomSheetModalRef={bottomSheetModalRef}

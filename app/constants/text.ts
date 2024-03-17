@@ -46,6 +46,7 @@ const text: any = {
   PracticeDescription:
     'You can invest in a team by training players. During such joint training, they practice skills in tactics and nades, which will help them in team play in matches',
   NotEnoughMoney: 'Not enough money',
+  Rating: 'Rating',
 };
 
 export default text;

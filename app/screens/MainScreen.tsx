@@ -49,7 +49,9 @@ export default function MainScreen({navigation}: any) {
           <SecondaryButtonCard
             title={text.GlobalRating}
             icon="halfStar"
-            action={() => {}}
+            action={() => {
+              navigation.navigate('RatingScreen');
+            }}
           />
         </VerticalMainCard>
       </CardsBlock>

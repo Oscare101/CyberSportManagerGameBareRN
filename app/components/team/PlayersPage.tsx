@@ -42,12 +42,12 @@ function PlayersPage() {
         <Text style={[styles.title, {color: colors[themeColor].main}]}>
           {text.MainRoaster}
         </Text>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           style={[styles.button, {backgroundColor: colors[themeColor].card}]}>
           <Text style={[styles.buttonTitle, {color: colors[themeColor].main}]}>
             {text.Open}
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       {myTeam.players.some((p: Player) => p.status === 'active') ? (
         <FlatList
@@ -78,12 +78,6 @@ function PlayersPage() {
         <Text style={[styles.title, {color: colors[themeColor].main}]}>
           {text.BenchedPlayers}
         </Text>
-        <TouchableOpacity
-          style={[styles.button, {backgroundColor: colors[themeColor].card}]}>
-          <Text style={[styles.buttonTitle, {color: colors[themeColor].main}]}>
-            {text.Open}
-          </Text>
-        </TouchableOpacity>
       </View>
       {myTeam.players.some((p: Player) => p.status === 'benched') ? (
         <FlatList
