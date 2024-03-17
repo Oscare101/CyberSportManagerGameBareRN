@@ -53,12 +53,12 @@ function PlayersPage() {
           style={{width: '100%'}}
           data={myTeam.players.filter((p: Player) => p.status === 'active')}
           renderItem={({item}) => (
-            // <PlayerItem item={item} theme={themeColor} players={allPlayers} />
-            <PlayerItemFull
-              item={item}
-              theme={themeColor}
-              players={allPlayers}
-            />
+            <PlayerItem item={item} theme={themeColor} players={allPlayers} />
+            // <PlayerItemFull
+            //   item={item}
+            //   theme={themeColor}
+            //   players={allPlayers}
+            // />
           )}
         />
       ) : (

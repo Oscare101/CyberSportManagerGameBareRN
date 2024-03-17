@@ -97,3 +97,7 @@ export interface IconName {
     | 'people'
     | 'personAdd';
 }
+
+export interface Role {
+  value: 'capitan' | 'sniper' | 'rifler' | 'support';
+}

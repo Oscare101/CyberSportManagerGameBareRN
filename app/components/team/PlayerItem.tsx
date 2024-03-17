@@ -14,6 +14,7 @@ import {Player} from '../../constants/interfaces/playerTeamInterfaces';
 import colors from '../../constants/colors';
 import StatBlock from './StatBlock';
 import {useNavigation} from '@react-navigation/native';
+import RoleImage from '../icons/RoleImage';
 
 const width = Dimensions.get('screen').width;
 
@@ -36,6 +37,11 @@ export default function PlayerItem(props: {
         style={[styles.name, {color: colors[props.theme].main}]}>
         {player.name}
       </Text>
+      <RoleImage
+        role={player.stat.role}
+        size={width * 0.04}
+        color={colors[props.theme].comment}
+      />
       <Text
         numberOfLines={1}
         style={[styles.role, {color: colors[props.theme].comment}]}>
@@ -107,5 +113,6 @@ const styles = StyleSheet.create({
   role: {
     width: '15%',
     fontSize: width * 0.035,
+    textAlign: 'right',
   },
 });

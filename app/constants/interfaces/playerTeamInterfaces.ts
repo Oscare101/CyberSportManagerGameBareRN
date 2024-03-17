@@ -1,8 +1,8 @@
-import {Teams} from './iconInterfaces';
+import {Role, Teams} from './iconInterfaces';
 import {Tournament} from './tournamentInterfaces';
 
 export interface PlayerStatistic {
-  role: 'sniper' | 'rifler' | 'support' | 'capitan';
+  role: Role['value'];
   reaction: number; // 0 - inf
   accuracy: number; // 0 - 1
   sprayControl: number; // 0 - 1

@@ -15,6 +15,7 @@ import colors from '../../constants/colors';
 import StatBlock from './StatBlock';
 import {useNavigation} from '@react-navigation/native';
 import globalStyles from '../../constants/globalStyles';
+import RoleImage from '../icons/RoleImage';
 
 const width = Dimensions.get('screen').width;
 
@@ -38,6 +39,12 @@ export default function PlayerItemFull(props: {
           style={[styles.name, {color: colors[props.theme].main}]}>
           {player.name}
         </Text>
+        <View style={{flex: 1}} />
+        <RoleImage
+          role={player.stat.role}
+          size={width * 0.05}
+          color={colors[props.theme].comment}
+        />
         <Text
           numberOfLines={1}
           style={[styles.role, {color: colors[props.theme].comment}]}>
@@ -116,7 +123,8 @@ const styles = StyleSheet.create({
     fontSize: width * 0.04,
   },
   role: {
-    // width: '15%',
+    width: '15%',
     fontSize: width * 0.035,
+    textAlign: 'right',
   },
 });
