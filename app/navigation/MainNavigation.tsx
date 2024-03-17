@@ -30,7 +30,6 @@ export default function MainNavigation() {
         name="MainScreen"
         component={MainScreen}
       />
-      {/* other screens then must apear without bottom tab navigation */}
       <Stack.Screen
         options={{
           headerShown: false,
