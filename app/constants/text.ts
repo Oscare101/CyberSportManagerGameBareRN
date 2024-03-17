@@ -61,6 +61,18 @@ const text: any = {
   SupportDescription:
     'Support helps everyone else play their roles, throws grenades. Therefore, it should feel very good on them. Must also be a good shooter',
   Finances: 'Finances',
+  Status: 'Status',
+  PlayerSalary: 'Salary',
+  PlayerSalaryYear: 'Salary per year',
+  ContractEnds: 'Contract ends',
+  SalaryDescription:
+    'Each player, according to the contract signed with the company, receives a salary. This salary must be paid at the beginning of the season one year in advance.',
+  SalaryNotPaidDescription:
+    'If the player does not receive a salary before the next season starts, the amount for a year in advance, he can terminate the contract with the team and leave',
+  ContractExtension:
+    'The contract can be extended at any time before its end. The salary will be recalculated, depending on the rating of the player relative to all other players in the field',
+  PriceDescription:
+    "Each player has his own price in the market. It varies depending on the player's own skill relative to the skill of all other players.",
 };
 
 export default text;

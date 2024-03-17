@@ -12,7 +12,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Oscare',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -27,7 +27,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Header',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -42,7 +42,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Modest',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -57,7 +57,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Olaph',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -72,7 +72,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Roller',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -97,7 +97,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Collector',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -112,7 +112,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Nelo',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -127,7 +127,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Brad',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -142,7 +142,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Silver',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -157,7 +157,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Colour',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -182,7 +182,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Octopus',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -197,7 +197,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Rossan',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -212,7 +212,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Awesome',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -227,7 +227,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'NBF',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -242,7 +242,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Scelt',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -267,7 +267,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Cloudy',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -282,7 +282,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'B8Loo',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -297,7 +297,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Newton',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -312,7 +312,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Serpe',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -327,7 +327,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Lancar',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -352,7 +352,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Macro',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -367,7 +367,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Zoom',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -382,7 +382,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Smith',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -397,7 +397,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Focus',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -412,7 +412,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Invincible',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -437,7 +437,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Dach',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -452,7 +452,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Theater',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -467,7 +467,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Salivan',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -482,7 +482,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Faker',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -497,7 +497,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Boxer',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -522,7 +522,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Gepard',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -537,7 +537,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Super',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -552,7 +552,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Bait',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -567,7 +567,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Fury',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -582,7 +582,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Pretios',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -607,7 +607,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Soul',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -622,7 +622,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Faris',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -637,7 +637,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Electron',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -652,7 +652,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Crowley',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -667,7 +667,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Right',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -692,7 +692,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Bad',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -707,7 +707,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Phantom',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -722,7 +722,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Titan',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -737,7 +737,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Swan',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -752,7 +752,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tenor',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -777,7 +777,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: '1Lery',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -792,7 +792,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Wong',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -807,7 +807,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Melon',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -822,7 +822,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Forest',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -837,7 +837,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'LoseIt',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -862,7 +862,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Rosh',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -877,7 +877,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chellen',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -892,7 +892,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chin',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -907,7 +907,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tatam',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -922,7 +922,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Aziraphale',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -947,7 +947,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'FGod',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -962,7 +962,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Cicada',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -977,7 +977,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Stoic',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -992,7 +992,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Somewhere',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -1007,7 +1007,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tabar',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -1032,7 +1032,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Omega',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -1047,7 +1047,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Timely',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1062,7 +1062,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Rock',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1077,7 +1077,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Sound',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -1092,7 +1092,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Firemane',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -1117,7 +1117,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Peace',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -1132,7 +1132,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chicago',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1147,7 +1147,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Percent',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1162,7 +1162,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Invisible',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -1177,7 +1177,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Ouroboros',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -1202,7 +1202,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Uppper',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -1217,7 +1217,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'SuperFrag',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1232,7 +1232,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Catcher',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1247,7 +1247,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Kipito',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -1262,7 +1262,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Salute',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',
@@ -1287,7 +1287,7 @@ const teamsDefault: Team[] = [
     players: [
       {
         name: 'Leon',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'capitan',
@@ -1302,7 +1302,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Kosus',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1317,7 +1317,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'TheOwl',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'rifler',
@@ -1332,7 +1332,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Mandarin',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'sniper',
@@ -1347,7 +1347,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Raven',
-        contract: {salary: 0, start: '', finish: ''},
+        contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
           role: 'support',

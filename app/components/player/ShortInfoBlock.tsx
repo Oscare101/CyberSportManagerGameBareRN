@@ -30,18 +30,20 @@ function ShortInfoBlock(props: {player: Player; action: any}) {
       },
     },
     {
-      title: text.Contract,
-      value: props.player.contract.finish,
+      title: text.Status,
+      value: props.player.status,
       icon: '',
       action: () => {},
     },
     {
-      title: text.Salary,
+      title: text.Contract,
       value: `${GetMoneyAmountString(
         GetPlayerSalaryYear(GetPlayersFromTeams(teams), props.player),
-      )} / y`,
+      )}`,
       icon: '',
-      action: () => {},
+      action: () => {
+        props.action('Contract');
+      },
     },
   ];
   return (
