@@ -44,7 +44,9 @@ export default function MyTeamScreen({navigation}: any) {
   const dispatch = useDispatch();
   const [page, setPage] = useState<'players' | 'team'>('players');
 
-  const [modalContent, setModalContent] = useState<'Practice'>('Practice');
+  const [modalContent, setModalContent] = useState<{screen: 'Practice'}>({
+    screen: 'Practice',
+  });
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const snapPoints = useMemo(() => [width * 0.9], []);
@@ -87,8 +89,7 @@ export default function MyTeamScreen({navigation}: any) {
         bottomSheetModalRef={bottomSheetModalRef}
         snapPoints={snapPoints}
         dismiss={onDismisModal}
-        content={modalContent}
-        data={{screen: modalContent}}
+        data={modalContent}
       />
     </BottomSheetModalProvider>
   );

@@ -10,7 +10,7 @@ import {useSelector} from 'react-redux';
 
 const width = Dimensions.get('screen').width;
 
-function ShortInfoBlock(props: {player: Player}) {
+function ShortInfoBlock(props: {player: Player; action: any}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
@@ -19,7 +19,9 @@ function ShortInfoBlock(props: {player: Player}) {
       title: text.Role,
       value: props.player.stat.role,
       icon: 'role',
-      action: () => {},
+      action: () => {
+        props.action('Role');
+      },
     },
     {
       title: text.Contract,

@@ -11,6 +11,7 @@ import InfoModal from './InfoModal';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
 import PracticeModal from './PracticeModal';
+import PlayerRoleChangeModal from './PlayerRoleChangeModal';
 
 const width = Dimensions.get('screen').width;
 
@@ -18,7 +19,6 @@ interface BottomModalBlockProps {
   bottomSheetModalRef: any;
   snapPoints: any;
   dismiss: any;
-  content: string;
   data: any;
   setData?: any;
 }
@@ -31,6 +31,7 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
   const contentData: any = {
     Info: <InfoModal date={props.data.item} />,
     Practice: <PracticeModal />,
+    Role: <PlayerRoleChangeModal playerName={props.data.item} />,
   };
 
   return (

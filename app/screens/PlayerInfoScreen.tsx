@@ -18,6 +18,7 @@ import text from '../constants/text';
 import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import BottomModalBlock from '../components/bottomModal/BottomModalBlock';
 import {Stat} from '../constants/interfaces/iconInterfaces';
+import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 
 const width = Dimensions.get('screen').width;
 
@@ -26,15 +27,31 @@ export default function PlayerInfoScreen({navigation, route}: any) {
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
 
-  const [modalContent, setModalContent] = useState<Stat['value']>('reaction');
+  const teams: Team[] = useSelector((state: RootState) => state.teams);
+  const myTeam: Team = teams.find((t: Team) => t.yourTeam) as Team;
+  const player: Player = myTeam.players.find(
+    (p: Player) => p.name === route.params.player.name,
+  ) as Player;
+
+  const [modalContent, setModalContent] = useState<{
+    screen: 'Info' | 'Role';
+    item: Stat['value'] | string;
+  }>({screen: 'Info', item: 'reaction'});
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-  const snapPoints = useMemo(() => [width], []);
+  const snapPointsInfo = useMemo(() => [width], []);
+  const snapPointsRole = useMemo(() => ['100%'], []);
+
   const onPresentModal = useCallback(() => {
     bottomSheetModalRef.current?.present();
   }, []);
   const onDismisModal = useCallback(() => {
     bottomSheetModalRef.current?.dismiss();
+  }, []);
+
+  const onModal = useCallback((value: 'Role') => {
+    setModalContent({screen: value, item: player.name});
+    onPresentModal();
   }, []);
 
   return (
@@ -44,27 +61,28 @@ export default function PlayerInfoScreen({navigation, route}: any) {
           globalStyles.container,
           {backgroundColor: colors[themeColor].bg},
         ]}>
-        <Header title={route.params.player.name} action="back" />
-        <ShortInfoBlock player={route.params.player} />
+        <Header title={player.name} action="back" />
+        <ShortInfoBlock player={player} action={onModal} />
         <View style={[globalStyles.rowBetween, {width: '92%'}]}>
           <Text style={[styles.comment, {color: colors[themeColor].main}]}>
             {text.Individuals}
           </Text>
         </View>
         <PlayerStatBlock
-          player={route.params.player}
+          player={player}
           action={(content: Stat['value']) => {
-            setModalContent(content);
+            setModalContent({screen: 'Info', item: content});
             onPresentModal();
           }}
         />
       </SafeAreaView>
       <BottomModalBlock
         bottomSheetModalRef={bottomSheetModalRef}
-        snapPoints={snapPoints}
+        snapPoints={
+          modalContent.screen === 'Info' ? snapPointsInfo : snapPointsRole
+        }
         dismiss={onDismisModal}
-        content={modalContent}
-        data={{screen: 'Info', item: modalContent}}
+        data={modalContent}
       />
     </BottomSheetModalProvider>
   );

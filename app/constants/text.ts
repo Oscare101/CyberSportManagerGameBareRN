@@ -47,6 +47,19 @@ const text: any = {
     'You can invest in a team by training players. During such joint training, they practice skills in tactics and nades, which will help them in team play in matches',
   NotEnoughMoney: 'Not enough money',
   Rating: 'Rating',
+  Capitan: 'Capitan',
+  Sniper: 'Sniper',
+  Rifler: 'Rifler',
+  Support: 'Support',
+  RoleDescription: 'Each player can perform one of 4 roles during the game.',
+  CapitanDescription:
+    'The captain leads the team, we advise you to have only one captain, and the one with the highest tactics score. Must also be a good shooter',
+  SniperDescription:
+    'The role of a sniper requires the best reaction, accuracy and flicks, a good sniper should never miss. It is also better to have only one per team',
+  RiflerDescription:
+    'A rifler is a player who plays the role of an active killer. Needs help with grenades from the support and normal tactics from the captain, must have good reaction, accuracy, flicks and spray',
+  SupportDescription:
+    'Support helps everyone else play their roles, throws grenades. Therefore, it should feel very good on them. Must also be a good shooter',
 };
 
 export default text;

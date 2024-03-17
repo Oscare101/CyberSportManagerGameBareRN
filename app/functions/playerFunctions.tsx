@@ -1,4 +1,4 @@
-import {Stat} from '../constants/interfaces/iconInterfaces';
+import {Role, Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import rules from '../constants/rules';
 
@@ -110,4 +110,34 @@ export function GetPlayerStatAverage(player: Player) {
 export function PracticePrice(team: Team) {
   const stat = GetTeamStatAverage(team);
   return +(stat ** 2 * rules.practicePrice).toFixed(3);
+}
+
+export function SetNewPlayerRole(
+  teams: Team[],
+  playerTeam: Team,
+  playerName: Player['name'],
+  role: Role['value'],
+) {
+  const newMyTeamPlayersData: Team = {
+    ...playerTeam,
+    players: playerTeam.players.map((p: Player) => {
+      if (p.name === playerName) {
+        return {
+          ...p,
+          stat: {
+            ...p.stat,
+            role: role,
+          },
+        };
+      } else {
+        return {
+          ...p,
+        };
+      }
+    }),
+  };
+  let newTeamsData: Team[] = teams
+    .filter((t: Team) => t.name !== playerTeam.name)
+    .concat(newMyTeamPlayersData);
+  return newTeamsData;
 }
