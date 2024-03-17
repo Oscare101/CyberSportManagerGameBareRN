@@ -41,8 +41,8 @@ export default function MainScreen({navigation}: any) {
         <View style={{width: width * 0.015}} />
         <VerticalMainCard>
           <SecondaryButtonCard
-            title={text.Practice}
-            icon="practice"
+            title={text.Finances}
+            icon="wallet"
             action={() => {}}
           />
           <View style={{height: width * 0.015}} />

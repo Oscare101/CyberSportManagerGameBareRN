@@ -25,7 +25,11 @@ function RenderPreview(props: {theme: Theme['value']}) {
         },
       ]}>
       <View style={[globalStyles.rowBetween, {padding: width * 0.01}]}>
-        <Icon icon="back" theme={props.theme} size={width * 0.02} />
+        <Icon
+          icon="back"
+          color={colors[props.theme].main}
+          size={width * 0.02}
+        />
         <View
           style={{
             width: width * 0.05,

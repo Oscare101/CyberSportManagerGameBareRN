@@ -36,7 +36,7 @@ function Header(props: {title: string; action: 'back' | 'none'}) {
           }}>
           <Icon
             icon={props.action as IconName['value']}
-            theme={themeColor}
+            color={colors[themeColor].main}
             size={width * 0.09}
           />
         </TouchableOpacity>

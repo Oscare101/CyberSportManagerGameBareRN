@@ -60,6 +60,7 @@ const text: any = {
     'A rifler is a player who plays the role of an active killer. Needs help with grenades from the support and normal tactics from the captain, must have good reaction, accuracy, flicks and spray',
   SupportDescription:
     'Support helps everyone else play their roles, throws grenades. Therefore, it should feel very good on them. Must also be a good shooter',
+  Finances: 'Finances',
 };
 
 export default text;

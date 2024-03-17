@@ -41,7 +41,11 @@ export default function SecondaryButtonCard(props: {
           </Text>
         </View>
       ) : (
-        <Icon icon={props.icon} size={width * 0.05} theme={themeColor} />
+        <Icon
+          icon={props.icon}
+          size={width * 0.05}
+          color={colors[themeColor].main}
+        />
       )}
     </TouchableOpacity>
   );

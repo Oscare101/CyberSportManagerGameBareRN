@@ -30,7 +30,11 @@ export default function TransferCard() {
       <Text style={[styles.title, {color: colors[themeColor].main}]}>
         {text.TransferAgency}
       </Text>
-      <Icon icon="personAdd" theme={themeColor} size={width * 0.05} />
+      <Icon
+        icon="personAdd"
+        color={colors[themeColor].main}
+        size={width * 0.05}
+      />
     </TouchableOpacity>
   );
 }

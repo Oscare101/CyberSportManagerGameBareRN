@@ -38,7 +38,11 @@ function PlayersPage() {
           globalStyles.rowBetween,
           {width: '92%', alignSelf: 'center', marginVertical: width * 0.02},
         ]}>
-        <Icon icon="people" theme={themeColor} size={width * 0.07} />
+        <Icon
+          icon="people"
+          color={colors[themeColor].main}
+          size={width * 0.07}
+        />
         <Text style={[styles.title, {color: colors[themeColor].main}]}>
           {text.MainRoaster}
         </Text>
@@ -74,7 +78,11 @@ function PlayersPage() {
           globalStyles.rowBetween,
           {width: '92%', alignSelf: 'center', marginVertical: width * 0.02},
         ]}>
-        <Icon icon="people" theme={themeColor} size={width * 0.07} />
+        <Icon
+          icon="people"
+          color={colors[themeColor].main}
+          size={width * 0.07}
+        />
         <Text style={[styles.title, {color: colors[themeColor].main}]}>
           {text.BenchedPlayers}
         </Text>

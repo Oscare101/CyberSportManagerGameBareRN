@@ -95,7 +95,8 @@ export interface IconName {
     | 'practice'
     | 'archive'
     | 'people'
-    | 'personAdd';
+    | 'personAdd'
+    | 'wallet';
 }
 
 export interface Role {
