@@ -1,9 +1,10 @@
 import {Role, Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import rules from '../constants/rules';
+import {GetPlayerTopWithPlayersByParameter} from './function';
 
 const statsToPractice: Stat['value'][] = ['nades', 'tactics'];
-const statsToChange: Stat['value'][] = [
+const allStats: Stat['value'][] = [
   'reaction',
   'accuracy',
   'flicksControl',
@@ -50,7 +51,7 @@ export function NewTeamsDataAfterStatChange(playerTeam: Team, teams: Team[]) {
     .filter((p: Player) => p.status === 'active')
     .map((p: Player) => {
       const statToChange: Stat['value'] =
-        statsToChange[Math.floor(Math.random() * statsToChange.length)];
+        allStats[Math.floor(Math.random() * allStats.length)];
       const newValue = +(
         p.stat[statToChange] +
         (statToChange === 'reaction'
@@ -140,4 +141,37 @@ export function SetNewPlayerRole(
     .filter((t: Team) => t.name !== playerTeam.name)
     .concat(newMyTeamPlayersData);
   return newTeamsData;
+}
+
+export function GetPlayerTopRationWithPlayers(
+  player: Player,
+  players: Player[],
+) {
+  const averageRating =
+    allStats.reduce(
+      (sum: number, s: Stat['value']) =>
+        sum + GetPlayerTopWithPlayersByParameter(players, s, player.stat[s]),
+      0,
+    ) / allStats.length;
+
+  return averageRating;
+}
+
+export function GetPlayerPrice(players: Player[], player: Player) {
+  return Math.floor(
+    rules.maxPlayerPrice * GetPlayerTopRationWithPlayers(player, players) ** 2,
+  );
+}
+export function GetPlayerSalaryMonth(players: Player[], player: Player) {
+  return Math.floor(
+    rules.mapPlayerSalary * GetPlayerTopRationWithPlayers(player, players) ** 3,
+  );
+}
+
+export function GetPlayerSalaryYear(players: Player[], player: Player) {
+  return Math.floor(
+    rules.mapPlayerSalary *
+      12 *
+      GetPlayerTopRationWithPlayers(player, players) ** 3,
+  );
 }

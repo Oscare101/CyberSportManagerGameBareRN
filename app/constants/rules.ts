@@ -15,4 +15,7 @@ export default {
   statUp: 0.03,
   statDown: 0.02,
   statChange: 0.01,
+
+  maxPlayerPrice: 5000000,
+  mapPlayerSalary: 50000,
 };

@@ -2,11 +2,15 @@ import {Dimensions, StyleSheet, View, useColorScheme} from 'react-native';
 import React, {memo} from 'react';
 import globalStyles from '../../constants/globalStyles';
 import text from '../../constants/text';
-import {Player} from '../../constants/interfaces/playerTeamInterfaces';
+import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import ShortInfoItem from './ShortInfoItem';
-import {GetMoneyAmountString} from '../../functions/function';
+import {
+  GetMoneyAmountString,
+  GetPlayersFromTeams,
+} from '../../functions/function';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
+import {GetPlayerSalaryYear} from '../../functions/playerFunctions';
 
 const width = Dimensions.get('screen').width;
 
@@ -14,6 +18,8 @@ function ShortInfoBlock(props: {player: Player; action: any}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
+  const teams: Team[] = useSelector((state: RootState) => state.teams);
+
   const data = [
     {
       title: text.Role,
@@ -31,7 +37,9 @@ function ShortInfoBlock(props: {player: Player; action: any}) {
     },
     {
       title: text.Salary,
-      value: `${GetMoneyAmountString(props.player.contract.salary)} / y`,
+      value: `${GetMoneyAmountString(
+        GetPlayerSalaryYear(GetPlayersFromTeams(teams), props.player),
+      )} / y`,
       icon: '',
       action: () => {},
     },
