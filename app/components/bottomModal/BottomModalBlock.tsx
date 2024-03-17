@@ -22,6 +22,7 @@ interface BottomModalBlockProps {
   dismiss: any;
   data: any;
   setData?: any;
+  onChange?: any;
 }
 
 export default function BottomModalBlock(props: BottomModalBlockProps) {
@@ -44,6 +45,7 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
       backgroundStyle={{
         backgroundColor: colors[themeColor].card,
       }}
+      onChange={props.onChange}
       ref={props.bottomSheetModalRef}
       snapPoints={props.snapPoints}
       backdropComponent={({style}) => (

@@ -1,4 +1,5 @@
 import {
+  BackHandler,
   Dimensions,
   SafeAreaView,
   StyleSheet,
@@ -6,7 +7,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React, {useCallback, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import Header from '../components/Header';
 import globalStyles from '../constants/globalStyles';
 import colors from '../constants/colors';
@@ -37,6 +38,7 @@ export default function PlayerInfoScreen({navigation, route}: any) {
     screen: 'Info' | 'Role';
     item: Stat['value'] | string;
   }>({screen: 'Info', item: 'reaction'});
+  const [modalOpened, setModalOpened] = useState<boolean>(false);
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const snapPointsInfo = useMemo(() => [width], []);
@@ -48,11 +50,34 @@ export default function PlayerInfoScreen({navigation, route}: any) {
   const onDismisModal = useCallback(() => {
     bottomSheetModalRef.current?.dismiss();
   }, []);
+  const handleSheetChanges = useCallback((index: number) => {
+    setModalOpened(!!(index + 1));
+  }, []);
 
   const onModal = useCallback((value: 'Role') => {
     setModalContent({screen: value, item: player.name});
     onPresentModal();
   }, []);
+
+  const statAction = useCallback((content: Stat['value']) => {
+    setModalContent({screen: 'Info', item: content});
+    onPresentModal();
+  }, []);
+
+  useEffect(() => {
+    if (modalOpened) {
+      const backAction = () => {
+        onDismisModal();
+
+        return true;
+      };
+      const backHandler = BackHandler.addEventListener(
+        'hardwareBackPress',
+        backAction,
+      );
+      return () => backHandler.remove();
+    }
+  }, [modalOpened]);
 
   return (
     <BottomSheetModalProvider>
@@ -68,19 +93,14 @@ export default function PlayerInfoScreen({navigation, route}: any) {
             {text.Individuals}
           </Text>
         </View>
-        <PlayerStatBlock
-          player={player}
-          action={(content: Stat['value']) => {
-            setModalContent({screen: 'Info', item: content});
-            onPresentModal();
-          }}
-        />
+        <PlayerStatBlock player={player} action={statAction} />
       </SafeAreaView>
       <BottomModalBlock
         bottomSheetModalRef={bottomSheetModalRef}
         snapPoints={
           modalContent.screen === 'Info' ? snapPointsInfo : snapPointsRole
         }
+        onChange={handleSheetChanges}
         dismiss={onDismisModal}
         data={modalContent}
       />

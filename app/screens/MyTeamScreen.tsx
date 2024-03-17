@@ -1,4 +1,5 @@
 import {
+  BackHandler,
   Dimensions,
   ScrollView,
   StyleSheet,
@@ -6,7 +7,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React, {useCallback, useMemo, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyles from '../constants/globalStyles';
 import colors from '../constants/colors';
@@ -47,6 +48,7 @@ export default function MyTeamScreen({navigation}: any) {
   const [modalContent, setModalContent] = useState<{screen: 'Practice'}>({
     screen: 'Practice',
   });
+  const [modalOpened, setModalOpened] = useState<boolean>(false);
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const snapPoints = useMemo(() => [width * 0.9], []);
@@ -56,10 +58,29 @@ export default function MyTeamScreen({navigation}: any) {
   const onDismisModal = useCallback(() => {
     bottomSheetModalRef.current?.dismiss();
   }, []);
+  const handleSheetChanges = useCallback((index: number) => {
+    setModalOpened(!!(index + 1));
+  }, []);
 
-  function StatChangeFunc() {
-    dispatch(updateTeams(NewTeamsDataAfterStatChange(myTeam, teams)));
-  }
+  const pageSelect = useCallback(
+    (value: 'players' | 'team') => setPage(value),
+    [],
+  );
+
+  useEffect(() => {
+    if (modalOpened) {
+      const backAction = () => {
+        onDismisModal();
+
+        return true;
+      };
+      const backHandler = BackHandler.addEventListener(
+        'hardwareBackPress',
+        backAction,
+      );
+      return () => backHandler.remove();
+    }
+  }, [modalOpened]);
 
   return (
     <BottomSheetModalProvider>
@@ -69,10 +90,7 @@ export default function MyTeamScreen({navigation}: any) {
           {backgroundColor: colors[themeColor].bg},
         ]}>
         <Header title={myTeam.name} action="back" />
-        <PageSelectorBlock
-          page={page}
-          setPage={(value: 'players' | 'team') => setPage(value)}
-        />
+        <PageSelectorBlock page={page} setPage={pageSelect} />
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={page === 'players' ? {width: '100%', flex: 1} : styles.hide}>
@@ -90,6 +108,7 @@ export default function MyTeamScreen({navigation}: any) {
         snapPoints={snapPoints}
         dismiss={onDismisModal}
         data={modalContent}
+        onChange={handleSheetChanges}
       />
     </BottomSheetModalProvider>
   );

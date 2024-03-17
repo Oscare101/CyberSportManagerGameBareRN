@@ -6,7 +6,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React from 'react';
+import React, {memo} from 'react';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
 import colors from '../../constants/colors';
@@ -14,10 +14,7 @@ import text from '../../constants/text';
 
 const width = Dimensions.get('screen').width;
 
-export default function PageSelectorBlock(props: {
-  page: 'players' | 'team';
-  setPage: any;
-}) {
+function PageSelectorBlock(props: {page: 'players' | 'team'; setPage: any}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
@@ -109,3 +106,5 @@ const styles = StyleSheet.create({
     fontSize: width * 0.04,
   },
 });
+
+export default memo(PageSelectorBlock);

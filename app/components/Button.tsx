@@ -6,14 +6,14 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React from 'react';
+import React, {memo} from 'react';
 import colors from '../constants/colors';
 import {RootState} from '../redux';
 import {useSelector} from 'react-redux';
 
 const width = Dimensions.get('screen').width;
 
-export default function Button(props: {
+function Button(props: {
   title: string;
   action: any;
   disable?: boolean;
@@ -59,3 +59,5 @@ const styles = StyleSheet.create({
     fontSize: width * 0.07,
   },
 });
+
+export default memo(Button);

@@ -1,37 +1,15 @@
-import {
-  Dimensions,
-  FlatList,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  useColorScheme,
-} from 'react-native';
+import {Dimensions, StyleSheet, Text, View, useColorScheme} from 'react-native';
 import colors from '../../constants/colors';
-import {Role, Stat} from '../../constants/interfaces/iconInterfaces';
-import Icon from '../icons/Icon';
-import StatImage from '../icons/StatImage';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux';
 import text from '../../constants/text';
 import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
-import {
-  GetPlayerSalaryMonth,
-  GetPlayerSalaryYear,
-  NewTeamsDataAfterPlayersPractice,
-  PracticePrice,
-  SetNewPlayerRole,
-} from '../../functions/playerFunctions';
+import {GetPlayerSalaryYear} from '../../functions/playerFunctions';
 import globalStyles from '../../constants/globalStyles';
 import {
   GetMoneyAmountString,
   GetPlayersFromTeams,
-  IsEnoughtMoney,
 } from '../../functions/function';
-import Button from '../Button';
-import {updateTeams} from '../../redux/teams';
-import {useState} from 'react';
-import RoleImage from '../icons/RoleImage';
 
 const width = Dimensions.get('screen').width;
 
@@ -73,7 +51,7 @@ export default function PlayerContractModal(props: {
             key={index}
             style={[
               globalStyles.rowBetween,
-              {marginBottom: index ? 0 : width * 0.02},
+              {marginBottom: index ? 0 : width * 0.0},
             ]}>
             <Text style={[styles.dataTitle, {color: colors[themeColor].main}]}>
               {item.title}
