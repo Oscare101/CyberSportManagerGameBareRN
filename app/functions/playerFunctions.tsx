@@ -2,7 +2,15 @@ import {Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import rules from '../constants/rules';
 
-const allStatsToPractice: Stat['value'][] = ['nades', 'tactics'];
+const statsToPractice: Stat['value'][] = ['nades', 'tactics'];
+const statsToChange: Stat['value'][] = [
+  'reaction',
+  'accuracy',
+  'flicksControl',
+  'sprayControl',
+  'nades',
+  'tactics',
+];
 
 export function NewTeamsDataAfterPlayersPractice(
   playerTeam: Team,
@@ -10,7 +18,7 @@ export function NewTeamsDataAfterPlayersPractice(
 ) {
   const newMyTeamPlayersData = playerTeam.players.map((p: Player) => {
     const statToChange: Stat['value'] =
-      allStatsToPractice[Math.floor(Math.random() * allStatsToPractice.length)];
+      statsToPractice[Math.floor(Math.random() * statsToPractice.length)];
     const newValue = +(
       p.stat[statToChange] +
       Math.random() * (rules.statUp + rules.statDown) -
@@ -21,6 +29,46 @@ export function NewTeamsDataAfterPlayersPractice(
       stat: {
         ...p.stat,
         [statToChange]: newValue > 1 ? 1 : newValue,
+      },
+    };
+  });
+  let newTeamsData: Team[] = teams
+    .filter((t: Team) => t.name !== playerTeam.name)
+    .concat({
+      ...playerTeam,
+      players: newMyTeamPlayersData,
+      bank: {
+        ...playerTeam.bank,
+        cash: playerTeam.bank.cash - PracticePrice(playerTeam),
+      },
+    });
+  return newTeamsData;
+}
+
+export function NewTeamsDataAfterStatChange(playerTeam: Team, teams: Team[]) {
+  const newMyTeamPlayersData = playerTeam.players.map((p: Player) => {
+    const statToChange: Stat['value'] =
+      statsToChange[Math.floor(Math.random() * statsToChange.length)];
+    const newValue = +(
+      p.stat[statToChange] +
+      (statToChange === 'reaction'
+        ? Math.random() * (rules.rectionChange + rules.rectionChange) -
+          rules.rectionChange
+        : Math.random() * (rules.statChange + rules.statChange) -
+          rules.statChange)
+    ).toFixed(3);
+    return {
+      ...p,
+      stat: {
+        ...p.stat,
+        [statToChange]:
+          statToChange === 'reaction'
+            ? newValue < rules.reactionCeil
+              ? rules.reactionCeil
+              : newValue
+            : newValue > rules.statCeil
+            ? rules.statCeil
+            : newValue,
       },
     };
   });

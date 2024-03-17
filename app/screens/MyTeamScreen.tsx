@@ -16,6 +16,7 @@ import {
   GetPlayerStatAverage,
   GetTeamStatAverage,
   NewTeamsDataAfterPlayersPractice,
+  NewTeamsDataAfterStatChange,
   PracticePrice,
 } from '../functions/playerFunctions';
 import {updateTeams} from '../redux/teams';
@@ -47,6 +48,10 @@ export default function MyTeamScreen({navigation}: any) {
     bottomSheetModalRef.current?.dismiss();
   }, []);
 
+  function StatChangeFunc() {
+    dispatch(updateTeams(NewTeamsDataAfterStatChange(myTeam, teams)));
+  }
+
   return (
     <BottomSheetModalProvider>
       <SafeAreaView
@@ -67,12 +72,7 @@ export default function MyTeamScreen({navigation}: any) {
         </View>
         <View style={{flex: 1}} />
         <Button title={text.Practice} action={onPresentModal} />
-        {/* <Button
-        title={`(${count}) ${Math.floor(
-          PracticePrice(myTeam) * rules.practicePrice,
-        )} ${GetTeamStatAverage(myTeam)}`}
-        action={PracticeFunc}
-      /> */}
+        <Button title={`chaaaaaange`} action={StatChangeFunc} />
       </SafeAreaView>
       <BottomModalBlock
         bottomSheetModalRef={bottomSheetModalRef}
