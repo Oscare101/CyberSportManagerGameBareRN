@@ -20,6 +20,7 @@ export default function StatBlock(props: {
   theme: Theme['value'];
   players: Player[];
   title: Stat['value'];
+  full?: boolean;
 }) {
   const stat = GetPlayerTopWithPlayers(props.players, props.title, props.stat);
 
@@ -29,20 +30,27 @@ export default function StatBlock(props: {
         styles.card,
         {
           backgroundColor: colors[props.theme][GetTopStatColor(stat)].bg,
+          height: props.full ? width * 0.07 : width * 0.06,
+          width: props.full ? (width * 0.92 - width * 0.07) / 6 : width * 0.06,
+          marginLeft: props.full ? 0 : width * 0.01,
         },
       ]}>
       <StatImage
         stat={props.title}
         color={colors[props.theme][GetTopStatColor(stat)].main}
-        size={width * 0.06}
+        size={props.full ? width * 0.05 : width * 0.06}
       />
-      {/* <Text
-        style={[
-          styles.title,
-          {color: colors[props.theme][GetTopStatColor(stat)].main},
-        ]}>
-        {props.stat.toFixed(2)}
-      </Text> */}
+      {props.full ? (
+        <Text
+          style={[
+            styles.title,
+            {color: colors[props.theme][GetTopStatColor(stat)].main},
+          ]}>
+          {props.stat.toFixed(2)}
+        </Text>
+      ) : (
+        <></>
+      )}
     </View>
   );
 }
@@ -51,11 +59,8 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     borderRadius: width * 0.01,
-    height: '100%',
-    marginLeft: width * 0.01,
-    aspectRatio: 1,
   },
-  title: {fontSize: width * 0.03, fontWeight: '300'},
+  title: {fontSize: width * 0.03},
 });
