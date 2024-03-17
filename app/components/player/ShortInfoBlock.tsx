@@ -18,16 +18,19 @@ function ShortInfoBlock(props: {player: Player}) {
     {
       title: text.Role,
       value: props.player.stat.role,
+      icon: 'role',
       action: () => {},
     },
     {
       title: text.Contract,
       value: props.player.contract.finish,
+      icon: '',
       action: () => {},
     },
     {
       title: text.Salary,
       value: `${GetMoneyAmountString(props.player.contract.salary)} / y`,
+      icon: '',
       action: () => {},
     },
   ];
@@ -42,6 +45,7 @@ function ShortInfoBlock(props: {player: Player}) {
           key={index}
           title={item.title}
           value={item.value}
+          icon={item.icon}
           action={item.action}
           theme={themeColor}
         />
