@@ -1,10 +1,11 @@
 import {Team} from '../interfaces/playerTeamInterfaces';
+import rules from '../rules';
 
 const teamsDefault: Team[] = [
   {
     name: 'NOVA',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: true,
@@ -89,7 +90,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Vangard',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -174,7 +175,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Quazars',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -259,7 +260,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Eagles',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -344,7 +345,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Guardians',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -429,7 +430,7 @@ const teamsDefault: Team[] = [
   {
     name: 'University',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -514,7 +515,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Five',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -599,7 +600,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Dream',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -684,7 +685,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Moon',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -769,7 +770,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Youth',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -854,7 +855,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Canoe',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -939,7 +940,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Sempra',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -1024,7 +1025,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Solid',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -1109,7 +1110,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Island',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -1194,7 +1195,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Kadagan',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,
@@ -1279,7 +1280,7 @@ const teamsDefault: Team[] = [
   {
     name: 'Jupiter',
     bank: {
-      cash: 1000000,
+      cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
     yourTeam: false,

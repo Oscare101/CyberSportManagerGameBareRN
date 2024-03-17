@@ -1,4 +1,5 @@
 export default {
+  teamMoneyDefault: 1000000,
   statMax: 0.9,
   statMin: 0.3,
 

@@ -65,10 +65,6 @@ export default function PlayerInfoScreen({navigation, route}: any) {
         dismiss={onDismisModal}
         content={modalContent}
         data={{screen: 'Info', item: modalContent}}
-        // setData={(newDate: Date) => {
-        //   setDate(newDate);
-        //   SetDates(newDate);
-        // }}
       />
     </BottomSheetModalProvider>
   );

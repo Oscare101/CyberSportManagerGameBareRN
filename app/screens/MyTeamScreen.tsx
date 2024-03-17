@@ -1,4 +1,11 @@
-import {Dimensions, StyleSheet, Text, View, useColorScheme} from 'react-native';
+import {
+  Dimensions,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  useColorScheme,
+} from 'react-native';
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import globalStyles from '../constants/globalStyles';
@@ -64,13 +71,16 @@ export default function MyTeamScreen({navigation}: any) {
           page={page}
           setPage={(value: 'players' | 'team') => setPage(value)}
         />
-        <View style={page === 'players' ? {width: '100%'} : styles.hide}>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={page === 'players' ? {width: '100%', flex: 1} : styles.hide}>
           <PlayersPage />
-        </View>
-        <View style={page === 'team' ? {width: '100%'} : styles.hide}>
+        </ScrollView>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={page === 'team' ? {width: '100%', flex: 1} : styles.hide}>
           <TeamPage />
-        </View>
-        <View style={{flex: 1}} />
+        </ScrollView>
         <Button title={text.Practice} action={onPresentModal} />
         <Button title={`chaaaaaange`} action={StatChangeFunc} />
       </SafeAreaView>
@@ -80,10 +90,6 @@ export default function MyTeamScreen({navigation}: any) {
         dismiss={onDismisModal}
         content={modalContent}
         data={{screen: modalContent}}
-        // setData={(newDate: Date) => {
-        //   setDate(newDate);
-        //   SetDates(newDate);
-        // }}
       />
     </BottomSheetModalProvider>
   );

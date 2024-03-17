@@ -46,41 +46,39 @@ export function NewTeamsDataAfterPlayersPractice(
 }
 
 export function NewTeamsDataAfterStatChange(playerTeam: Team, teams: Team[]) {
-  const newMyTeamPlayersData = playerTeam.players.map((p: Player) => {
-    const statToChange: Stat['value'] =
-      statsToChange[Math.floor(Math.random() * statsToChange.length)];
-    const newValue = +(
-      p.stat[statToChange] +
-      (statToChange === 'reaction'
-        ? Math.random() * (rules.rectionChange + rules.rectionChange) -
-          rules.rectionChange
-        : Math.random() * (rules.statChange + rules.statChange) -
-          rules.statChange)
-    ).toFixed(3);
-    return {
-      ...p,
-      stat: {
-        ...p.stat,
-        [statToChange]:
-          statToChange === 'reaction'
-            ? newValue < rules.reactionCeil
-              ? rules.reactionCeil
-              : newValue
-            : newValue > rules.statCeil
-            ? rules.statCeil
-            : newValue,
-      },
-    };
-  });
+  const newMyTeamPlayersData = playerTeam.players
+    .filter((p: Player) => p.status === 'active')
+    .map((p: Player) => {
+      const statToChange: Stat['value'] =
+        statsToChange[Math.floor(Math.random() * statsToChange.length)];
+      const newValue = +(
+        p.stat[statToChange] +
+        (statToChange === 'reaction'
+          ? Math.random() * (rules.rectionChange + rules.rectionChange) -
+            rules.rectionChange
+          : Math.random() * (rules.statChange + rules.statChange) -
+            rules.statChange)
+      ).toFixed(3);
+      return {
+        ...p,
+        stat: {
+          ...p.stat,
+          [statToChange]:
+            statToChange === 'reaction'
+              ? newValue < rules.reactionCeil
+                ? rules.reactionCeil
+                : newValue
+              : newValue > rules.statCeil
+              ? rules.statCeil
+              : newValue,
+        },
+      };
+    });
   let newTeamsData: Team[] = teams
     .filter((t: Team) => t.name !== playerTeam.name)
     .concat({
       ...playerTeam,
       players: newMyTeamPlayersData,
-      bank: {
-        ...playerTeam.bank,
-        cash: playerTeam.bank.cash - PracticePrice(playerTeam),
-      },
     });
   return newTeamsData;
 }

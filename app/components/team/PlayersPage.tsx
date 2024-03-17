@@ -1,6 +1,7 @@
 import {
   Dimensions,
   FlatList,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -50,15 +51,16 @@ function PlayersPage() {
       </View>
       {myTeam.players.some((p: Player) => p.status === 'active') ? (
         <FlatList
+          scrollEnabled={false}
           style={{width: '100%'}}
           data={myTeam.players.filter((p: Player) => p.status === 'active')}
           renderItem={({item}) => (
-            <PlayerItem item={item} theme={themeColor} players={allPlayers} />
-            // <PlayerItemFull
-            //   item={item}
-            //   theme={themeColor}
-            //   players={allPlayers}
-            // />
+            // <PlayerItem item={item} theme={themeColor} players={allPlayers} />
+            <PlayerItemFull
+              item={item}
+              theme={themeColor}
+              players={allPlayers}
+            />
           )}
         />
       ) : (
@@ -85,6 +87,7 @@ function PlayersPage() {
       </View>
       {myTeam.players.some((p: Player) => p.status === 'benched') ? (
         <FlatList
+          scrollEnabled={false}
           style={{width: '100%'}}
           data={myTeam.players.filter((p: Player) => p.status === 'benched')}
           renderItem={({item}) => (
