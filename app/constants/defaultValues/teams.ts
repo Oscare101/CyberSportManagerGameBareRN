@@ -21,7 +21,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.332,
           flicksControl: 0.236,
           nades: 0.335,
-
           tactics: 0.493,
         },
       },
@@ -36,7 +35,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.515,
           flicksControl: 0.454,
           nades: 0.421,
-
           tactics: 0.369,
         },
       },
@@ -51,7 +49,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.595,
           flicksControl: 0.375,
           nades: 0.388,
-
           tactics: 0.653,
         },
       },
@@ -83,20 +80,6 @@ const teamsDefault: Team[] = [
           tactics: 0.542,
         },
       },
-      {
-        name: 'Tractor',
-        contract: {salary: 0, start: '1', finish: '1'},
-        status: 'benched',
-        stat: {
-          role: 'rifler',
-          reaction: 0.345,
-          accuracy: 0.464,
-          sprayControl: 0.332,
-          flicksControl: 0.236,
-          nades: 0.335,
-          tactics: 0.293,
-        },
-      },
     ],
   },
   {
@@ -118,7 +101,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.479,
           flicksControl: 0.79,
           nades: 0.664,
-
           tactics: 0.751,
         },
       },
@@ -133,7 +115,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.367,
           flicksControl: 0.814,
           nades: 0.421,
-
           tactics: 0.758,
         },
       },
@@ -148,7 +129,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.668,
           flicksControl: 0.713,
           nades: 0.337,
-
           tactics: 0.886,
         },
       },
@@ -163,7 +143,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.648,
           flicksControl: 0.392,
           nades: 0.306,
-
           tactics: 0.521,
         },
       },
@@ -178,7 +157,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.42,
           flicksControl: 0.862,
           nades: 0.834,
-
           tactics: 0.352,
         },
       },
@@ -203,7 +181,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.855,
           flicksControl: 0.596,
           nades: 0.339,
-
           tactics: 0.89,
         },
       },
@@ -218,7 +195,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.845,
           flicksControl: 0.857,
           nades: 0.406,
-
           tactics: 0.509,
         },
       },
@@ -233,7 +209,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.494,
           flicksControl: 0.364,
           nades: 0.559,
-
           tactics: 0.389,
         },
       },
@@ -248,7 +223,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.742,
           flicksControl: 0.887,
           nades: 0.826,
-
           tactics: 0.67,
         },
       },
@@ -263,7 +237,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.823,
           flicksControl: 0.302,
           nades: 0.577,
-
           tactics: 0.728,
         },
       },
@@ -288,7 +261,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.8,
           flicksControl: 0.674,
           nades: 0.401,
-
           tactics: 0.598,
         },
       },
@@ -303,7 +275,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.581,
           flicksControl: 0.383,
           nades: 0.475,
-
           tactics: 0.342,
         },
       },
@@ -318,7 +289,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.334,
           flicksControl: 0.879,
           nades: 0.315,
-
           tactics: 0.587,
         },
       },
@@ -333,7 +303,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.799,
           flicksControl: 0.684,
           nades: 0.453,
-
           tactics: 0.62,
         },
       },
@@ -348,7 +317,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.486,
           flicksControl: 0.8,
           nades: 0.806,
-
           tactics: 0.669,
         },
       },
@@ -373,7 +341,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.381,
           flicksControl: 0.712,
           nades: 0.567,
-
           tactics: 0.874,
         },
       },
@@ -388,7 +355,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.518,
           flicksControl: 0.376,
           nades: 0.584,
-
           tactics: 0.619,
         },
       },
@@ -403,7 +369,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.389,
           flicksControl: 0.519,
           nades: 0.605,
-
           tactics: 0.428,
         },
       },
@@ -418,7 +383,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.595,
           flicksControl: 0.537,
           nades: 0.652,
-
           tactics: 0.844,
         },
       },
@@ -433,7 +397,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.813,
           flicksControl: 0.393,
           nades: 0.647,
-
           tactics: 0.875,
         },
       },
@@ -458,7 +421,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.386,
           flicksControl: 0.641,
           nades: 0.67,
-
           tactics: 0.833,
         },
       },
@@ -473,7 +435,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.347,
           flicksControl: 0.355,
           nades: 0.444,
-
           tactics: 0.69,
         },
       },
@@ -488,7 +449,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.631,
           flicksControl: 0.684,
           nades: 0.619,
-
           tactics: 0.809,
         },
       },
@@ -503,7 +463,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.455,
           flicksControl: 0.499,
           nades: 0.301,
-
           tactics: 0.563,
         },
       },
@@ -518,7 +477,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.52,
           flicksControl: 0.658,
           nades: 0.847,
-
           tactics: 0.666,
         },
       },
@@ -543,7 +501,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.58,
           flicksControl: 0.75,
           nades: 0.859,
-
           tactics: 0.662,
         },
       },
@@ -558,7 +515,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.694,
           flicksControl: 0.49,
           nades: 0.804,
-
           tactics: 0.346,
         },
       },
@@ -573,7 +529,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.55,
           flicksControl: 0.317,
           nades: 0.448,
-
           tactics: 0.503,
         },
       },
@@ -588,7 +543,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.881,
           flicksControl: 0.549,
           nades: 0.827,
-
           tactics: 0.404,
         },
       },
@@ -603,7 +557,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.474,
           flicksControl: 0.494,
           nades: 0.875,
-
           tactics: 0.313,
         },
       },
@@ -628,7 +581,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.47,
           flicksControl: 0.803,
           nades: 0.536,
-
           tactics: 0.424,
         },
       },
@@ -643,7 +595,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.819,
           flicksControl: 0.898,
           nades: 0.727,
-
           tactics: 0.582,
         },
       },
@@ -658,7 +609,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.666,
           flicksControl: 0.732,
           nades: 0.87,
-
           tactics: 0.43,
         },
       },
@@ -673,7 +623,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.881,
           flicksControl: 0.512,
           nades: 0.572,
-
           tactics: 0.617,
         },
       },
@@ -688,7 +637,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.425,
           flicksControl: 0.759,
           nades: 0.332,
-
           tactics: 0.557,
         },
       },
@@ -713,7 +661,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.871,
           flicksControl: 0.31,
           nades: 0.752,
-
           tactics: 0.469,
         },
       },
@@ -728,7 +675,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.596,
           flicksControl: 0.595,
           nades: 0.541,
-
           tactics: 0.47,
         },
       },
@@ -743,7 +689,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.777,
           flicksControl: 0.781,
           nades: 0.566,
-
           tactics: 0.64,
         },
       },
@@ -758,7 +703,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.759,
           flicksControl: 0.772,
           nades: 0.377,
-
           tactics: 0.669,
         },
       },
@@ -773,7 +717,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.89,
           flicksControl: 0.532,
           nades: 0.338,
-
           tactics: 0.304,
         },
       },
@@ -798,7 +741,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.335,
           flicksControl: 0.602,
           nades: 0.406,
-
           tactics: 0.843,
         },
       },
@@ -813,7 +755,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.698,
           flicksControl: 0.841,
           nades: 0.596,
-
           tactics: 0.771,
         },
       },
@@ -828,7 +769,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.442,
           flicksControl: 0.454,
           nades: 0.353,
-
           tactics: 0.435,
         },
       },
@@ -843,7 +783,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.44,
           flicksControl: 0.584,
           nades: 0.372,
-
           tactics: 0.424,
         },
       },
@@ -858,7 +797,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.655,
           flicksControl: 0.342,
           nades: 0.607,
-
           tactics: 0.877,
         },
       },
@@ -883,7 +821,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.876,
           flicksControl: 0.374,
           nades: 0.637,
-
           tactics: 0.639,
         },
       },
@@ -898,7 +835,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.854,
           flicksControl: 0.603,
           nades: 0.603,
-
           tactics: 0.579,
         },
       },
@@ -913,7 +849,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.793,
           flicksControl: 0.419,
           nades: 0.575,
-
           tactics: 0.847,
         },
       },
@@ -928,7 +863,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.451,
           flicksControl: 0.475,
           nades: 0.535,
-
           tactics: 0.595,
         },
       },
@@ -943,7 +877,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.374,
           flicksControl: 0.55,
           nades: 0.671,
-
           tactics: 0.811,
         },
       },
@@ -968,7 +901,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.843,
           flicksControl: 0.897,
           nades: 0.786,
-
           tactics: 0.9,
         },
       },
@@ -983,7 +915,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.787,
           flicksControl: 0.401,
           nades: 0.617,
-
           tactics: 0.399,
         },
       },
@@ -998,7 +929,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.812,
           flicksControl: 0.864,
           nades: 0.778,
-
           tactics: 0.552,
         },
       },
@@ -1013,7 +943,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.709,
           flicksControl: 0.533,
           nades: 0.625,
-
           tactics: 0.441,
         },
       },
@@ -1028,7 +957,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.459,
           flicksControl: 0.59,
           nades: 0.611,
-
           tactics: 0.764,
         },
       },
@@ -1053,7 +981,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.368,
           flicksControl: 0.331,
           nades: 0.516,
-
           tactics: 0.9,
         },
       },
@@ -1068,7 +995,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.433,
           flicksControl: 0.656,
           nades: 0.769,
-
           tactics: 0.327,
         },
       },
@@ -1083,7 +1009,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.392,
           flicksControl: 0.511,
           nades: 0.314,
-
           tactics: 0.856,
         },
       },
@@ -1098,7 +1023,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.494,
           flicksControl: 0.385,
           nades: 0.572,
-
           tactics: 0.881,
         },
       },
@@ -1113,7 +1037,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.786,
           flicksControl: 0.479,
           nades: 0.801,
-
           tactics: 0.673,
         },
       },
@@ -1138,7 +1061,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.834,
           flicksControl: 0.764,
           nades: 0.88,
-
           tactics: 0.833,
         },
       },
@@ -1153,7 +1075,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.657,
           flicksControl: 0.642,
           nades: 0.318,
-
           tactics: 0.447,
         },
       },
@@ -1168,7 +1089,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.439,
           flicksControl: 0.683,
           nades: 0.698,
-
           tactics: 0.896,
         },
       },
@@ -1183,7 +1103,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.492,
           flicksControl: 0.821,
           nades: 0.388,
-
           tactics: 0.622,
         },
       },
@@ -1198,7 +1117,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.892,
           flicksControl: 0.481,
           nades: 0.517,
-
           tactics: 0.439,
         },
       },
@@ -1223,7 +1141,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.348,
           flicksControl: 0.542,
           nades: 0.467,
-
           tactics: 0.371,
         },
       },
@@ -1238,7 +1155,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.324,
           flicksControl: 0.587,
           nades: 0.446,
-
           tactics: 0.651,
         },
       },
@@ -1253,7 +1169,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.861,
           flicksControl: 0.616,
           nades: 0.71,
-
           tactics: 0.695,
         },
       },
@@ -1268,7 +1183,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.529,
           flicksControl: 0.373,
           nades: 0.453,
-
           tactics: 0.64,
         },
       },
@@ -1283,7 +1197,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.376,
           flicksControl: 0.686,
           nades: 0.492,
-
           tactics: 0.33,
         },
       },
@@ -1308,7 +1221,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.743,
           flicksControl: 0.752,
           nades: 0.843,
-
           tactics: 0.56,
         },
       },
@@ -1323,7 +1235,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.597,
           flicksControl: 0.355,
           nades: 0.704,
-
           tactics: 0.766,
         },
       },
@@ -1338,7 +1249,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.892,
           flicksControl: 0.657,
           nades: 0.594,
-
           tactics: 0.48,
         },
       },
@@ -1353,7 +1263,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.661,
           flicksControl: 0.648,
           nades: 0.66,
-
           tactics: 0.696,
         },
       },
@@ -1368,7 +1277,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.346,
           flicksControl: 0.492,
           nades: 0.313,
-
           tactics: 0.73,
         },
       },

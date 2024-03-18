@@ -12,8 +12,6 @@ import React, {useEffect} from 'react';
 import StatImage from '../components/icons/StatImage';
 import globalStyles from '../constants/globalStyles';
 import colors from '../constants/colors';
-import {Theme} from '../constants/interfaces/iconInterfaces';
-import text from '../constants/text';
 import {MMKV} from 'react-native-mmkv';
 import {useDispatch} from 'react-redux';
 import {updateTeams} from '../redux/teams';
@@ -21,6 +19,8 @@ import teamsDefault from '../constants/defaultValues/teams';
 import {updateTournaments} from '../redux/tournaments';
 import tournamentsDefault from '../constants/defaultValues/tournaments';
 import {updateTheme} from '../redux/theme';
+import {updateFreePlayers} from '../redux/freePlayers';
+import freePlayersDefault from '../constants/defaultValues/freePlayers';
 export const storage = new MMKV();
 
 const width = Dimensions.get('screen').width;
@@ -41,6 +41,13 @@ export default function LaunchScreen({navigation}: any) {
       dispatch(updateTeams(JSON.parse(teamsStorage)));
     } else {
       dispatch(updateTeams(teamsDefault));
+    }
+
+    const freePlayersStorage = storage.getString('freePlayers');
+    if (freePlayersStorage && freePlayersStorage.length) {
+      dispatch(updateFreePlayers(JSON.parse(freePlayersStorage)));
+    } else {
+      dispatch(updateFreePlayers(freePlayersDefault));
     }
 
     const tournamentsStorage = storage.getString('tournaments');
