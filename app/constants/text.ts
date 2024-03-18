@@ -86,6 +86,7 @@ const text: any = {
     'When changing the status of players, please note that there must be exactly 5 players in the main squad, and do not forget to check the characteristics of the player to put him in the right role.',
   IfMainIsFullChangeDescription:
     'If the main squad is already full and there are 5 players in it, then in order to change a player, first bench someone from the main squad, and then add a player from the benched.',
+  ShowMore: 'Show more',
 };
 
 export default text;

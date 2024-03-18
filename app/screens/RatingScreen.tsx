@@ -7,7 +7,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {RootState} from '../redux';
 import {useSelector} from 'react-redux';
 import globalStyles from '../constants/globalStyles';
@@ -18,6 +18,7 @@ import {GetPlayersFromTeams} from '../functions/function';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import PlayerItem from '../components/team/PlayerItem';
 import {GetPlayerTopRatingWithPlayers} from '../functions/playerFunctions';
+import Button from '../components/Button';
 
 const width = Dimensions.get('screen').width;
 
@@ -33,6 +34,8 @@ export default function RatingScreen({navigation}: any) {
       GetPlayerTopRatingWithPlayers(a, players),
   );
 
+  const [showAll, setShowAll] = useState<boolean>(false);
+
   return (
     <SafeAreaView
       style={[
@@ -44,15 +47,32 @@ export default function RatingScreen({navigation}: any) {
       <FlatList
         showsVerticalScrollIndicator={false}
         style={{width: '100%'}}
-        data={sorted}
+        data={sorted.slice(0, showAll ? sorted.length : 20)}
         renderItem={(item: any) => (
           <PlayerItem
             item={item.item}
+            index={item.index + 1}
             theme={themeColor}
             players={players}
             teamIcon={true}
             global={true}
           />
+        )}
+        ListFooterComponent={() => (
+          <>
+            {showAll ? (
+              <></>
+            ) : (
+              <Button
+                title={text.ShowMore}
+                action={() => setShowAll(true)}
+                buttonStyles={{
+                  alignSelf: 'center',
+                  backgroundColor: '#00000000',
+                }}
+              />
+            )}
+          </>
         )}
       />
     </SafeAreaView>
