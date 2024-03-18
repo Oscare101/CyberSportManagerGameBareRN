@@ -13,6 +13,7 @@ import {useSelector} from 'react-redux';
 import PracticeModal from './PracticeModal';
 import PlayerRoleChangeModal from './PlayerRoleChangeModal';
 import PlayerContractModal from './PlayerContractModal';
+import PlayerStatusModal from './PlayerStatusModal';
 
 const width = Dimensions.get('screen').width;
 
@@ -35,6 +36,7 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
     Practice: <PracticeModal />,
     Role: <PlayerRoleChangeModal playerName={props.data.item} />,
     Contract: <PlayerContractModal playerName={props.data.item} />,
+    Status: <PlayerStatusModal playerName={props.data.item} />,
   };
 
   return (

@@ -33,7 +33,9 @@ function ShortInfoBlock(props: {player: Player; action: any}) {
       title: text.Status,
       value: props.player.status,
       icon: '',
-      action: () => {},
+      action: () => {
+        props.action('Status');
+      },
     },
     {
       title: text.Contract,

@@ -96,7 +96,10 @@ export interface IconName {
     | 'archive'
     | 'people'
     | 'personAdd'
-    | 'wallet';
+    | 'wallet'
+    | 'controller'
+    | 'bed'
+    | 'contract';
 }
 
 export interface Role {

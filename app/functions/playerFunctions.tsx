@@ -143,6 +143,33 @@ export function SetNewPlayerRole(
   return newTeamsData;
 }
 
+export function SetNewPlayerStatus(
+  teams: Team[],
+  playerTeam: Team,
+  playerName: Player['name'],
+  status: Player['status'],
+) {
+  const newMyTeamPlayersData: Team = {
+    ...playerTeam,
+    players: playerTeam.players.map((p: Player) => {
+      if (p.name === playerName) {
+        return {
+          ...p,
+          status: status,
+        };
+      } else {
+        return {
+          ...p,
+        };
+      }
+    }),
+  };
+  let newTeamsData: Team[] = teams
+    .filter((t: Team) => t.name !== playerTeam.name)
+    .concat(newMyTeamPlayersData);
+  return newTeamsData;
+}
+
 export function GetPlayerTopRatingWithPlayers(
   player: Player,
   players: Player[],
