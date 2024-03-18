@@ -46,6 +46,39 @@ function PlayersPage() {
         <Text style={[styles.title, {color: colors[themeColor].main}]}>
           {text.MainRoaster}
         </Text>
+        {myTeam.players.filter((p: Player) => p.status === 'active').length !==
+        5 ? (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: colors[themeColor].red.bg,
+              paddingHorizontal: width * 0.02,
+              height: '100%',
+              borderRadius: width * 0.02,
+            }}>
+            <Icon
+              icon="alertCircle"
+              color={colors[themeColor].red.main}
+              size={width * 0.04}
+            />
+            <Text
+              style={{
+                fontSize: width * 0.04,
+                color: colors[themeColor].red.main,
+                marginLeft: width * 0.01,
+              }}>
+              {
+                myTeam.players.filter((p: Player) => p.status === 'active')
+                  .length
+              }
+              /5
+            </Text>
+          </View>
+        ) : (
+          <></>
+        )}
         {/* <TouchableOpacity
           style={[styles.button, {backgroundColor: colors[themeColor].card}]}>
           <Text style={[styles.buttonTitle, {color: colors[themeColor].main}]}>

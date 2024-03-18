@@ -99,7 +99,8 @@ export interface IconName {
     | 'wallet'
     | 'controller'
     | 'bed'
-    | 'contract';
+    | 'contract'
+    | 'alertCircle';
 }
 
 export interface Role {
