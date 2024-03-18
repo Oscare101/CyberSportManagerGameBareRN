@@ -30,7 +30,6 @@ function PlayerItem(props: {
 }) {
   const player: Player = props.item;
   const navigation: any = useNavigation();
-  console.log(props.index);
 
   return (
     <View style={globalStyles.rowCenter}>
@@ -38,6 +37,7 @@ function PlayerItem(props: {
         activeOpacity={0.8}
         onPress={() => {
           if (props.global) {
+            navigation.navigate('OtherPlayerInfoScreen', {player: player});
           } else {
             navigation.navigate('PlayerInfoScreen', {player: player});
           }

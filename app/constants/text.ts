@@ -15,6 +15,7 @@ const text: any = {
   Theme: 'Theme',
   Players: 'Players',
   Team: 'Team',
+  NoTeam: 'No team',
   MainRoaster: 'Main roaster',
   Open: 'Open',
   NoBenchedPlayersYet: 'No benched players yet',

@@ -9,6 +9,7 @@ import MyTeamScreen from '../screens/MyTeamScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import PlayerInfoScreen from '../screens/PlayerInfoScreen';
 import RatingScreen from '../screens/RatingScreen';
+import OtherPlayerInfoScreen from '../screens/OtherPlayerInfoScreen';
 
 const Stack = createStackNavigator();
 
@@ -77,6 +78,18 @@ export default function MainNavigation() {
         }}
         name="RatingScreen"
         component={RatingScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+          headerLeft: () => null,
+          animationEnabled: true,
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="OtherPlayerInfoScreen"
+        component={OtherPlayerInfoScreen}
       />
     </Stack.Navigator>
   );
