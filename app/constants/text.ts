@@ -40,6 +40,8 @@ const text: any = {
     'Indicator of skill with grenades. It will help in duels with the opponent or if needed by other players. The bigger the better. Can be practiced',
   tacticsDescription:
     'Indicator of knowledge of tactics and communication with other players. Helps in harmonious teams. More is better. Can be practiced',
+  ColoredStatRatingDescription:
+    "The colored indicator indicates the player's rating relative to all other players",
   Individuals: 'Individuals',
   PraciceCost: 'Pracice cost',
   AvailableMoney: 'Available money',

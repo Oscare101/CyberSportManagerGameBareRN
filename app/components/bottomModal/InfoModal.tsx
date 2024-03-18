@@ -35,6 +35,9 @@ export default function InfoModal(props: {date: Stat['value']}) {
       <Text style={[styles.text, {color: colors[themeColor].main}]}>
         {text[`${props.date}Description`]}
       </Text>
+      <Text style={[styles.text, {color: colors[themeColor].comment}]}>
+        {text.ColoredStatRatingDescription}
+      </Text>
     </>
   );
 }
