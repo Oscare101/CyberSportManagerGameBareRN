@@ -15,7 +15,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'sniper',
           reaction: 0.345,
           accuracy: 0.664,
           sprayControl: 0.332,
@@ -43,7 +43,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'capitan',
           reaction: 0.369,
           accuracy: 0.639,
           sprayControl: 0.595,
@@ -57,7 +57,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'support',
           reaction: 0.346,
           accuracy: 0.375,
           sprayControl: 0.51,
@@ -71,7 +71,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'rifler',
           reaction: 0.499,
           accuracy: 0.431,
           sprayControl: 0.527,
@@ -95,7 +95,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'rifler',
           reaction: 0.437,
           accuracy: 0.742,
           sprayControl: 0.479,
@@ -123,7 +123,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'capitan',
           reaction: 0.485,
           accuracy: 0.839,
           sprayControl: 0.668,
@@ -189,7 +189,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'sniper',
           reaction: 0.327,
           accuracy: 0.732,
           sprayControl: 0.845,
@@ -217,7 +217,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'support',
           reaction: 0.265,
           accuracy: 0.625,
           sprayControl: 0.742,
@@ -231,7 +231,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'rifler',
           reaction: 0.317,
           accuracy: 0.758,
           sprayControl: 0.823,
@@ -255,7 +255,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'rifler',
           reaction: 0.273,
           accuracy: 0.429,
           sprayControl: 0.8,
@@ -269,7 +269,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'sniper',
           reaction: 0.307,
           accuracy: 0.768,
           sprayControl: 0.581,
@@ -297,7 +297,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'support',
           reaction: 0.331,
           accuracy: 0.668,
           sprayControl: 0.799,
@@ -311,7 +311,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'capitan',
           reaction: 0.273,
           accuracy: 0.628,
           sprayControl: 0.486,
@@ -335,7 +335,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'sniper',
           reaction: 0.23,
           accuracy: 0.483,
           sprayControl: 0.381,
@@ -377,7 +377,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'support',
           reaction: 0.441,
           accuracy: 0.822,
           sprayControl: 0.595,
@@ -391,7 +391,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'capitan',
           reaction: 0.428,
           accuracy: 0.833,
           sprayControl: 0.813,
@@ -415,7 +415,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'sniper',
           reaction: 0.251,
           accuracy: 0.718,
           sprayControl: 0.386,
@@ -429,7 +429,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'capitan',
           reaction: 0.47,
           accuracy: 0.705,
           sprayControl: 0.347,
@@ -457,7 +457,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'rifler',
           reaction: 0.421,
           accuracy: 0.401,
           sprayControl: 0.455,
@@ -523,7 +523,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'sniper',
           reaction: 0.313,
           accuracy: 0.824,
           sprayControl: 0.55,
@@ -537,7 +537,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'rifler',
           reaction: 0.411,
           accuracy: 0.847,
           sprayControl: 0.881,
@@ -575,7 +575,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'sniper',
           reaction: 0.233,
           accuracy: 0.805,
           sprayControl: 0.47,
@@ -603,7 +603,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'support',
           reaction: 0.366,
           accuracy: 0.335,
           sprayControl: 0.666,
@@ -617,7 +617,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'rifler',
           reaction: 0.358,
           accuracy: 0.534,
           sprayControl: 0.881,
@@ -631,7 +631,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'capitan',
           reaction: 0.352,
           accuracy: 0.353,
           sprayControl: 0.425,
@@ -655,7 +655,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'sniper',
           reaction: 0.281,
           accuracy: 0.685,
           sprayControl: 0.871,
@@ -683,7 +683,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'support',
           reaction: 0.466,
           accuracy: 0.576,
           sprayControl: 0.777,
@@ -697,7 +697,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'capitan',
           reaction: 0.258,
           accuracy: 0.455,
           sprayControl: 0.759,
@@ -711,7 +711,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'rifler',
           reaction: 0.48,
           accuracy: 0.794,
           sprayControl: 0.89,
@@ -763,7 +763,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'sniper',
           reaction: 0.297,
           accuracy: 0.765,
           sprayControl: 0.442,
@@ -777,7 +777,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'rifler',
           reaction: 0.488,
           accuracy: 0.426,
           sprayControl: 0.44,
@@ -815,7 +815,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'rifler',
           reaction: 0.365,
           accuracy: 0.622,
           sprayControl: 0.876,
@@ -829,7 +829,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'sniper',
           reaction: 0.21,
           accuracy: 0.345,
           sprayControl: 0.854,
@@ -843,7 +843,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'capitan',
           reaction: 0.416,
           accuracy: 0.457,
           sprayControl: 0.793,
@@ -857,7 +857,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'rifler',
           reaction: 0.408,
           accuracy: 0.67,
           sprayControl: 0.451,
@@ -923,7 +923,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'support',
           reaction: 0.412,
           accuracy: 0.34,
           sprayControl: 0.812,
@@ -937,7 +937,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'rifler',
           reaction: 0.492,
           accuracy: 0.587,
           sprayControl: 0.709,
@@ -951,7 +951,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'sniper',
           reaction: 0.329,
           accuracy: 0.434,
           sprayControl: 0.459,
@@ -1083,7 +1083,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'support',
           reaction: 0.491,
           accuracy: 0.571,
           sprayControl: 0.439,
@@ -1111,7 +1111,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'rifler',
           reaction: 0.319,
           accuracy: 0.496,
           sprayControl: 0.892,
@@ -1135,7 +1135,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'rifler',
           reaction: 0.338,
           accuracy: 0.821,
           sprayControl: 0.348,
@@ -1149,7 +1149,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'sniper',
           reaction: 0.279,
           accuracy: 0.835,
           sprayControl: 0.324,
@@ -1163,7 +1163,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'capitan',
           reaction: 0.323,
           accuracy: 0.35,
           sprayControl: 0.861,
@@ -1177,7 +1177,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'support',
           reaction: 0.292,
           accuracy: 0.34,
           sprayControl: 0.529,
@@ -1191,7 +1191,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'rifler',
           reaction: 0.332,
           accuracy: 0.658,
           sprayControl: 0.376,
@@ -1215,7 +1215,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'capitan',
+          role: 'rifler',
           reaction: 0.355,
           accuracy: 0.627,
           sprayControl: 0.743,
@@ -1229,7 +1229,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'support',
           reaction: 0.213,
           accuracy: 0.785,
           sprayControl: 0.597,
@@ -1243,7 +1243,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'rifler',
+          role: 'sniper',
           reaction: 0.221,
           accuracy: 0.699,
           sprayControl: 0.892,
@@ -1257,7 +1257,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'sniper',
+          role: 'rifler',
           reaction: 0.431,
           accuracy: 0.541,
           sprayControl: 0.661,
@@ -1271,7 +1271,7 @@ const teamsDefault: Team[] = [
         contract: {salary: 0, start: '1', finish: '1'},
         status: 'active',
         stat: {
-          role: 'support',
+          role: 'capitan',
           reaction: 0.359,
           accuracy: 0.588,
           sprayControl: 0.346,

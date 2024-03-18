@@ -1,5 +1,6 @@
 import {Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
+import {GetPlayerRating} from './playerFunctions';
 
 export function GetMoneyAmount(money: number) {
   const grades = [
@@ -50,11 +51,85 @@ export function GetPlayersFromTeams(teams: Team[]) {
 }
 
 export function SortPlayerByRoles(players: Player[]) {
-  const capitans = players.filter((p: Player) => p.stat.role === 'capitan');
-  const snipers = players.filter((p: Player) => p.stat.role === 'sniper');
-  const riflers = players.filter((p: Player) => p.stat.role === 'rifler');
-  const supports = players.filter((p: Player) => p.stat.role === 'support');
+  const capitans = players
+    .filter((p: Player) => p.stat.role === 'capitan')
+    .sort((a: Player, b: Player) => b.stat.tactics - a.stat.tactics);
+  const snipers = players
+    .filter((p: Player) => p.stat.role === 'sniper')
+    .sort(
+      (a: Player, b: Player) =>
+        (b.stat.reaction * 2 + b.stat.accuracy + b.stat.flicksControl) / 4 -
+        (a.stat.reaction * 2 + a.stat.accuracy + a.stat.flicksControl) / 4,
+    );
+  const riflers = players
+    .filter((p: Player) => p.stat.role === 'rifler')
+    .sort(
+      (a: Player, b: Player) =>
+        (b.stat.reaction * 2 +
+          b.stat.accuracy +
+          b.stat.flicksControl +
+          b.stat.sprayControl) /
+          5 -
+        (a.stat.reaction * 2 +
+          a.stat.accuracy +
+          a.stat.flicksControl +
+          a.stat.sprayControl) /
+          5,
+    );
+  const supports = players
+    .filter((p: Player) => p.stat.role === 'support')
+    .sort((a: Player, b: Player) => b.stat.nades - a.stat.nades);
   return [...capitans, ...snipers, ...riflers, ...supports] as Player[];
+}
+
+export function SortPlayersByTeam(players: Player[]) {
+  let arr: Player[] = [];
+  players.forEach((i: any) => {
+    arr.push(i);
+  });
+
+  const groupedByTeam = arr.reduce((acc: any, player: Player) => {
+    const team = player.team as Team['name'];
+    if (!acc[team]) {
+      acc[team] = {players: [], totalRating: 0, count: 0};
+    }
+    acc[team].players.push(player);
+    acc[team].totalRating += GetPlayerRating(player, players);
+    acc[team].count += 1;
+
+    return acc;
+  }, {});
+
+  const sortedTeams = Object.entries(groupedByTeam)
+    .sort(([depA, dataA]: any, [depB, dataB]: any) => {
+      const avgRatingA = dataA.totalRating / dataA.count;
+      const avgRatingB = dataB.totalRating / dataB.count;
+      return avgRatingA - avgRatingB;
+    })
+    .map(([team, data]: any) => ({
+      team,
+      players: data.players.sort(
+        (a: any, b: any) =>
+          GetPlayerRating(a, players) - GetPlayerRating(b, players),
+      ),
+    }));
+
+  let sortedArr: any = [];
+
+  sortedTeams.reverse().forEach((i: any) => {
+    i.players.reverse().forEach((p: any) => {
+      sortedArr.push(p);
+    });
+  });
+
+  return sortedArr;
+}
+
+export function SortPlayersByStat(players: Player[]) {
+  return [...players].sort(
+    (a: Player, b: Player) =>
+      GetPlayerRating(b, players) - GetPlayerRating(a, players),
+  );
 }
 
 export function GetTopPlayerStat(max: number, min: number, value: number) {
@@ -75,8 +150,7 @@ export function GetTopStatColor(rating: number) {
   }
 }
 
-// returns a KOEF (0-1) depending on the parameters of the PLAYER relative to other PLAYERS
-export function GetPlayerTopWithPlayersByParameter(
+export function GetPlayerParameterRating(
   players: Player[],
   parameter: Stat['value'],
   value: number,

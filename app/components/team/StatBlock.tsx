@@ -5,7 +5,7 @@ import {Player} from '../../constants/interfaces/playerTeamInterfaces';
 import Icon from '../icons/Icon';
 import StatImage from '../icons/StatImage';
 import {
-  GetPlayerTopWithPlayersByParameter,
+  GetPlayerParameterRating,
   GetTopPlayerStat,
   GetTopStatColor,
 } from '../../functions/function';
@@ -22,11 +22,7 @@ export default function StatBlock(props: {
   title: Stat['value'];
   full?: boolean;
 }) {
-  const stat = GetPlayerTopWithPlayersByParameter(
-    props.players,
-    props.title,
-    props.stat,
-  );
+  const stat = GetPlayerParameterRating(props.players, props.title, props.stat);
 
   return (
     <View

@@ -11,7 +11,7 @@ import colors from '../../constants/colors';
 import globalStyles from '../../constants/globalStyles';
 import text from '../../constants/text';
 import {
-  GetPlayerTopWithPlayersByParameter,
+  GetPlayerParameterRating,
   GetTopPlayerStat,
   GetTopStatColor,
 } from '../../functions/function';
@@ -27,7 +27,7 @@ export default function PlayerStatItem(props: {
   index: number;
   players: Player[];
 }) {
-  const stat = GetPlayerTopWithPlayersByParameter(
+  const stat = GetPlayerParameterRating(
     props.players,
     props.item.icon,
     props.item.value,

@@ -1,7 +1,7 @@
 import {Role, Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import rules from '../constants/rules';
-import {GetPlayerTopWithPlayersByParameter} from './function';
+import {GetPlayerParameterRating} from './function';
 
 const statsToPractice: Stat['value'][] = ['nades', 'tactics'];
 const allStats: Stat['value'][] = [
@@ -170,14 +170,11 @@ export function SetNewPlayerStatus(
   return newTeamsData;
 }
 
-export function GetPlayerTopRatingWithPlayers(
-  player: Player,
-  players: Player[],
-) {
+export function GetPlayerRating(player: Player, players: Player[]) {
   const averageRating =
     allStats.reduce(
       (sum: number, s: Stat['value']) =>
-        sum + GetPlayerTopWithPlayersByParameter(players, s, player.stat[s]),
+        sum + GetPlayerParameterRating(players, s, player.stat[s]),
       0,
     ) / allStats.length;
   return averageRating;
@@ -185,19 +182,17 @@ export function GetPlayerTopRatingWithPlayers(
 
 export function GetPlayerPrice(players: Player[], player: Player) {
   return Math.floor(
-    rules.maxPlayerPrice * GetPlayerTopRatingWithPlayers(player, players) ** 2,
+    rules.maxPlayerPrice * GetPlayerRating(player, players) ** 2,
   );
 }
 export function GetPlayerSalaryMonth(players: Player[], player: Player) {
   return Math.floor(
-    rules.mapPlayerSalary * GetPlayerTopRatingWithPlayers(player, players) ** 3,
+    rules.mapPlayerSalary * GetPlayerRating(player, players) ** 3,
   );
 }
 
 export function GetPlayerSalaryYear(players: Player[], player: Player) {
   return Math.floor(
-    rules.mapPlayerSalary *
-      12 *
-      GetPlayerTopRatingWithPlayers(player, players) ** 3,
+    rules.mapPlayerSalary * 12 * GetPlayerRating(player, players) ** 3,
   );
 }

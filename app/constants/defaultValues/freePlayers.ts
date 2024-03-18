@@ -464,20 +464,6 @@ const freePlayersDefault: Player[] = [
     },
   },
   {
-    name: 'Luke',
-    status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
-    stat: {
-      role: 'sniper',
-      reaction: 0.418,
-      accuracy: 0.621,
-      sprayControl: 0.448,
-      flicksControl: 0.797,
-      nades: 0.676,
-      tactics: 0.305,
-    },
-  },
-  {
     name: 'Force',
     status: 'free',
     contract: {salary: 0, start: '', finish: ''},
@@ -1063,20 +1049,6 @@ const freePlayersDefault: Player[] = [
       flicksControl: 0.474,
       nades: 0.732,
       tactics: 0.678,
-    },
-  },
-  {
-    name: 'Catcher',
-    status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
-    stat: {
-      role: 'capitan',
-      reaction: 0.317,
-      accuracy: 0.587,
-      sprayControl: 0.358,
-      flicksControl: 0.387,
-      nades: 0.703,
-      tactics: 0.704,
     },
   },
   {
