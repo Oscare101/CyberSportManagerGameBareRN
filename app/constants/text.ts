@@ -75,12 +75,15 @@ const text: any = {
     "Each player has his own price in the market. It varies depending on the player's own skill relative to the skill of all other players.",
   Active: 'Active',
   Benched: 'Benched',
+  MainIsAlreadyFull: 'Main roaster is already full',
   ActiveDescription:
     'A player with an active status is exactly the one who is part of the main team. There can be only 5 of them.',
   BenchedDescription:
     "Benched players are also team players who have an active contract and get paid and train with everyone else, but they don't participate in tournaments unless you choose them instead of someone from the main squad.",
   StatusChangeDescription:
     'When changing the status of players, please note that there must be exactly 5 players in the main squad, and do not forget to check the characteristics of the player to put him in the right role.',
+  IfMainIsFullChangeDescription:
+    'If the main squad is already full and there are 5 players in it, then in order to change a player, first bench someone from the main squad, and then add a player from the benched.',
 };
 
 export default text;

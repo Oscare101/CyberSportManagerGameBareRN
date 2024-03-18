@@ -66,7 +66,6 @@ const teamsDefault: Team[] = [
           sprayControl: 0.51,
           flicksControl: 0.446,
           nades: 0.564,
-
           tactics: 0.364,
         },
       },
@@ -81,8 +80,21 @@ const teamsDefault: Team[] = [
           sprayControl: 0.527,
           flicksControl: 0.619,
           nades: 0.361,
-
           tactics: 0.542,
+        },
+      },
+      {
+        name: 'Tractor',
+        contract: {salary: 0, start: '1', finish: '1'},
+        status: 'benched',
+        stat: {
+          role: 'rifler',
+          reaction: 0.345,
+          accuracy: 0.464,
+          sprayControl: 0.332,
+          flicksControl: 0.236,
+          nades: 0.335,
+          tactics: 0.293,
         },
       },
     ],

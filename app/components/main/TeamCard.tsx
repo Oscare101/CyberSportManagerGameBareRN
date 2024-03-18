@@ -16,6 +16,7 @@ import {useSelector} from 'react-redux';
 import {RootState} from '../../redux';
 import {useNavigation} from '@react-navigation/native';
 import {GetMoneyAmountString} from '../../functions/function';
+import Icon from '../icons/Icon';
 
 const width = Dimensions.get('screen').width;
 
@@ -41,6 +42,24 @@ export default function TeamCard() {
       activeOpacity={0.8}
       onPress={() => navigation.navigate('MyTeamScreen')}
       style={[styles.card, {backgroundColor: colors[themeColor].card}]}>
+      {myTeam.players.filter((player: Player) => player.status === 'active')
+        .length !== 5 ? (
+        <View
+          style={{
+            position: 'absolute',
+            top: width * 0.01,
+            right: width * 0.01,
+          }}>
+          <Icon
+            icon="alertCircle"
+            color={colors[themeColor].red.main}
+            size={width * 0.04}
+          />
+        </View>
+      ) : (
+        <></>
+      )}
+
       <View style={globalStyles.rowBetween}>
         <TeamImage team={myTeam.name} size={width * 0.17} />
         <View style={globalStyles.columnEnd}>

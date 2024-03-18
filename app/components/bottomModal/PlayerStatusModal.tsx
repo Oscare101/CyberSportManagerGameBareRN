@@ -43,10 +43,17 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
     status: Player['status'];
     icon: IconName['value'];
     active: boolean;
+    comment: string;
   }[] = [
     {
       title: text.Active,
       status: 'active',
+      comment:
+        myTeam.players.find((p: Player) => p.name === props.playerName)
+          ?.status === 'benched' &&
+        myTeam.players.filter((p: Player) => p.status === 'active').length === 5
+          ? `(${text.MainIsAlreadyFull})`
+          : '',
       icon: 'controller',
       active:
         myTeam.players.find((p: Player) => p.name === props.playerName)
@@ -56,6 +63,7 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
       title: text.Benched,
       status: 'benched',
       icon: 'bed',
+      comment: '',
       active:
         myTeam.players.find((p: Player) => p.name === props.playerName)
           ?.status === 'benched',
@@ -63,6 +71,12 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
   ];
 
   function SetNewPlayerStatusFunc(status: Player['status']) {
+    if (
+      status === 'active' &&
+      myTeam.players.filter((p: Player) => p.status === 'active').length === 5
+    ) {
+      return false;
+    }
     dispatch(
       updateTeams(SetNewPlayerStatus(teams, myTeam, props.playerName, status)),
     );
@@ -103,6 +117,15 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
             ]}>
             {item.title}
           </Text>
+          <Text
+            style={{
+              fontSize: width * 0.04,
+              color: colors[themeColor].comment,
+              flex: 1,
+              marginLeft: width * 0.02,
+            }}>
+            {item.comment}
+          </Text>
           <Icon
             icon={item.icon}
             color={
@@ -122,6 +145,9 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
       </Text>
       <Text style={[styles.text, {color: colors[themeColor].greys[4]}]}>
         {text.StatusChangeDescription}
+      </Text>
+      <Text style={[styles.text, {color: colors[themeColor].greys[4]}]}>
+        {text.IfMainIsFullChangeDescription}
       </Text>
     </>
   );
