@@ -15,6 +15,7 @@ import colors from '../../constants/colors';
 import StatBlock from './StatBlock';
 import {useNavigation} from '@react-navigation/native';
 import RoleImage from '../icons/RoleImage';
+import TeamImage from '../icons/TeamImage';
 
 const width = Dimensions.get('screen').width;
 
@@ -22,6 +23,8 @@ export default function PlayerItem(props: {
   item: any;
   theme: Theme['value'];
   players: Player[];
+  teamIcon?: boolean;
+  global?: boolean;
 }) {
   const player: Player = props.item;
   const navigation: any = useNavigation();
@@ -29,12 +32,22 @@ export default function PlayerItem(props: {
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={() => {
-        navigation.navigate('PlayerInfoScreen', {player: player});
+        if (props.global) {
+        } else {
+          navigation.navigate('PlayerInfoScreen', {player: player});
+        }
       }}
       style={[styles.card, {backgroundColor: colors[props.theme].card}]}>
+      <TeamImage team={player.team!} size={width * 0.05} />
       <Text
         numberOfLines={1}
-        style={[styles.name, {color: colors[props.theme].main}]}>
+        style={[
+          styles.name,
+          {
+            color: colors[props.theme].main,
+            marginLeft: props.teamIcon ? width * 0.02 : 0,
+          },
+        ]}>
         {player.name}
       </Text>
       <RoleImage
@@ -47,7 +60,6 @@ export default function PlayerItem(props: {
         style={[styles.role, {color: colors[props.theme].comment}]}>
         {player.stat.role}
       </Text>
-      <View style={{flex: 1}} />
       <StatBlock
         stat={player.stat.reaction}
         title="reaction"
@@ -107,8 +119,8 @@ const styles = StyleSheet.create({
     padding: width * 0.01,
   },
   name: {
-    width: '30%',
     fontSize: width * 0.04,
+    flex: 1,
   },
   role: {
     width: '15%',

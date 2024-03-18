@@ -19,6 +19,7 @@ export interface Status {
 
 export interface Player {
   name: string;
+  team?: Team['name'];
   status: Status['value'];
   contract: {
     salary: number;

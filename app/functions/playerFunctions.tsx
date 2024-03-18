@@ -143,7 +143,7 @@ export function SetNewPlayerRole(
   return newTeamsData;
 }
 
-export function GetPlayerTopRationWithPlayers(
+export function GetPlayerTopRatingWithPlayers(
   player: Player,
   players: Player[],
 ) {
@@ -153,18 +153,17 @@ export function GetPlayerTopRationWithPlayers(
         sum + GetPlayerTopWithPlayersByParameter(players, s, player.stat[s]),
       0,
     ) / allStats.length;
-
   return averageRating;
 }
 
 export function GetPlayerPrice(players: Player[], player: Player) {
   return Math.floor(
-    rules.maxPlayerPrice * GetPlayerTopRationWithPlayers(player, players) ** 2,
+    rules.maxPlayerPrice * GetPlayerTopRatingWithPlayers(player, players) ** 2,
   );
 }
 export function GetPlayerSalaryMonth(players: Player[], player: Player) {
   return Math.floor(
-    rules.mapPlayerSalary * GetPlayerTopRationWithPlayers(player, players) ** 3,
+    rules.mapPlayerSalary * GetPlayerTopRatingWithPlayers(player, players) ** 3,
   );
 }
 
@@ -172,6 +171,6 @@ export function GetPlayerSalaryYear(players: Player[], player: Player) {
   return Math.floor(
     rules.mapPlayerSalary *
       12 *
-      GetPlayerTopRationWithPlayers(player, players) ** 3,
+      GetPlayerTopRatingWithPlayers(player, players) ** 3,
   );
 }

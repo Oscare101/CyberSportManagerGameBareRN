@@ -37,8 +37,15 @@ export function GetMoneyAmountString(money: number) {
 
 export function GetPlayersFromTeams(teams: Team[]) {
   let players: Player[] = [];
-  teams.forEach((team: any) => (players = [...players, ...team.players]));
-
+  teams.forEach(
+    (team: any) =>
+      (players = [
+        ...players,
+        ...team.players.map((p: Player) => {
+          return {...p, team: team.name};
+        }),
+      ]),
+  );
   return players;
 }
 

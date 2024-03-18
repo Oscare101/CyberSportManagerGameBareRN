@@ -55,7 +55,7 @@ export default function ShortInfoItem(props: {
 
 const styles = StyleSheet.create({
   card: {
-    width: '30%',
+    width: (width * 0.88) / 3,
     borderRadius: width * 0.02,
     flexDirection: 'column',
     alignItems: 'center',
