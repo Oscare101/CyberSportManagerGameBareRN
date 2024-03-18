@@ -16,9 +16,9 @@ import {RootState} from '../../redux';
 import text from '../../constants/text';
 import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import {
-  NewTeamsDataAfterPlayersPractice,
+  SetTeamsPlayersStatAfterPractice,
   PracticePrice,
-  SetNewPlayerRole,
+  SetPlayerRole,
 } from '../../functions/playerFunctions';
 import globalStyles from '../../constants/globalStyles';
 import {GetMoneyAmountString, IsEnoughtMoney} from '../../functions/function';
@@ -71,10 +71,8 @@ export default function PlayerRoleChangeModal(props: {
     },
   ];
 
-  function SetNewPlayerRoleFunc(role: Role['value']) {
-    dispatch(
-      updateTeams(SetNewPlayerRole(teams, myTeam, props.playerName, role)),
-    );
+  function SetPlayerRoleFunc(role: Role['value']) {
+    dispatch(updateTeams(SetPlayerRole(teams, myTeam, props.playerName, role)));
   }
 
   return (
@@ -86,7 +84,7 @@ export default function PlayerRoleChangeModal(props: {
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => {
-            SetNewPlayerRoleFunc(item.role);
+            SetPlayerRoleFunc(item.role);
           }}
           style={[
             globalStyles.rowBetween,

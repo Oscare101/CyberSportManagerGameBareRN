@@ -23,8 +23,8 @@ import Button from '../components/Button';
 import {
   GetPlayerStatAverage,
   GetTeamStatAverage,
-  NewTeamsDataAfterPlayersPractice,
-  NewTeamsDataAfterStatChange,
+  SetTeamsPlayersStatAfterPractice,
+  SetTeamsPlayersStatAfterChange,
   PracticePrice,
 } from '../functions/playerFunctions';
 import {updateTeams} from '../redux/teams';

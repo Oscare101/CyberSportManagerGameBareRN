@@ -13,7 +13,7 @@ import text from '../../constants/text';
 import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import {
   GetPlayerSalaryYear,
-  SetNewPlayerStatus,
+  SetPlayerStatus,
 } from '../../functions/playerFunctions';
 import globalStyles from '../../constants/globalStyles';
 import {
@@ -70,7 +70,7 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
     },
   ];
 
-  function SetNewPlayerStatusFunc(status: Player['status']) {
+  function SetPlayerStatusFunc(status: Player['status']) {
     if (
       status === 'active' &&
       myTeam.players.filter((p: Player) => p.status === 'active').length === 5
@@ -78,7 +78,7 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
       return false;
     }
     dispatch(
-      updateTeams(SetNewPlayerStatus(teams, myTeam, props.playerName, status)),
+      updateTeams(SetPlayerStatus(teams, myTeam, props.playerName, status)),
     );
   }
 
@@ -91,7 +91,7 @@ export default function PlayerStatusModal(props: {playerName: Player['name']}) {
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={() => {
-            SetNewPlayerStatusFunc(item.status);
+            SetPlayerStatusFunc(item.status);
           }}
           style={[
             globalStyles.rowBetween,

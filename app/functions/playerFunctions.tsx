@@ -13,7 +13,7 @@ const allStats: Stat['value'][] = [
   'tactics',
 ];
 
-export function NewTeamsDataAfterPlayersPractice(
+export function SetTeamsPlayersStatAfterPractice(
   playerTeam: Team,
   teams: Team[],
 ) {
@@ -46,8 +46,8 @@ export function NewTeamsDataAfterPlayersPractice(
   return newTeamsData;
 }
 
-export function NewTeamsDataAfterStatChange(playerTeam: Team, teams: Team[]) {
-  const newMyTeamPlayersData = playerTeam.players
+export function SetTeamsPlayersStatAfterChange(team: Team, teams: Team[]) {
+  const newMyTeamPlayersData = team.players
     .filter((p: Player) => p.status === 'active')
     .map((p: Player) => {
       const statToChange: Stat['value'] =
@@ -76,9 +76,9 @@ export function NewTeamsDataAfterStatChange(playerTeam: Team, teams: Team[]) {
       };
     });
   let newTeamsData: Team[] = teams
-    .filter((t: Team) => t.name !== playerTeam.name)
+    .filter((t: Team) => t.name !== team.name)
     .concat({
-      ...playerTeam,
+      ...team,
       players: newMyTeamPlayersData,
     });
   return newTeamsData;
@@ -113,7 +113,7 @@ export function PracticePrice(team: Team) {
   return +(stat ** 2 * rules.practicePrice).toFixed(3);
 }
 
-export function SetNewPlayerRole(
+export function SetPlayerRole(
   teams: Team[],
   playerTeam: Team,
   playerName: Player['name'],
@@ -143,7 +143,7 @@ export function SetNewPlayerRole(
   return newTeamsData;
 }
 
-export function SetNewPlayerStatus(
+export function SetPlayerStatus(
   teams: Team[],
   playerTeam: Team,
   playerName: Player['name'],
@@ -180,11 +180,12 @@ export function GetPlayerRating(player: Player, players: Player[]) {
   return averageRating;
 }
 
-export function GetPlayerPrice(players: Player[], player: Player) {
+export function GetPlayerContractPrice(players: Player[], player: Player) {
   return Math.floor(
     rules.maxPlayerPrice * GetPlayerRating(player, players) ** 2,
   );
 }
+
 export function GetPlayerSalaryMonth(players: Player[], player: Player) {
   return Math.floor(
     rules.mapPlayerSalary * GetPlayerRating(player, players) ** 3,

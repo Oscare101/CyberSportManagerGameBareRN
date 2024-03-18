@@ -16,7 +16,7 @@ import {RootState} from '../../redux';
 import text from '../../constants/text';
 import {Team} from '../../constants/interfaces/playerTeamInterfaces';
 import {
-  NewTeamsDataAfterPlayersPractice,
+  SetTeamsPlayersStatAfterPractice,
   PracticePrice,
 } from '../../functions/playerFunctions';
 import globalStyles from '../../constants/globalStyles';
@@ -45,7 +45,7 @@ export default function PracticeModal() {
   ];
 
   function PracticeFunc() {
-    dispatch(updateTeams(NewTeamsDataAfterPlayersPractice(myTeam, teams)));
+    dispatch(updateTeams(SetTeamsPlayersStatAfterPractice(myTeam, teams)));
   }
 
   return (
