@@ -42,7 +42,7 @@ export default function PlayerInfoScreen({navigation, route}: any) {
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const snapPointsInfo = useMemo(() => [width], []);
-  const snapPointsRole = useMemo(() => ['100%'], []);
+  const snapPointsRole = useMemo(() => [width * 1.7, '100%'], []);
 
   const onPresentModal = useCallback(() => {
     bottomSheetModalRef.current?.present();
