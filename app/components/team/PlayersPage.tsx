@@ -13,7 +13,7 @@ import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
 import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import PlayerItem from './PlayerItem';
-import {GetPlayersFromTeams} from '../../functions/function';
+import {GetPlayersFromTeams, SortPlayerByRoles} from '../../functions/function';
 import globalStyles from '../../constants/globalStyles';
 import text from '../../constants/text';
 import Icon from '../icons/Icon';
@@ -90,7 +90,9 @@ function PlayersPage() {
         <FlatList
           scrollEnabled={false}
           style={{width: '100%'}}
-          data={myTeam.players.filter((p: Player) => p.status === 'active')}
+          data={SortPlayerByRoles(
+            myTeam.players.filter((p: Player) => p.status === 'active'),
+          )}
           renderItem={({item}) => (
             // <PlayerItem item={item} theme={themeColor} players={allPlayers} />
             <PlayerItemFull
@@ -124,7 +126,9 @@ function PlayersPage() {
         <FlatList
           scrollEnabled={false}
           style={{width: '100%'}}
-          data={myTeam.players.filter((p: Player) => p.status === 'benched')}
+          data={SortPlayerByRoles(
+            myTeam.players.filter((p: Player) => p.status === 'benched'),
+          )}
           renderItem={({item}) => (
             <PlayerItem item={item} theme={themeColor} players={allPlayers} />
           )}

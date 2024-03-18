@@ -49,6 +49,14 @@ export function GetPlayersFromTeams(teams: Team[]) {
   return players;
 }
 
+export function SortPlayerByRoles(players: Player[]) {
+  const capitans = players.filter((p: Player) => p.stat.role === 'capitan');
+  const snipers = players.filter((p: Player) => p.stat.role === 'sniper');
+  const riflers = players.filter((p: Player) => p.stat.role === 'rifler');
+  const supports = players.filter((p: Player) => p.stat.role === 'support');
+  return [...capitans, ...snipers, ...riflers, ...supports] as Player[];
+}
+
 export function GetTopPlayerStat(max: number, min: number, value: number) {
   return (value - min) / (max - min);
 }
