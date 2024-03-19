@@ -12,6 +12,7 @@ import {
   DefaultTheme,
 } from '@react-navigation/native';
 import MainNavigation from '../navigation/MainNavigation';
+
 export const storage = new MMKV();
 
 export default function AppComponent() {
@@ -25,7 +26,6 @@ export default function AppComponent() {
   const tournaments: Tournament[] = useSelector(
     (state: RootState) => state.tournaments,
   );
-
   useEffect(() => {
     if (teams.length) {
       storage.set('teams', JSON.stringify(teams));
