@@ -7,7 +7,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {RootState} from '../redux';
 import {useSelector} from 'react-redux';
 import globalStyles from '../constants/globalStyles';
@@ -17,14 +17,20 @@ import text from '../constants/text';
 import {
   GetPlayersFromTeams,
   SortPlayerByRoles,
+  SortPlayersByRating,
   SortPlayersByStat,
   SortPlayersByTeam,
 } from '../functions/function';
-import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
+import {
+  Player,
+  SortByInterface,
+  Team,
+} from '../constants/interfaces/playerTeamInterfaces';
 import PlayerItem from '../components/team/PlayerItem';
 import {GetPlayerRating} from '../functions/playerFunctions';
 import Button from '../components/Button';
-import PlayerItemGlobal from '../components/team/PlayerItemGlobal';
+import PlayerItemGlobal from '../components/rating/PlayerItemGlobal';
+import PlayerSortByBlock from '../components/rating/PlayerSortByBlock';
 
 const width = Dimensions.get('screen').width;
 
@@ -40,9 +46,7 @@ export default function RatingScreen({navigation}: any) {
   );
 
   const [showAll, setShowAll] = useState<boolean>(false);
-  const [sortBy, setSortBy] = useState<'stat' | 'role' | 'rating' | 'team'>(
-    'team',
-  );
+  const [sortBy, setSortBy] = useState<SortByInterface['value']>('team');
 
   function Sort() {
     return sortBy === 'stat'
@@ -51,8 +55,12 @@ export default function RatingScreen({navigation}: any) {
       ? SortPlayerByRoles(players)
       : sortBy === 'team'
       ? SortPlayersByTeam(players)
-      : [];
+      : SortPlayersByRating(players);
   }
+
+  const setSortFunc = useCallback((value: SortByInterface['value']) => {
+    setSortBy(value);
+  }, []);
 
   return (
     <SafeAreaView
@@ -61,11 +69,11 @@ export default function RatingScreen({navigation}: any) {
         {backgroundColor: colors[themeColor].bg},
       ]}>
       <Header title={text.Rating} action="back" />
-      {/* <PlayerSortByBlock  /> */}
+      <PlayerSortByBlock sortBy={sortBy} setSort={setSortFunc} />
 
       <FlatList
         showsVerticalScrollIndicator={false}
-        style={{width: '100%'}}
+        style={{width: '100%', marginTop: width * 0.01}}
         data={Sort().slice(0, showAll ? sorted.length : 20)}
         initialNumToRender={20}
         getItemLayout={(data: any, index: number) => ({

@@ -38,7 +38,7 @@ export default function PracticeModal() {
 
   const data = [
     {
-      title: text.PraciceCost,
+      title: text.PracticeCost,
       value: GetMoneyAmountString(PracticePrice(myTeam)),
     },
     {title: text.AvailableMoney, value: GetMoneyAmountString(myTeam.bank.cash)},
@@ -71,6 +71,10 @@ export default function PracticeModal() {
       <Text style={[styles.text, {color: colors[themeColor].greys[4]}]}>
         {text.PracticeDescription}
       </Text>
+      <Text style={[styles.text, {color: colors[themeColor].greys[4]}]}>
+        {text.PracticeNadesTacticsOnly}
+      </Text>
+
       <View style={{flex: 1}} />
       <Button
         disable={!IsEnoughtMoney(myTeam.bank.cash, PracticePrice(myTeam))}

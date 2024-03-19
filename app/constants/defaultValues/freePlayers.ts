@@ -1471,6 +1471,20 @@ const freePlayersDefault: Player[] = [
       tactics: 0.49,
     },
   },
+  {
+    name: 'Mace',
+    status: 'free',
+    contract: {salary: 0, start: '', finish: ''},
+    stat: {
+      role: 'capitan',
+      reaction: 0.352,
+      accuracy: 0.427,
+      sprayControl: 0.293,
+      flicksControl: 0.386,
+      nades: 0.752,
+      tactics: 0.69,
+    },
+  },
 ];
 
 export default freePlayersDefault;

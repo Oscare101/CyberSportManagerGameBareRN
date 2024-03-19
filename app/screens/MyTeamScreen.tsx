@@ -3,8 +3,6 @@ import {
   Dimensions,
   ScrollView,
   StyleSheet,
-  Text,
-  View,
   useColorScheme,
 } from 'react-native';
 import React, {useCallback, useEffect, useMemo, useRef, useState} from 'react';
@@ -15,21 +13,11 @@ import {RootState} from '../redux';
 import {useDispatch, useSelector} from 'react-redux';
 import text from '../constants/text';
 import Header from '../components/Header';
-import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
+import {Team} from '../constants/interfaces/playerTeamInterfaces';
 import PageSelectorBlock from '../components/team/PageSelectorBlock';
 import PlayersPage from '../components/team/PlayersPage';
 import TeamPage from '../components/team/TeamPage';
 import Button from '../components/Button';
-import {
-  GetPlayerStatAverage,
-  GetTeamStatAverage,
-  SetTeamsPlayersStatAfterPractice,
-  SetTeamsPlayersStatAfterChange,
-  PracticePrice,
-} from '../functions/playerFunctions';
-import {updateTeams} from '../redux/teams';
-import {GetMoneyAmountString, GetPlayersFromTeams} from '../functions/function';
-import rules from '../constants/rules';
 import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import BottomModalBlock from '../components/bottomModal/BottomModalBlock';
 
@@ -51,7 +39,7 @@ export default function MyTeamScreen({navigation}: any) {
   const [modalOpened, setModalOpened] = useState<boolean>(false);
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-  const snapPoints = useMemo(() => [width * 0.9], []);
+  const snapPoints = useMemo(() => [width * 1.1], []);
   const onPresentModal = useCallback(() => {
     bottomSheetModalRef.current?.present();
   }, []);

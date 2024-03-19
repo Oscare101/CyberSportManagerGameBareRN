@@ -12,7 +12,7 @@ import {useSelector} from 'react-redux';
 import {Theme} from '../../constants/interfaces/iconInterfaces';
 import {Player} from '../../constants/interfaces/playerTeamInterfaces';
 import colors from '../../constants/colors';
-import StatBlock from './StatBlock';
+import StatBlock from '../team/StatBlock';
 import {useNavigation} from '@react-navigation/native';
 import RoleImage from '../icons/RoleImage';
 import TeamImage from '../icons/TeamImage';

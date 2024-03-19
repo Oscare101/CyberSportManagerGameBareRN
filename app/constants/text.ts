@@ -44,10 +44,12 @@ const text: any = {
   ColoredStatRatingDescription:
     "The colored indicator indicates the player's rating relative to all other players",
   Individuals: 'Individuals',
-  PraciceCost: 'Pracice cost',
+  PracticeCost: 'Practice cost',
   AvailableMoney: 'Available money',
   PracticeDescription:
     'You can invest in a team by training players. During such joint training, they practice skills in tactics and nades, which will help them in team play in matches.',
+  PracticeNadesTacticsOnly:
+    "Joint training increases players' skills in nades and tactics only",
   NotEnoughMoney: 'Not enough money',
   Rating: 'Rating',
   Capitan: 'Capitan',
@@ -88,6 +90,7 @@ const text: any = {
   IfMainIsFullChangeDescription:
     'If the main squad is already full and there are 5 players in it, then in order to change a player, first bench someone from the main squad, and then add a player from the benched.',
   ShowMore: 'Show more',
+  Statistic: 'Statistic',
 };
 
 export default text;

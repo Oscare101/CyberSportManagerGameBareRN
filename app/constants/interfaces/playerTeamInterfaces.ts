@@ -38,3 +38,7 @@ export interface Team {
   ratingHistory: any[];
   players: Player[];
 }
+
+export interface SortByInterface {
+  value: 'stat' | 'role' | 'rating' | 'team';
+}

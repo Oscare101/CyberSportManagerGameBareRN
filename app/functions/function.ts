@@ -132,6 +132,10 @@ export function SortPlayersByStat(players: Player[]) {
   );
 }
 
+export function SortPlayersByRating(players: Player[]) {
+  return players; // TODO
+}
+
 export function GetTopPlayerStat(max: number, min: number, value: number) {
   return (value - min) / (max - min);
 }
