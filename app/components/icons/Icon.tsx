@@ -124,6 +124,21 @@ function AlertCircleIcon(color: string) {
 `;
 }
 
+function UpIcon(color: string) {
+  return `<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M112 328L256 184L400 328" stroke=${color} stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+`;
+}
+
+function DownIcon(color: string) {
+  return `<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M112 184L256 328L400 184" stroke=${color} stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+`;
+}
+
 export default function Icon(props: {
   icon: IconName['value'];
   size: number;

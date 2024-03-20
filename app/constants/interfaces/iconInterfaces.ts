@@ -100,7 +100,9 @@ export interface IconName {
     | 'controller'
     | 'bed'
     | 'contract'
-    | 'alertCircle';
+    | 'alertCircle'
+    | 'up'
+    | 'down';
 }
 
 export interface Role {

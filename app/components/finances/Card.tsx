@@ -13,6 +13,7 @@ interface CardProps {
   value: string;
   theme: Theme['value'];
   data?: any[];
+  open?: boolean;
   toggle?: any;
 }
 
@@ -30,7 +31,7 @@ export default function Card(props: CardProps) {
         {props.data?.length ? (
           <View style={styles.icon}>
             <Icon
-              icon="alertCircle"
+              icon={props.open ? 'up' : 'down'}
               size={width * 0.05}
               color={colors[props.theme].main}
             />
