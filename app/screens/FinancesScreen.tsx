@@ -34,9 +34,14 @@ export default function FinancesScreen() {
       value: GetMoneyAmountString(myTeam.bank.cash),
     },
     {
-      title: text.Expenses,
+      title: `${text.Expenses} ${text.perYear}`,
       value: GetMoneyAmountString(playersSalaries),
-      data: myTeam.players,
+      data: myTeam.players.map((p: Player) => {
+        return {
+          title: p.name,
+          value: GetMoneyAmountString(p.contract.salary),
+        };
+      }),
       // open: cardsOpen.find((i: string) => i === text.Expenses),
       // toggle: () => {
       //   if (cardsOpen.find((i: string) => i === text.Expenses)) {

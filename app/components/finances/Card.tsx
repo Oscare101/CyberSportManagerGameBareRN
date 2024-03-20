@@ -1,4 +1,11 @@
-import {Animated, Dimensions, StyleSheet, Text, View} from 'react-native';
+import {
+  Animated,
+  Dimensions,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import React, {useEffect, useRef, useState} from 'react';
 import globalStyles from '../../constants/globalStyles';
 import {Theme} from '../../constants/interfaces/iconInterfaces';
@@ -22,12 +29,25 @@ export default function Card(props: CardProps) {
   useEffect(() => {
     Animated.timing(heightAnim, {
       toValue: open
-        ? width * 0.12 + width * 0.08 * (props.data?.length || 0)
+        ? width * 0.14 + width * 0.08 * (props.data?.length || 0)
         : width * 0.12,
       duration: 100,
       useNativeDriver: false,
     }).start();
   }, [open]);
+
+  function RenderItem({item}: any) {
+    return (
+      <View style={[globalStyles.rowBetween, {height: width * 0.08}]}>
+        <Text style={{fontSize: width * 0.04, color: colors[props.theme].main}}>
+          {item.title}
+        </Text>
+        <Text style={{fontSize: width * 0.04, color: colors[props.theme].main}}>
+          {item.value}
+        </Text>
+      </View>
+    );
+  }
 
   return (
     <Animated.View
@@ -60,7 +80,21 @@ export default function Card(props: CardProps) {
           {props.value}
         </Text>
       </TouchableOpacity>
-      {open && props.data?.length ? <></> : <></>}
+      {props.data?.length ? (
+        <>
+          <View
+            style={{
+              width: '100%',
+              height: 1,
+              backgroundColor: colors[props.theme].comment,
+              marginTop: width * 0.02,
+            }}
+          />
+          <FlatList data={props.data} renderItem={RenderItem} />
+        </>
+      ) : (
+        <></>
+      )}
     </Animated.View>
   );
 }
@@ -75,6 +109,7 @@ const styles = StyleSheet.create({
     borderRadius: width * 0.02,
     alignSelf: 'center',
     marginBottom: width * 0.02,
+    overflow: 'hidden',
   },
   title: {
     fontSize: width * 0.05,

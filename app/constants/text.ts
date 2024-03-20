@@ -93,6 +93,7 @@ const text: any = {
   Statistic: 'Statistic',
   Cash: 'Cash',
   Expenses: 'Expenses',
+  perYear: 'per year',
 };
 
 export default text;
