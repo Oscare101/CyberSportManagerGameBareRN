@@ -43,7 +43,9 @@ export default function MainScreen({navigation}: any) {
           <SecondaryButtonCard
             title={text.Finances}
             icon="wallet"
-            action={() => {}}
+            action={() => {
+              navigation.navigate('FinancesScreen');
+            }}
           />
           <View style={{height: width * 0.015}} />
           <SecondaryButtonCard

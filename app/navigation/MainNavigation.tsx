@@ -10,6 +10,7 @@ import SettingsScreen from '../screens/SettingsScreen';
 import PlayerInfoScreen from '../screens/PlayerInfoScreen';
 import RatingScreen from '../screens/RatingScreen';
 import OtherPlayerInfoScreen from '../screens/OtherPlayerInfoScreen';
+import FinancesScreen from '../screens/FinancesScreen';
 
 const Stack = createStackNavigator();
 
@@ -90,6 +91,18 @@ export default function MainNavigation() {
         }}
         name="OtherPlayerInfoScreen"
         component={OtherPlayerInfoScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+          headerLeft: () => null,
+          animationEnabled: true,
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="FinancesScreen"
+        component={FinancesScreen}
       />
     </Stack.Navigator>
   );
