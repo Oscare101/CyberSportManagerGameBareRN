@@ -38,14 +38,17 @@ export default function Card(props: CardProps) {
 
   function RenderItem({item}: any) {
     return (
-      <View style={[globalStyles.rowBetween, {height: width * 0.08}]}>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={item.action}
+        style={[globalStyles.rowBetween, {height: width * 0.08}]}>
         <Text style={{fontSize: width * 0.04, color: colors[props.theme].main}}>
           {item.title}
         </Text>
         <Text style={{fontSize: width * 0.04, color: colors[props.theme].main}}>
           {item.value}
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 

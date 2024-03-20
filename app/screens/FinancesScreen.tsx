@@ -1,4 +1,5 @@
 import {
+  Dimensions,
   FlatList,
   SafeAreaView,
   StyleSheet,
@@ -15,7 +16,9 @@ import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import Card from '../components/finances/Card';
 import {GetMoneyAmountString} from '../functions/function';
 
-export default function FinancesScreen() {
+const width = Dimensions.get('screen').width;
+
+export default function FinancesScreen({navigation}: any) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
@@ -25,8 +28,6 @@ export default function FinancesScreen() {
     (sum: number, p: Player) => sum + p.contract.salary,
     0,
   ); // TODO
-
-  const [cardsOpen, setCardsOpen] = useState<string[]>([]);
 
   const data = [
     {
@@ -40,19 +41,9 @@ export default function FinancesScreen() {
         return {
           title: p.name,
           value: GetMoneyAmountString(p.contract.salary),
+          action: () => navigation.navigate('PlayerInfoScreen', {player: p}),
         };
       }),
-      // open: cardsOpen.find((i: string) => i === text.Expenses),
-      // toggle: () => {
-      //   if (cardsOpen.find((i: string) => i === text.Expenses)) {
-      //     let newOppenedCard = [...cardsOpen].filter(
-      //       (i: string) => i !== text.Expenses,
-      //     );
-      //     setCardsOpen(newOppenedCard);
-      //   } else {
-      //     setCardsOpen([...cardsOpen, text.Expenses]);
-      //   }
-      // },
     },
   ];
 
@@ -70,7 +61,11 @@ export default function FinancesScreen() {
   return (
     <SafeAreaView>
       <Header title={text.Finances} action="back" />
-      <FlatList data={data} renderItem={RenderItem} />
+      <FlatList
+        style={{marginTop: width * 0.02}}
+        data={data}
+        renderItem={RenderItem}
+      />
     </SafeAreaView>
   );
 }
