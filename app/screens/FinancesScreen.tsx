@@ -10,7 +10,7 @@ import Header from '../components/Header';
 import text from '../constants/text';
 import {RootState} from '../redux';
 import {useSelector} from 'react-redux';
-import {Team} from '../constants/interfaces/playerTeamInterfaces';
+import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import Card from '../components/finances/Card';
 import {GetMoneyAmountString} from '../functions/function';
 
@@ -20,6 +20,10 @@ export default function FinancesScreen() {
   const themeColor: any = theme === 'system' ? systemTheme : theme;
   const teams: Team[] = useSelector((state: RootState) => state.teams);
   const myTeam: Team = teams.find((t: Team) => t.yourTeam) as Team;
+  const playersSalaries = myTeam.players.reduce(
+    (sum: number, p: Player) => sum + p.contract.salary,
+    0,
+  );
 
   return (
     <SafeAreaView>
@@ -27,6 +31,11 @@ export default function FinancesScreen() {
       <Card
         title={text.Cash}
         value={GetMoneyAmountString(myTeam.bank.cash)}
+        theme={themeColor}
+      />
+      <Card
+        title={text.Expenses}
+        value={GetMoneyAmountString(playersSalaries)}
         theme={themeColor}
       />
     </SafeAreaView>

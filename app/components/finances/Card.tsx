@@ -10,6 +10,7 @@ interface CardProps {
   title: string;
   value: string;
   theme: Theme['value'];
+  data?: any[];
 }
 
 export default function Card(props: CardProps) {
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
     padding: width * 0.02,
     borderRadius: width * 0.02,
     alignSelf: 'center',
+    marginBottom: width * 0.02,
   },
   title: {
     fontSize: width * 0.05,

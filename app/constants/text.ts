@@ -92,6 +92,7 @@ const text: any = {
   ShowMore: 'Show more',
   Statistic: 'Statistic',
   Cash: 'Cash',
+  Expenses: 'Expenses',
 };
 
 export default text;
