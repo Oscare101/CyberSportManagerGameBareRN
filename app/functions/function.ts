@@ -183,3 +183,14 @@ export function GetPlayerParameterRating(
 export function IsEnoughtMoney(cash: number, price: number) {
   return cash >= price;
 }
+
+export function GetPlayersToTransfer(amount: number, players: Player[]) {
+  const transferArr: Player[] = [];
+  [...Array(amount)].forEach(() => {
+    const free: Player[] = players.filter(
+      (p: Player) => !transferArr.includes(p),
+    );
+    transferArr.push(free[Math.floor(Math.random() * free.length)]);
+  });
+  return transferArr;
+}

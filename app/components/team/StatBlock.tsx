@@ -21,6 +21,7 @@ export default function StatBlock(props: {
   players: Player[];
   title: Stat['value'];
   full?: boolean;
+  containerStyles?: any;
 }) {
   const stat = GetPlayerParameterRating(props.players, props.title, props.stat);
 
@@ -34,6 +35,7 @@ export default function StatBlock(props: {
           width: props.full ? (width * 0.92 - width * 0.07) / 6 : width * 0.06,
           marginLeft: props.full ? 0 : width * 0.01,
         },
+        props.containerStyles,
       ]}>
       <StatImage
         stat={props.title}
