@@ -23,7 +23,7 @@ export default function FinancesScreen() {
   const playersSalaries = myTeam.players.reduce(
     (sum: number, p: Player) => sum + p.contract.salary,
     0,
-  );
+  ); // TODO
 
   return (
     <SafeAreaView>
@@ -37,6 +37,7 @@ export default function FinancesScreen() {
         title={text.Expenses}
         value={GetMoneyAmountString(playersSalaries)}
         theme={themeColor}
+        data={myTeam.players}
       />
     </SafeAreaView>
   );
