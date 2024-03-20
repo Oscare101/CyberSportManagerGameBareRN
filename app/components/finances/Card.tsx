@@ -1,5 +1,5 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {Animated, Dimensions, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
 import globalStyles from '../../constants/globalStyles';
 import {Theme} from '../../constants/interfaces/iconInterfaces';
 import colors from '../../constants/colors';
@@ -13,25 +13,40 @@ interface CardProps {
   value: string;
   theme: Theme['value'];
   data?: any[];
-  open?: boolean;
-  toggle?: any;
 }
 
 export default function Card(props: CardProps) {
+  const [open, setOpen] = useState<boolean>(false);
+  const heightAnim = useRef(new Animated.Value(width * 0.12)).current;
+
+  useEffect(() => {
+    Animated.timing(heightAnim, {
+      toValue: open
+        ? width * 0.12 + width * 0.08 * (props.data?.length || 0)
+        : width * 0.12,
+      duration: 100,
+      useNativeDriver: false,
+    }).start();
+  }, [open]);
+
   return (
-    <View style={[styles.card, {backgroundColor: colors[props.theme].card}]}>
+    <Animated.View
+      style={[
+        styles.card,
+        {backgroundColor: colors[props.theme].card, height: heightAnim},
+      ]}>
       <TouchableOpacity
         disabled={!props.data?.length}
         activeOpacity={0.8}
-        onPress={props.toggle}
-        style={globalStyles.rowBetween}>
+        onPress={() => setOpen(!open)}
+        style={[globalStyles.rowBetween, {height: width * 0.08}]}>
         <Text style={[styles.title, {color: colors[props.theme].main}]}>
           {props.title}
         </Text>
         {props.data?.length ? (
           <View style={styles.icon}>
             <Icon
-              icon={props.open ? 'up' : 'down'}
+              icon={open ? 'up' : 'down'}
               size={width * 0.05}
               color={colors[props.theme].main}
             />
@@ -45,13 +60,8 @@ export default function Card(props: CardProps) {
           {props.value}
         </Text>
       </TouchableOpacity>
-      {/* {props.data?.length ?
-      
-        <>
-        
-        </>
-      : <></>} */}
-    </View>
+      {open && props.data?.length ? <></> : <></>}
+    </Animated.View>
   );
 }
 
@@ -60,7 +70,7 @@ const styles = StyleSheet.create({
     width: width * 0.92,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     padding: width * 0.02,
     borderRadius: width * 0.02,
     alignSelf: 'center',

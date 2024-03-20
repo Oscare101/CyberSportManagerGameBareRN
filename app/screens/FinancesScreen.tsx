@@ -37,17 +37,17 @@ export default function FinancesScreen() {
       title: text.Expenses,
       value: GetMoneyAmountString(playersSalaries),
       data: myTeam.players,
-      open: cardsOpen.find((i: string) => i === text.Expenses),
-      toggle: () => {
-        if (cardsOpen.find((i: string) => i === text.Expenses)) {
-          let newOppenedCard = [...cardsOpen].filter(
-            (i: string) => i !== text.Expenses,
-          );
-          setCardsOpen(newOppenedCard);
-        } else {
-          setCardsOpen([...cardsOpen, text.Expenses]);
-        }
-      },
+      // open: cardsOpen.find((i: string) => i === text.Expenses),
+      // toggle: () => {
+      //   if (cardsOpen.find((i: string) => i === text.Expenses)) {
+      //     let newOppenedCard = [...cardsOpen].filter(
+      //       (i: string) => i !== text.Expenses,
+      //     );
+      //     setCardsOpen(newOppenedCard);
+      //   } else {
+      //     setCardsOpen([...cardsOpen, text.Expenses]);
+      //   }
+      // },
     },
   ];
 
@@ -58,8 +58,6 @@ export default function FinancesScreen() {
         value={item.value}
         theme={themeColor}
         data={item.data}
-        open={item.open}
-        toggle={item.toggle}
       />
     );
   }
