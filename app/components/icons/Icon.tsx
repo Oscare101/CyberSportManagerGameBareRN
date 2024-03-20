@@ -236,6 +236,20 @@ export default function Icon(props: {
         height={props.size}
       />
     ),
+    up: (
+      <SvgXml
+        xml={UpIcon(props.color)}
+        width={props.size}
+        height={props.size}
+      />
+    ),
+    down: (
+      <SvgXml
+        xml={DownIcon(props.color)}
+        width={props.size}
+        height={props.size}
+      />
+    ),
   };
 
   return icons[props.icon];

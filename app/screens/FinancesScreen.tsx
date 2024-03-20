@@ -1,11 +1,12 @@
 import {
+  FlatList,
   SafeAreaView,
   StyleSheet,
   Text,
   View,
   useColorScheme,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../components/Header';
 import text from '../constants/text';
 import {RootState} from '../redux';
@@ -25,20 +26,48 @@ export default function FinancesScreen() {
     0,
   ); // TODO
 
+  const [cardsOpen, setCardsOpen] = useState<string[]>([]);
+
+  const data = [
+    {
+      title: text.Cash,
+      value: GetMoneyAmountString(myTeam.bank.cash),
+    },
+    {
+      title: text.Expenses,
+      value: GetMoneyAmountString(playersSalaries),
+      data: myTeam.players,
+      open: cardsOpen.find((i: string) => i === text.Expenses),
+      toggle: () => {
+        if (cardsOpen.find((i: string) => i === text.Expenses)) {
+          let newOppenedCard = [...cardsOpen].filter(
+            (i: string) => i !== text.Expenses,
+          );
+          setCardsOpen(newOppenedCard);
+        } else {
+          setCardsOpen([...cardsOpen, text.Expenses]);
+        }
+      },
+    },
+  ];
+
+  function RenderItem({item}: any) {
+    return (
+      <Card
+        title={item.title}
+        value={item.value}
+        theme={themeColor}
+        data={item.data}
+        open={item.open}
+        toggle={item.toggle}
+      />
+    );
+  }
+
   return (
     <SafeAreaView>
       <Header title={text.Finances} action="back" />
-      <Card
-        title={text.Cash}
-        value={GetMoneyAmountString(myTeam.bank.cash)}
-        theme={themeColor}
-      />
-      <Card
-        title={text.Expenses}
-        value={GetMoneyAmountString(playersSalaries)}
-        theme={themeColor}
-        data={myTeam.players}
-      />
+      <FlatList data={data} renderItem={RenderItem} />
     </SafeAreaView>
   );
 }
