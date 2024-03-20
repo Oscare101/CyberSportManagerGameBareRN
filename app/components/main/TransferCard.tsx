@@ -25,7 +25,9 @@ export default function TransferCard() {
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      onPress={() => {}}
+      onPress={() => {
+        navigation.navigate('TransferAgency');
+      }}
       style={[styles.card, {backgroundColor: colors[themeColor].card}]}>
       <Text style={[styles.title, {color: colors[themeColor].main}]}>
         {text.TransferAgency}
