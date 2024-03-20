@@ -91,6 +91,7 @@ const text: any = {
     'If the main squad is already full and there are 5 players in it, then in order to change a player, first bench someone from the main squad, and then add a player from the benched.',
   ShowMore: 'Show more',
   Statistic: 'Statistic',
+  Cash: 'Cash',
 };
 
 export default text;
