@@ -39,9 +39,7 @@ function ShortInfoBlock(props: {player: Player; action: any}) {
     },
     {
       title: text.Contract,
-      value: `${GetMoneyAmountString(
-        GetPlayerSalaryYear(GetPlayersFromTeams(teams), props.player),
-      )}`,
+      value: `${GetMoneyAmountString(props.player.contract.salary)}`,
       icon: '',
       action: () => {
         props.action('Contract');

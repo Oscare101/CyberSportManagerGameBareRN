@@ -47,6 +47,7 @@ export default function LaunchScreen({navigation}: any) {
     } else {
       dispatch(updateTeams(SetPlayersContractsInit(teamsDefault)));
     }
+
     let freePlayers: Player[];
     const freePlayersStorage = storage.getString('freePlayers');
     if (freePlayersStorage && freePlayersStorage.length) {
@@ -56,6 +57,7 @@ export default function LaunchScreen({navigation}: any) {
       dispatch(updateFreePlayers(freePlayersDefault));
       freePlayers = freePlayersDefault;
     }
+
     let season: number;
     const tournamentsStorage = storage.getString('tournaments');
     if (tournamentsStorage && tournamentsStorage.length) {

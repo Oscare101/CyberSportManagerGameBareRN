@@ -37,13 +37,15 @@ export default function FinancesScreen({navigation}: any) {
     {
       title: `${text.Expenses} ${text.perYear}`,
       value: GetMoneyAmountString(playersSalaries),
-      data: myTeam.players.map((p: Player) => {
-        return {
-          title: p.name,
-          value: GetMoneyAmountString(p.contract.salary),
-          action: () => navigation.navigate('PlayerInfoScreen', {player: p}),
-        };
-      }),
+      data: [...myTeam.players]
+        .sort((a: Player, b: Player) => b.contract.salary - a.contract.salary)
+        .map((p: Player) => {
+          return {
+            title: p.name,
+            value: GetMoneyAmountString(p.contract.salary),
+            action: () => navigation.navigate('PlayerInfoScreen', {player: p}),
+          };
+        }),
     },
   ];
 
