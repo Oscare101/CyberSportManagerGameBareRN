@@ -8,5 +8,6 @@ export interface Tournament {
   description: string;
   grid: any;
   points: number[];
+  tier: number;
   period: number;
 }
