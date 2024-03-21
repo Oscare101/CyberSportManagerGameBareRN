@@ -3,14 +3,12 @@ import {Tournament} from './tournamentInterfaces';
 
 export interface PlayerStatistic {
   role: Role['value'];
-  reaction: number; // 0 - inf
-  accuracy: number; // 0 - 1
-  sprayControl: number; // 0 - 1
-  flicksControl: number; // 0 - 1
-  nades: number; // 0 - 1
-  // aggression: number; // 0 - 1
-  tactics: number; // 0 - 1
-  // stamina: number; // 0 - 1
+  reaction: number;
+  accuracy: number;
+  sprayControl: number;
+  flicksControl: number;
+  nades: number;
+  tactics: number;
 }
 
 export interface Status {
@@ -21,6 +19,7 @@ export interface Player {
   name: string;
   team?: Team['name'];
   status: Status['value'];
+  trophies: Trophy[];
   contract: {
     salary: number;
     start: number;
@@ -29,13 +28,25 @@ export interface Player {
   stat: PlayerStatistic;
 }
 
+export interface Trophy {
+  season: number;
+  tournament: Tournament['name'];
+}
+
+export interface RatingHistory {
+  season: number;
+  tournament: Tournament['name'];
+  place: number;
+}
+
 export interface Team {
   name: Teams['value'];
   yourTeam: boolean;
   bank: {
     cash: number;
   };
-  ratingHistory: any[];
+  ratingHistory: RatingHistory[];
+  trophies: Trophy[];
   players: Player[];
 }
 

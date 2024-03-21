@@ -4,6 +4,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Iceberg',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -18,6 +19,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'M1ner',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -32,6 +34,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Vampire',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -46,6 +49,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bear',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -60,6 +64,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Fenix',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -74,6 +79,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Riot',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -88,6 +94,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Rebel',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -102,6 +109,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Lynx',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -116,6 +124,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Shart',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -130,6 +139,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Whip',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -144,6 +154,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'TheBest',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -158,6 +169,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Launcher',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -172,6 +184,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sky',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -186,6 +199,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bell',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -200,6 +214,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Brocoli',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -214,6 +229,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Drill',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -228,6 +244,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Catt',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -242,6 +259,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Girkiy',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -256,6 +274,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'L0ud',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -270,6 +289,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Silent',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -284,6 +304,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bruce',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -298,6 +319,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bean',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -312,6 +334,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Fremen',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -326,6 +349,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Snake',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -340,6 +364,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'IKill',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -354,6 +379,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Smoke',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -368,6 +394,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Trust',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -382,6 +409,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Rapid',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -396,6 +424,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Laman',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -410,6 +439,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Obel1x',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -424,6 +454,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Point',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -438,6 +469,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Frame',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -452,6 +484,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sc0pe',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -466,6 +499,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Force',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -480,6 +514,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Magnus',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -494,6 +529,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Apricity',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -508,6 +544,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Lamp',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -522,6 +559,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Hasky',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -536,6 +574,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Electricity',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -550,6 +589,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Anthony',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -564,6 +604,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Parson',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -578,6 +619,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Athos',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -592,6 +634,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Hans',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -606,6 +649,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Deirdre',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -620,6 +664,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Mirand',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -634,6 +679,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Edward',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -648,6 +694,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Panglosss',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -662,6 +709,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Romeo',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -676,6 +724,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Scapit',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -690,6 +739,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Halvard',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -704,6 +754,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sutpen',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -718,6 +769,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Tarzan',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -732,6 +784,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ol1ver',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -746,6 +799,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Weird',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -760,6 +814,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Zorro',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -774,6 +829,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Thomas',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -788,6 +844,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Shadow',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -802,6 +859,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Samuel',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -816,6 +874,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Oberon',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -830,6 +889,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Baron',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -844,6 +904,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Travis',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -858,6 +919,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Lochinvar',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -872,6 +934,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Cupper',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -886,6 +949,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Scout',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -900,6 +964,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'TRex',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -914,6 +979,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'BlackWater',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -928,6 +994,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Hard',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -942,6 +1009,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Gozer',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -956,6 +1024,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Pr0t0n',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -970,6 +1039,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Argentum',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -984,6 +1054,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Saxon',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -998,6 +1069,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Conqueror',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1012,6 +1084,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Aryan',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1026,6 +1099,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'ManGo',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -1040,6 +1114,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'P1tcher',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -1054,6 +1129,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Defender',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1068,6 +1144,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Forward',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1082,6 +1159,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Striker',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -1096,6 +1174,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Watchman',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -1110,6 +1189,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'S1r',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -1124,6 +1204,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Flash',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1138,6 +1219,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ranger',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1152,6 +1234,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ginger',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -1166,6 +1249,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Rumor',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -1180,6 +1264,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Spark',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -1194,6 +1279,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Logan',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1208,6 +1294,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Luke',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1222,6 +1309,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sawyer',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -1236,6 +1324,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Goliath',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -1250,6 +1339,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Beast',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -1264,6 +1354,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Brutus',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1278,6 +1369,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ares',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1292,6 +1384,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Crusher',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -1306,6 +1399,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Magnum',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -1320,6 +1414,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Trigger',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -1334,6 +1429,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Atlas',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1348,6 +1444,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Dragon',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1362,6 +1459,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Talon',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -1376,6 +1474,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ammo',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -1390,6 +1489,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Soldier',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -1404,6 +1504,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Chaos',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1418,6 +1519,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Carbon',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
@@ -1432,6 +1534,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Atom',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
@@ -1446,6 +1549,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Secret',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
@@ -1460,6 +1564,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Tractor',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
@@ -1474,6 +1579,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Mace',
     status: 'free',
+    trophies: [],
     contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',

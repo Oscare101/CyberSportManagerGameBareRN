@@ -8,10 +8,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: true,
     players: [
       {
         name: 'Oscare',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -26,6 +28,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Header',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -40,6 +43,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Modest',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -54,6 +58,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Olaph',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -68,6 +73,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Roller',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -88,10 +94,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Collector',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -106,6 +114,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Nelo',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -120,6 +129,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Brad',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -134,6 +144,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Silver',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -148,6 +159,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Colour',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -168,10 +180,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Octopus',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -186,6 +200,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Rossan',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -200,6 +215,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Awesome',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -214,6 +230,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'NBF',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -228,6 +245,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Scelt',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -248,10 +266,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Cloudy',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -266,6 +286,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'B8Loo',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -280,6 +301,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Newton',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -294,6 +316,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Serpe',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -308,6 +331,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Lancar',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -328,10 +352,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Macro',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -346,6 +372,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Zoom',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -360,6 +387,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Smith',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -374,6 +402,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Focus',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -388,6 +417,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Invincible',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -408,10 +438,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Dach',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -426,6 +458,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Theater',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -440,6 +473,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Salivan',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -454,6 +488,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Faker',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -468,6 +503,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Boxer',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -488,10 +524,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Gepard',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -506,6 +544,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Super',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -520,6 +559,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Bait',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -534,6 +574,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Fury',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -548,6 +589,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Pretios',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -568,10 +610,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Soul',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -586,6 +630,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Faris',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -600,6 +645,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Electron',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -614,6 +660,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Crowley',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -628,6 +675,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Right',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -648,10 +696,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Bad',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -666,6 +716,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Phantom',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -680,6 +731,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Titan',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -694,6 +746,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Swan',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -708,6 +761,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tenor',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -728,10 +782,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: '1Lery',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -746,6 +802,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Wong',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -760,6 +817,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Melon',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -774,6 +832,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Forest',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -788,6 +847,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'LoseIt',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -808,10 +868,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Rosh',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -826,6 +888,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chellen',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -840,6 +903,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chin',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -854,6 +918,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tatam',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -868,6 +933,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Aziraphale',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -888,10 +954,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'FGod',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -906,6 +974,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Cicada',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -920,6 +989,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Stoic',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -934,6 +1004,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Somewhere',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -948,6 +1019,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Tabar',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -968,10 +1040,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Omega',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -986,6 +1060,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Timely',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1000,6 +1075,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Rock',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1014,6 +1090,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Sound',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1028,6 +1105,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Firemane',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1048,10 +1126,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Peace',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1066,6 +1146,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Chicago',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1080,6 +1161,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Percent',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1094,6 +1176,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Invisible',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1108,6 +1191,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Ouroboros',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1128,10 +1212,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Uppper',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1146,6 +1232,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'SuperFrag',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1160,6 +1247,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Catcher',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1174,6 +1262,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Kipito',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1188,6 +1277,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Salute',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1208,10 +1298,12 @@ const teamsDefault: Team[] = [
       cash: rules.teamMoneyDefault,
     },
     ratingHistory: [],
+    trophies: [],
     yourTeam: false,
     players: [
       {
         name: 'Leon',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1226,6 +1318,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Kosus',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1240,6 +1333,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'TheOwl',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1254,6 +1348,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Mandarin',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {
@@ -1268,6 +1363,7 @@ const teamsDefault: Team[] = [
       },
       {
         name: 'Raven',
+        trophies: [],
         contract: {salary: 0, start: 1, finish: 1},
         status: 'active',
         stat: {

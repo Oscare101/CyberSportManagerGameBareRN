@@ -40,10 +40,6 @@ export default function RatingScreen({navigation}: any) {
   const themeColor: any = theme === 'system' ? systemTheme : theme;
   const teams: Team[] = useSelector((state: RootState) => state.teams);
   const players: Player[] = GetPlayersFromTeams(teams);
-  const sorted = [...players].sort(
-    (a: Player, b: Player) =>
-      GetPlayerRating(b, players) - GetPlayerRating(a, players),
-  );
 
   const [showAll, setShowAll] = useState<boolean>(false);
   const [sortBy, setSortBy] = useState<SortByInterface['value']>('stat');
@@ -74,7 +70,7 @@ export default function RatingScreen({navigation}: any) {
       <FlatList
         showsVerticalScrollIndicator={false}
         style={{width: '100%', marginTop: width * 0.01}}
-        data={Sort().slice(0, showAll ? sorted.length : 20)}
+        data={Sort().slice(0, showAll ? players.length : 20)}
         initialNumToRender={20}
         getItemLayout={(data: any, index: number) => ({
           length: width * 0.08,
