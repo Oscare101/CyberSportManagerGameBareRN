@@ -7,7 +7,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React from 'react';
+import React, {useCallback, useMemo, useRef, useState} from 'react';
 import Header from '../components/Header';
 import text from '../constants/text';
 import {RootState} from '../redux';
@@ -21,6 +21,8 @@ import FreePlayerItem from '../components/transfer/FreePlayerItem';
 import {GetPlayersFromTeams, GetPlayersToTransfer} from '../functions/function';
 import globalStyles from '../constants/globalStyles';
 import colors from '../constants/colors';
+import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import BottomModalBlock from '../components/bottomModal/BottomModalBlock';
 
 const width = Dimensions.get('screen').width;
 
@@ -33,40 +35,70 @@ export default function TransferAgency({navigation}: any) {
     (state: RootState) => state.availableTransfers,
   );
 
-  const freePlayers: Player[] = useSelector(
-    (state: RootState) => state.freePlayers,
-  );
+  const [modalContent, setModalContent] = useState<{
+    screen: 'Transfer';
+    item: Player | string;
+  }>({screen: 'Transfer', item: ''});
+  const [modalOpened, setModalOpened] = useState<boolean>(false);
+
+  const bottomSheetModalRef = useRef<BottomSheetModal>(null);
+  const snapPoints = useMemo(() => [width * 1.1], []);
+
+  const onPresentModal = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
+  const onDismisModal = useCallback(() => {
+    bottomSheetModalRef.current?.dismiss();
+  }, []);
+  const handleSheetChanges = useCallback((index: number) => {
+    setModalOpened(!!(index + 1));
+  }, []);
+
+  const onModal = useCallback((value: Player) => {
+    setModalContent({screen: 'Transfer', item: value});
+    onPresentModal();
+  }, []);
 
   return (
-    <SafeAreaView
-      style={[
-        globalStyles.container,
-        {backgroundColor: colors[themeColor].bg},
-      ]}>
-      <Header title={text.TransferAgency} action="back" />
-      <Text style={[styles.text, {color: colors[themeColor].main}]}>
-        {text.AvailableTransfersDescription}
-      </Text>
-      {availableTransfers.players.length ? (
-        <FlatList
-          style={{width: '92%'}}
-          numColumns={2}
-          data={availableTransfers.players}
-          renderItem={({item, index}: any) => (
-            <FreePlayerItem
-              item={item}
-              index={index}
-              theme={themeColor}
-              players={GetPlayersFromTeams(teams)}
-            />
-          )}
-        />
-      ) : (
-        <Text style={[styles.warning, {color: colors[themeColor].comment}]}>
-          {text.NoAvalableTransfers}
+    <BottomSheetModalProvider>
+      <SafeAreaView
+        style={[
+          globalStyles.container,
+          {backgroundColor: colors[themeColor].bg},
+        ]}>
+        <Header title={text.TransferAgency} action="back" />
+        <Text style={[styles.text, {color: colors[themeColor].main}]}>
+          {text.AvailableTransfersDescription}
         </Text>
-      )}
-    </SafeAreaView>
+        {availableTransfers.players.length ? (
+          <FlatList
+            style={{width: '92%'}}
+            numColumns={2}
+            data={availableTransfers.players}
+            renderItem={({item, index}: any) => (
+              <FreePlayerItem
+                item={item}
+                index={index}
+                theme={themeColor}
+                players={GetPlayersFromTeams(teams)}
+                action={onModal}
+              />
+            )}
+          />
+        ) : (
+          <Text style={[styles.warning, {color: colors[themeColor].comment}]}>
+            {text.NoAvalableTransfers}
+          </Text>
+        )}
+      </SafeAreaView>
+      <BottomModalBlock
+        bottomSheetModalRef={bottomSheetModalRef}
+        snapPoints={snapPoints}
+        onChange={handleSheetChanges}
+        dismiss={onDismisModal}
+        data={modalContent}
+      />
+    </BottomSheetModalProvider>
   );
 }
 

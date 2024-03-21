@@ -74,7 +74,9 @@ export default function FreePlayerItem(props: any) {
   return (
     <TouchableOpacity
       activeOpacity={0.8}
-      onPress={() => {}}
+      onPress={() => {
+        props.action(props.item);
+      }}
       style={[
         styles.button,
         {

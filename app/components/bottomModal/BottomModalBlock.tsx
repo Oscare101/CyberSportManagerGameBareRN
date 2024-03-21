@@ -14,6 +14,7 @@ import PracticeModal from './PracticeModal';
 import PlayerRoleChangeModal from './PlayerRoleChangeModal';
 import PlayerContractModal from './PlayerContractModal';
 import PlayerStatusModal from './PlayerStatusModal';
+import TransferModal from './TransferModal';
 
 const width = Dimensions.get('screen').width;
 
@@ -37,6 +38,7 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
     Role: <PlayerRoleChangeModal playerName={props.data.item} />,
     Contract: <PlayerContractModal playerName={props.data.item} />,
     Status: <PlayerStatusModal playerName={props.data.item} />,
+    Transfer: <TransferModal player={props.data.item} />,
   };
 
   return (
