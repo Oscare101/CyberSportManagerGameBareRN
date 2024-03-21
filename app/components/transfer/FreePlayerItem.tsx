@@ -85,7 +85,11 @@ export default function FreePlayerItem(props: any) {
       <Text style={[styles.name, {color: colors[props.theme].main}]}>
         {props.item.name}
       </Text>
-      <FlatList data={contractData} renderItem={ContractItem} />
+      <FlatList
+        style={{marginVertical: width * 0.02}}
+        data={contractData}
+        renderItem={ContractItem}
+      />
 
       <FlatList
         style={{width: '100%'}}

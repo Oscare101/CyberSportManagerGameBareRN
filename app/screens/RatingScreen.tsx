@@ -46,7 +46,7 @@ export default function RatingScreen({navigation}: any) {
   );
 
   const [showAll, setShowAll] = useState<boolean>(false);
-  const [sortBy, setSortBy] = useState<SortByInterface['value']>('team');
+  const [sortBy, setSortBy] = useState<SortByInterface['value']>('stat');
 
   function Sort() {
     return sortBy === 'stat'
@@ -102,6 +102,7 @@ export default function RatingScreen({navigation}: any) {
                   alignSelf: 'center',
                   backgroundColor: '#00000000',
                 }}
+                titleStyles={{color: colors[themeColor].comment}}
               />
             )}
           </>
