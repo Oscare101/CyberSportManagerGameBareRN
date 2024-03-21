@@ -68,8 +68,7 @@ export default function LaunchScreen({navigation}: any) {
     const availableTransfersStorage = storage.getString('availableTransfers');
     if (
       availableTransfersStorage &&
-      JSON.parse(availableTransfersStorage).season === season &&
-      JSON.parse(availableTransfersStorage).players.length
+      JSON.parse(availableTransfersStorage).season === season
     ) {
       dispatch(updateAvailableTransfers(JSON.parse(availableTransfersStorage)));
     } else {

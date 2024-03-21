@@ -94,6 +94,9 @@ const text: any = {
   Cash: 'Cash',
   Expenses: 'Expenses',
   perYear: 'per year',
+  AvailableTransfersDescription:
+    'Players free for transfers are updated every season. You can add any of them to your team, in order to complete the contract, it will be necessary to pay the salary for this season',
+  NoAvalableTransfers: 'There are no free transfers. Come back next season',
 };
 
 export default text;
