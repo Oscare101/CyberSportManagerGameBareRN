@@ -3,7 +3,11 @@ import React, {useEffect} from 'react';
 import {useSelector} from 'react-redux';
 import {RootState} from '../redux';
 import colors from '../constants/colors';
-import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
+import {
+  AvailableTransfer,
+  Player,
+  Team,
+} from '../constants/interfaces/playerTeamInterfaces';
 import {MMKV} from 'react-native-mmkv';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
 import {
@@ -20,6 +24,10 @@ export default function AppComponent() {
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
   const teams: Team[] = useSelector((state: RootState) => state.teams);
+  const availableTransfers: AvailableTransfer = useSelector(
+    (state: RootState) => state.availableTransfers,
+  );
+
   const freePlayers: Player[] = useSelector(
     (state: RootState) => state.freePlayers,
   );
@@ -43,6 +51,12 @@ export default function AppComponent() {
       storage.set('tournaments', JSON.stringify(tournaments));
     }
   }, [tournaments]);
+
+  useEffect(() => {
+    if (availableTransfers.season && availableTransfers.players.length) {
+      storage.set('availableTransfers', JSON.stringify(availableTransfers));
+    }
+  }, [availableTransfers]);
 
   return (
     <>

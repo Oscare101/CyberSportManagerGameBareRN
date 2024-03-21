@@ -3,9 +3,6 @@ import {
   NativeModules,
   Platform,
   SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
   useColorScheme,
 } from 'react-native';
 import React, {useEffect} from 'react';
@@ -21,6 +18,13 @@ import tournamentsDefault from '../constants/defaultValues/tournaments';
 import {updateTheme} from '../redux/theme';
 import {updateFreePlayers} from '../redux/freePlayers';
 import freePlayersDefault from '../constants/defaultValues/freePlayers';
+import {updateAvailableTransfers} from '../redux/availableTransfers';
+import {
+  AvailableTransfer,
+  Player,
+} from '../constants/interfaces/playerTeamInterfaces';
+import {CurrentTournament} from '../functions/tournamentFunctions';
+import {GetPlayersToTransfer} from '../functions/function';
 export const storage = new MMKV();
 
 const width = Dimensions.get('screen').width;
@@ -42,19 +46,39 @@ export default function LaunchScreen({navigation}: any) {
     } else {
       dispatch(updateTeams(teamsDefault));
     }
-
+    let freePlayers: Player[];
     const freePlayersStorage = storage.getString('freePlayers');
     if (freePlayersStorage && freePlayersStorage.length) {
       dispatch(updateFreePlayers(JSON.parse(freePlayersStorage)));
+      freePlayers = JSON.parse(freePlayersStorage);
     } else {
       dispatch(updateFreePlayers(freePlayersDefault));
+      freePlayers = freePlayersDefault;
     }
-
+    let season: number;
     const tournamentsStorage = storage.getString('tournaments');
     if (tournamentsStorage && tournamentsStorage.length) {
       dispatch(updateTournaments(JSON.parse(tournamentsStorage)));
+      season = CurrentTournament(JSON.parse(tournamentsStorage)).season;
     } else {
       dispatch(updateTournaments(tournamentsDefault));
+      season = CurrentTournament(tournamentsDefault).season;
+    }
+
+    const availableTransfersStorage = storage.getString('availableTransfers');
+    if (
+      availableTransfersStorage &&
+      JSON.parse(availableTransfersStorage).season === season &&
+      JSON.parse(availableTransfersStorage).players.length
+    ) {
+      dispatch(updateAvailableTransfers(JSON.parse(availableTransfersStorage)));
+    } else {
+      dispatch(
+        updateAvailableTransfers({
+          season: season,
+          players: GetPlayersToTransfer(4, freePlayers),
+        } as AvailableTransfer),
+      );
     }
 
     const themeStorage = storage.getString('theme');

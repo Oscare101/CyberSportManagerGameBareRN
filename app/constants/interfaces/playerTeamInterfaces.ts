@@ -42,3 +42,8 @@ export interface Team {
 export interface SortByInterface {
   value: 'stat' | 'role' | 'rating' | 'team';
 }
+
+export interface AvailableTransfer {
+  season: number;
+  players: Player[];
+}
