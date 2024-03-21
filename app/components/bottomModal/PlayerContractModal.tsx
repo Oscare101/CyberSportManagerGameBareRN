@@ -4,41 +4,66 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux';
 import text from '../../constants/text';
 import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
-import {GetPlayerSalaryYear} from '../../functions/playerFunctions';
+import {
+  GetPlayerSalaryYear,
+  TerminateContract,
+} from '../../functions/playerFunctions';
 import globalStyles from '../../constants/globalStyles';
 import {
   GetMoneyAmountString,
   GetPlayersFromTeams,
 } from '../../functions/function';
+import Button from '../Button';
+import {useState} from 'react';
+import {updateFreePlayers} from '../../redux/freePlayers';
+import {useNavigation} from '@react-navigation/native';
+import {updateTeams} from '../../redux/teams';
 
 const width = Dimensions.get('screen').width;
 
 export default function PlayerContractModal(props: {
   playerName: Player['name'];
 }) {
+  const navigation: any = useNavigation();
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
 
   const teams: Team[] = useSelector((state: RootState) => state.teams);
+  const freePlayers: Player[] = useSelector(
+    (state: RootState) => state.freePlayers,
+  );
+
   const myTeam: Team = teams.find((t: Team) => t.yourTeam) as Team;
   const player: Player = myTeam.players.find(
     (p: Player) => p.name === props.playerName,
   ) as Player;
   const dispatch = useDispatch();
 
+  const [terminate, setTerminate] = useState<boolean>(false);
+
   const data: {title: string; value: string}[] = [
     {
       title: text.PlayerSalaryYear,
-      value: GetMoneyAmountString(
-        GetPlayerSalaryYear(GetPlayersFromTeams(teams), player),
-      ),
+      value: GetMoneyAmountString(player?.contract.salary || 0),
     },
     {
       title: text.ContractEnds,
-      value: `after ${player.contract.finish} season`,
+      value: `after ${player?.contract.finish} season`,
     },
   ];
+
+  function TerminateContractFunc() {
+    const teamsData: Team[] = TerminateContract(player, myTeam, teams);
+
+    const freePlayersdata: Player[] = [
+      ...freePlayers,
+      {...player, contract: {salary: 0, start: 0, finish: 0}, status: 'free'},
+    ];
+    dispatch(updateTeams(teamsData));
+    dispatch(updateFreePlayers(freePlayersdata));
+    navigation.goBack();
+  }
 
   return (
     <>
@@ -71,6 +96,32 @@ export default function PlayerContractModal(props: {
       <Text style={[styles.text, {color: colors[themeColor].greys[4]}]}>
         {text.SalaryNotPaidDescription}
       </Text>
+      <Text style={[styles.text, {color: colors[themeColor].greys[4]}]}>
+        {text.SellPlayerDescription}
+      </Text>
+      <View style={{flex: 1}} />
+      <Button
+        title={terminate ? text.ConfirmTermination : text.TerminateContract}
+        action={() => {
+          if (terminate) {
+            TerminateContractFunc();
+          } else {
+            setTerminate(true);
+          }
+        }}
+        buttonStyles={
+          terminate ? {backgroundColor: colors[themeColor].red.bg} : {}
+        }
+        titleStyles={
+          terminate
+            ? {
+                color: colors[themeColor].red.main,
+                fontWeight: '300',
+                fontSize: width * 0.06,
+              }
+            : {}
+        }
+      />
     </>
   );
 }

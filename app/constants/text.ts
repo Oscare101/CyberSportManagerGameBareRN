@@ -95,12 +95,16 @@ const text: any = {
   Expenses: 'Expenses',
   perYear: 'per year',
   AvailableTransfersDescription:
-    'Players free for transfers are updated every season. You can add any of them to your team, in order to complete the contract, it will be necessary to pay the salary for this season',
+    'Players free for transfers are updated every season. You can add any of them to your team, in order to complete the contract, it will be necessary to pay the salary for this season.',
   NoAvalableTransfers: 'There are no free transfers. Come back next season',
   BuyPlayer: 'Buy player',
   SalaryForThisSeason: 'Salary for this season',
   BuyPlayerDescription:
-    'The new player will be added to the team in benched status. Do not forget to include him in the main team if you want him to participate in tournaments',
+    'The new player will be added to the team in benched status. Do not forget to include him in the main team if you want him to participate in tournaments.',
+  SellPlayerDescription:
+    "You can terminate the contract with the player at any time. Paid player's salary for the season will not be refunded.",
+  TerminateContract: 'Terminate the contract',
+  ConfirmTermination: 'Confirm termination',
 };
 
 export default text;

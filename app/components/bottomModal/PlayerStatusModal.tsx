@@ -11,15 +11,8 @@ import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux';
 import text from '../../constants/text';
 import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
-import {
-  GetPlayerSalaryYear,
-  SetPlayerStatus,
-} from '../../functions/playerFunctions';
+import {SetPlayerStatus} from '../../functions/playerFunctions';
 import globalStyles from '../../constants/globalStyles';
-import {
-  GetMoneyAmountString,
-  GetPlayersFromTeams,
-} from '../../functions/function';
 import {IconName} from '../../constants/interfaces/iconInterfaces';
 import Icon from '../icons/Icon';
 import {updateTeams} from '../../redux/teams';

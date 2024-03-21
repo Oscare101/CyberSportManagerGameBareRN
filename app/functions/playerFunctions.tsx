@@ -186,12 +186,6 @@ export function GetPlayerContractPrice(players: Player[], player: Player) {
   );
 }
 
-export function GetPlayerSalaryMonth(players: Player[], player: Player) {
-  return Math.floor(
-    rules.mapPlayerSalary * GetPlayerRating(player, players) ** 3,
-  );
-}
-
 export function GetPlayerSalaryYear(players: Player[], player: Player) {
   return Math.floor(
     rules.mapPlayerSalary * 12 * GetPlayerRating(player, players) ** 3,
@@ -241,4 +235,19 @@ export function SetPlayersContractsInit(teams: Team[]) {
     };
   });
   return teamsData;
+}
+
+export function TerminateContract(
+  player: Player,
+  playerTeam: Team,
+  teams: Team[],
+) {
+  const myTeamData: Team = {
+    ...playerTeam,
+    players: playerTeam.players.filter((p: Player) => p.name !== player.name),
+  };
+  let newTeamsData: Team[] = teams
+    .filter((t: Team) => t.name !== playerTeam.name)
+    .concat(myTeamData);
+  return newTeamsData;
 }

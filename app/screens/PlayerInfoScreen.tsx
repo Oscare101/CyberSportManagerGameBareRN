@@ -42,7 +42,7 @@ export default function PlayerInfoScreen({navigation, route}: any) {
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
   const snapPointsInfo = useMemo(() => [width * 1.1], []);
-  const snapPointsRole = useMemo(() => [width * 1.7, '100%'], []);
+  const snapPointsRole = useMemo(() => [width * 1.7], []);
 
   const onPresentModal = useCallback(() => {
     bottomSheetModalRef.current?.present();
@@ -86,14 +86,20 @@ export default function PlayerInfoScreen({navigation, route}: any) {
           globalStyles.container,
           {backgroundColor: colors[themeColor].bg},
         ]}>
-        <Header title={player.name} action="back" />
-        <ShortInfoBlock player={player} action={onModal} />
-        <View style={[globalStyles.rowBetween, {width: '92%'}]}>
-          <Text style={[styles.comment, {color: colors[themeColor].main}]}>
-            {text.Individuals}
-          </Text>
-        </View>
-        <PlayerStatBlock player={player} action={statAction} />
+        {player ? (
+          <>
+            <Header title={player.name} action="back" />
+            <ShortInfoBlock player={player} action={onModal} />
+            <View style={[globalStyles.rowBetween, {width: '92%'}]}>
+              <Text style={[styles.comment, {color: colors[themeColor].main}]}>
+                {text.Individuals}
+              </Text>
+            </View>
+            <PlayerStatBlock player={player} action={statAction} />
+          </>
+        ) : (
+          <></>
+        )}
       </SafeAreaView>
       <BottomModalBlock
         bottomSheetModalRef={bottomSheetModalRef}

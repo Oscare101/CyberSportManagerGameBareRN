@@ -10,8 +10,6 @@ import {
 } from '../../functions/function';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
-import {GetPlayerSalaryYear} from '../../functions/playerFunctions';
-
 const width = Dimensions.get('screen').width;
 
 function ShortInfoBlock(props: {player: Player; action: any}) {
