@@ -42,7 +42,7 @@ export default function TransferAgency({navigation}: any) {
   const [modalOpened, setModalOpened] = useState<boolean>(false);
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-  const snapPoints = useMemo(() => [width * 1.1], []);
+  const snapPoints = useMemo(() => [width * 0.9], []);
 
   const onPresentModal = useCallback(() => {
     bottomSheetModalRef.current?.present();

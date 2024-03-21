@@ -19,10 +19,12 @@ import globalStyles from '../../constants/globalStyles';
 import {
   GetMoneyAmountString,
   GetPlayersFromTeams,
+  IsEnoughtMoney,
 } from '../../functions/function';
 import {IconName} from '../../constants/interfaces/iconInterfaces';
 import Icon from '../icons/Icon';
 import {updateTeams} from '../../redux/teams';
+import Button from '../Button';
 
 const width = Dimensions.get('screen').width;
 
@@ -36,11 +38,71 @@ export default function TransferModal(props: {player: Player}) {
 
   const dispatch = useDispatch();
 
+  const playerSalaryForSeason = GetPlayerSalaryYear(
+    GetPlayersFromTeams(teams),
+    props.player,
+  );
+
+  const data = [
+    {
+      title: text.SalaryForThisSeason,
+      value: GetMoneyAmountString(playerSalaryForSeason),
+    },
+    {title: text.AvailableMoney, value: GetMoneyAmountString(myTeam.bank.cash)},
+  ];
+
+  function BuyPlayerFunc() {}
+
   return (
     <>
       <Text style={[styles.title, {color: colors[themeColor].main}]}>
         {props.player.name}
       </Text>
+      {data.map((item: any, index: number) => (
+        <View
+          style={[
+            globalStyles.rowBetween,
+            {width: '92%', marginVertical: width * 0.01},
+          ]}
+          key={index}>
+          <Text style={[styles.dataTitle, {color: colors[themeColor].main}]}>
+            {item.title}
+          </Text>
+          <Text style={[styles.dataValue, {color: colors[themeColor].main}]}>
+            {item.value}
+          </Text>
+        </View>
+      ))}
+      <Text style={[styles.text, {color: colors[themeColor].greys[4]}]}>
+        {text.BuyPlayerDescription}
+      </Text>
+      <View style={{flex: 1}} />
+      <Button
+        action={BuyPlayerFunc}
+        disable={!IsEnoughtMoney(myTeam.bank.cash, playerSalaryForSeason)}
+        buttonStyles={
+          !IsEnoughtMoney(myTeam.bank.cash, playerSalaryForSeason)
+            ? {backgroundColor: colors[themeColor].red.bg}
+            : {}
+        }
+        titleStyles={
+          !IsEnoughtMoney(myTeam.bank.cash, playerSalaryForSeason)
+            ? {
+                color: colors[themeColor].red.main,
+                fontWeight: '300',
+                fontSize: width * 0.06,
+              }
+            : {}
+        }
+        title={
+          !IsEnoughtMoney(
+            myTeam.bank.cash,
+            GetPlayerSalaryYear(GetPlayersFromTeams(teams), props.player),
+          )
+            ? text.NotEnoughMoney
+            : text.BuyPlayer
+        }
+      />
     </>
   );
 }
