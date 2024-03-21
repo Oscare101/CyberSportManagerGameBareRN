@@ -25,6 +25,7 @@ import {
 } from '../constants/interfaces/playerTeamInterfaces';
 import {CurrentTournament} from '../functions/tournamentFunctions';
 import {GetPlayersToTransfer} from '../functions/function';
+import {SetPlayersContractsInit} from '../functions/playerFunctions';
 export const storage = new MMKV();
 
 const width = Dimensions.get('screen').width;
@@ -44,7 +45,7 @@ export default function LaunchScreen({navigation}: any) {
     if (teamsStorage && teamsStorage.length) {
       dispatch(updateTeams(JSON.parse(teamsStorage)));
     } else {
-      dispatch(updateTeams(teamsDefault));
+      dispatch(updateTeams(SetPlayersContractsInit(teamsDefault)));
     }
     let freePlayers: Player[];
     const freePlayersStorage = storage.getString('freePlayers');
@@ -76,7 +77,7 @@ export default function LaunchScreen({navigation}: any) {
         updateAvailableTransfers({
           season: season,
           players: GetPlayersToTransfer(4, freePlayers),
-        } as AvailableTransfer),
+        }),
       );
     }
 

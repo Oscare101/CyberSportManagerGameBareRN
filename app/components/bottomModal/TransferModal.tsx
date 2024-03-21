@@ -10,8 +10,13 @@ import colors from '../../constants/colors';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../../redux';
 import text from '../../constants/text';
-import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import {
+  AvailableTransfer,
+  Player,
+  Team,
+} from '../../constants/interfaces/playerTeamInterfaces';
+import {
+  BuyPlayer,
   GetPlayerSalaryYear,
   SetPlayerStatus,
 } from '../../functions/playerFunctions';
@@ -25,16 +30,31 @@ import {IconName} from '../../constants/interfaces/iconInterfaces';
 import Icon from '../icons/Icon';
 import {updateTeams} from '../../redux/teams';
 import Button from '../Button';
+import {updateAvailableTransfers} from '../../redux/availableTransfers';
+import {updateFreePlayers} from '../../redux/freePlayers';
+import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
+import {CurrentTournament} from '../../functions/tournamentFunctions';
 
 const width = Dimensions.get('screen').width;
 
-export default function TransferModal(props: {player: Player}) {
+export default function TransferModal(props: {player: Player; dismiss: any}) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
 
   const teams: Team[] = useSelector((state: RootState) => state.teams);
+  const tournaments: Tournament[] = useSelector(
+    (state: RootState) => state.tournaments,
+  );
+
+  const availableTransfers: AvailableTransfer = useSelector(
+    (state: RootState) => state.availableTransfers,
+  );
+
   const myTeam: Team = teams.find((t: Team) => t.yourTeam) as Team;
+  const freePlayers: Player[] = useSelector(
+    (state: RootState) => state.freePlayers,
+  );
 
   const dispatch = useDispatch();
 
@@ -51,7 +71,29 @@ export default function TransferModal(props: {player: Player}) {
     {title: text.AvailableMoney, value: GetMoneyAmountString(myTeam.bank.cash)},
   ];
 
-  function BuyPlayerFunc() {}
+  function BuyPlayerFunc() {
+    const teamsData: Team[] = BuyPlayer(
+      props.player,
+      playerSalaryForSeason,
+      myTeam,
+      teams,
+      CurrentTournament(tournaments).season,
+    );
+    const freePlayersData: Player[] = freePlayers.filter(
+      (p: Player) => p.name !== props.player.name,
+    );
+    const availableTransfersData: AvailableTransfer = {
+      ...availableTransfers,
+      players: availableTransfers.players.filter(
+        (p: Player) => p.name !== props.player.name,
+      ),
+    };
+
+    dispatch(updateTeams(teamsData));
+    dispatch(updateFreePlayers(freePlayersData));
+    dispatch(updateAvailableTransfers(availableTransfersData));
+    props.dismiss();
+  }
 
   return (
     <>

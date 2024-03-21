@@ -1,7 +1,7 @@
 import {Role, Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import rules from '../constants/rules';
-import {GetPlayerParameterRating} from './function';
+import {GetPlayerParameterRating, GetPlayersFromTeams} from './function';
 
 const statsToPractice: Stat['value'][] = ['nades', 'tactics'];
 const allStats: Stat['value'][] = [
@@ -196,4 +196,49 @@ export function GetPlayerSalaryYear(players: Player[], player: Player) {
   return Math.floor(
     rules.mapPlayerSalary * 12 * GetPlayerRating(player, players) ** 3,
   );
+}
+
+export function BuyPlayer(
+  player: Player,
+  cost: number,
+  playerTeam: Team,
+  teams: Team[],
+  season: number,
+) {
+  const myTeamData: Team = {
+    ...playerTeam,
+    players: [
+      ...playerTeam.players,
+      {
+        ...player,
+        status: 'benched',
+        contract: {salary: cost, start: season, finish: season},
+      },
+    ],
+    bank: {...playerTeam.bank, cash: playerTeam.bank.cash - cost},
+  };
+
+  let newTeamsData: Team[] = teams
+    .filter((t: Team) => t.name !== playerTeam.name)
+    .concat(myTeamData);
+  return newTeamsData;
+}
+
+export function SetPlayersContractsInit(teams: Team[]) {
+  const teamsData = teams.map((team: Team) => {
+    return {
+      ...team,
+      players: team.players.map((p: Player) => {
+        return {
+          ...p,
+          contract: {
+            salary: GetPlayerSalaryYear(GetPlayersFromTeams(teams), p),
+            start: 1,
+            finish: 1,
+          },
+        };
+      }),
+    };
+  });
+  return teamsData;
 }

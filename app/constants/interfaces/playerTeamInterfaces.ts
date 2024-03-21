@@ -23,8 +23,8 @@ export interface Player {
   status: Status['value'];
   contract: {
     salary: number;
-    start: string;
-    finish: string;
+    start: number;
+    finish: number;
   };
   stat: PlayerStatistic;
 }

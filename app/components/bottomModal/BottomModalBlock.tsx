@@ -38,7 +38,9 @@ export default function BottomModalBlock(props: BottomModalBlockProps) {
     Role: <PlayerRoleChangeModal playerName={props.data.item} />,
     Contract: <PlayerContractModal playerName={props.data.item} />,
     Status: <PlayerStatusModal playerName={props.data.item} />,
-    Transfer: <TransferModal player={props.data.item} />,
+    Transfer: (
+      <TransferModal player={props.data.item} dismiss={props.dismiss} />
+    ),
   };
 
   return (

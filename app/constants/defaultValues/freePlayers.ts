@@ -4,7 +4,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Iceberg',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.301,
@@ -18,7 +18,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'M1ner',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.486,
@@ -32,7 +32,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Vampire',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.282,
@@ -46,7 +46,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bear',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.229,
@@ -60,7 +60,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Fenix',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.346,
@@ -74,7 +74,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Riot',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.304,
@@ -88,7 +88,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Rebel',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.311,
@@ -102,7 +102,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Lynx',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.246,
@@ -116,7 +116,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Shart',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.395,
@@ -130,7 +130,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Whip',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.225,
@@ -144,7 +144,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'TheBest',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.332,
@@ -158,7 +158,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Launcher',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.347,
@@ -172,7 +172,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sky',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.373,
@@ -186,7 +186,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bell',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.241,
@@ -200,7 +200,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Brocoli',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.255,
@@ -214,7 +214,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Drill',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.362,
@@ -228,7 +228,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Catt',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.272,
@@ -242,7 +242,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Girkiy',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.48,
@@ -256,7 +256,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'L0ud',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.362,
@@ -270,7 +270,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Silent',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.442,
@@ -284,7 +284,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bruce',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.401,
@@ -298,7 +298,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Bean',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.327,
@@ -312,7 +312,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Fremen',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.469,
@@ -326,7 +326,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Snake',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.413,
@@ -340,7 +340,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'IKill',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.242,
@@ -354,7 +354,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Smoke',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.329,
@@ -368,7 +368,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Trust',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.474,
@@ -382,7 +382,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Rapid',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.226,
@@ -396,7 +396,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Laman',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.34,
@@ -410,7 +410,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Obel1x',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.371,
@@ -424,7 +424,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Point',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.329,
@@ -438,7 +438,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Frame',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.259,
@@ -452,7 +452,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sc0pe',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.339,
@@ -466,7 +466,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Force',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.265,
@@ -480,7 +480,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Magnus',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.388,
@@ -494,7 +494,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Apricity',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.331,
@@ -508,7 +508,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Lamp',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.395,
@@ -522,7 +522,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Hasky',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.475,
@@ -536,7 +536,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Electricity',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.448,
@@ -550,7 +550,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Anthony',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.307,
@@ -564,7 +564,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Parson',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.324,
@@ -578,7 +578,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Athos',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.404,
@@ -592,7 +592,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Hans',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.396,
@@ -606,7 +606,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Deirdre',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.496,
@@ -620,7 +620,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Mirand',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.395,
@@ -634,7 +634,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Edward',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.495,
@@ -648,7 +648,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Panglosss',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.244,
@@ -662,7 +662,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Romeo',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.275,
@@ -676,7 +676,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Scapit',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.273,
@@ -690,7 +690,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Halvard',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.431,
@@ -704,7 +704,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sutpen',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.324,
@@ -718,7 +718,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Tarzan',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.297,
@@ -732,7 +732,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ol1ver',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.407,
@@ -746,7 +746,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Weird',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.496,
@@ -760,7 +760,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Zorro',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.31,
@@ -774,7 +774,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Thomas',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.254,
@@ -788,7 +788,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Shadow',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.312,
@@ -802,7 +802,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Samuel',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.293,
@@ -816,7 +816,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Oberon',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.291,
@@ -830,7 +830,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Baron',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.294,
@@ -844,7 +844,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Travis',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.213,
@@ -858,7 +858,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Lochinvar',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.413,
@@ -872,7 +872,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Cupper',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.47,
@@ -886,7 +886,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Scout',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.286,
@@ -900,7 +900,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'TRex',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.42,
@@ -914,7 +914,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'BlackWater',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.333,
@@ -928,7 +928,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Hard',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.267,
@@ -942,7 +942,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Gozer',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.317,
@@ -956,7 +956,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Pr0t0n',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.371,
@@ -970,7 +970,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Argentum',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.273,
@@ -984,7 +984,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Saxon',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.327,
@@ -998,7 +998,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Conqueror',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.391,
@@ -1012,7 +1012,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Aryan',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.389,
@@ -1026,7 +1026,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'ManGo',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.311,
@@ -1040,7 +1040,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'P1tcher',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.325,
@@ -1054,7 +1054,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Defender',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.318,
@@ -1068,7 +1068,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Forward',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.232,
@@ -1082,7 +1082,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Striker',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.472,
@@ -1096,7 +1096,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Watchman',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.23,
@@ -1110,7 +1110,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'S1r',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.371,
@@ -1124,7 +1124,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Flash',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.234,
@@ -1138,7 +1138,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ranger',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.319,
@@ -1152,7 +1152,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ginger',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.256,
@@ -1166,7 +1166,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Rumor',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.272,
@@ -1180,7 +1180,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Spark',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.27,
@@ -1194,7 +1194,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Logan',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.383,
@@ -1208,7 +1208,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Luke',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.496,
@@ -1222,7 +1222,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Sawyer',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.307,
@@ -1236,7 +1236,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Goliath',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.352,
@@ -1250,7 +1250,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Beast',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.419,
@@ -1264,7 +1264,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Brutus',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.405,
@@ -1278,7 +1278,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ares',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.263,
@@ -1292,7 +1292,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Crusher',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.432,
@@ -1306,7 +1306,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Magnum',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.424,
@@ -1320,7 +1320,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Trigger',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.494,
@@ -1334,7 +1334,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Atlas',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.482,
@@ -1348,7 +1348,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Dragon',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.331,
@@ -1362,7 +1362,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Talon',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.294,
@@ -1376,7 +1376,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Ammo',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.396,
@@ -1390,7 +1390,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Soldier',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.322,
@@ -1404,7 +1404,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Chaos',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.349,
@@ -1418,7 +1418,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Carbon',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'rifler',
       reaction: 0.493,
@@ -1432,7 +1432,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Atom',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'sniper',
       reaction: 0.255,
@@ -1446,7 +1446,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Secret',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'support',
       reaction: 0.418,
@@ -1460,7 +1460,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Tractor',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.302,
@@ -1474,7 +1474,7 @@ const freePlayersDefault: Player[] = [
   {
     name: 'Mace',
     status: 'free',
-    contract: {salary: 0, start: '', finish: ''},
+    contract: {salary: 0, start: 0, finish: 0},
     stat: {
       role: 'capitan',
       reaction: 0.352,
