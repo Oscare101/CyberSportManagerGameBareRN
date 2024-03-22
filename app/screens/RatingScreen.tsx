@@ -39,7 +39,9 @@ export default function RatingScreen({navigation}: any) {
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
   const teams: Team[] = useSelector((state: RootState) => state.teams);
-  const players: Player[] = GetPlayersFromTeams(teams);
+  const players: Player[] = GetPlayersFromTeams(teams).filter(
+    (p: Player) => p.status === 'active',
+  );
 
   const [showAll, setShowAll] = useState<boolean>(false);
   const [sortBy, setSortBy] = useState<SortByInterface['value']>('stat');
