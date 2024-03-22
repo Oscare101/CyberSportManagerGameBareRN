@@ -11,6 +11,7 @@ const tournamentsDefault: Tournament[] = [
     period: 1,
     tier: 1,
     grid: [],
+    challengerRules: 'swiss16',
   },
   {
     season: 1,
@@ -22,6 +23,7 @@ const tournamentsDefault: Tournament[] = [
     period: 2,
     tier: 1,
     grid: [],
+    challengerRules: 'swiss12rating',
   },
   {
     season: 1,
@@ -33,6 +35,7 @@ const tournamentsDefault: Tournament[] = [
     period: 3,
     tier: 1,
     grid: [],
+    challengerRules: 'swiss16',
   },
   {
     season: 1,
@@ -44,6 +47,7 @@ const tournamentsDefault: Tournament[] = [
     period: 4,
     tier: 1,
     grid: [],
+    challengerRules: 'swiss16',
   },
   {
     season: 1,
@@ -55,6 +59,7 @@ const tournamentsDefault: Tournament[] = [
     period: 5,
     tier: 1,
     grid: [],
+    challengerRules: 'none',
   },
   {
     season: 1,
@@ -66,6 +71,7 @@ const tournamentsDefault: Tournament[] = [
     period: 6,
     tier: 1,
     grid: [],
+    challengerRules: 'swiss12invite',
   },
   {
     season: 1,
@@ -77,6 +83,7 @@ const tournamentsDefault: Tournament[] = [
     period: 7,
     tier: 1,
     grid: [],
+    challengerRules: 'swiss16',
   },
   {
     season: 1,
@@ -88,6 +95,7 @@ const tournamentsDefault: Tournament[] = [
     period: 1,
     tier: 2,
     grid: [],
+    challengerRules: 'none',
   },
   {
     season: 1,
@@ -99,6 +107,7 @@ const tournamentsDefault: Tournament[] = [
     period: 2,
     tier: 2,
     grid: [],
+    challengerRules: 'none',
   },
   {
     season: 1,
@@ -110,6 +119,7 @@ const tournamentsDefault: Tournament[] = [
     period: 3,
     tier: 2,
     grid: [],
+    challengerRules: 'none',
   },
   {
     season: 1,
@@ -121,6 +131,7 @@ const tournamentsDefault: Tournament[] = [
     period: 4,
     tier: 2,
     grid: [],
+    challengerRules: 'none',
   },
   {
     season: 1,
@@ -132,6 +143,7 @@ const tournamentsDefault: Tournament[] = [
     period: 5,
     tier: 2,
     grid: [],
+    challengerRules: 'none',
   },
   {
     season: 1,
@@ -143,6 +155,7 @@ const tournamentsDefault: Tournament[] = [
     period: 6,
     tier: 2,
     grid: [],
+    challengerRules: 'none',
   },
   {
     season: 1,
@@ -154,6 +167,7 @@ const tournamentsDefault: Tournament[] = [
     period: 7,
     tier: 2,
     grid: [],
+    challengerRules: 'none',
   },
 ];
 

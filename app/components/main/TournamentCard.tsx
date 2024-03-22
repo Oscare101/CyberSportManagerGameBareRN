@@ -97,7 +97,7 @@ export default function TournamentCard() {
             {text.Teams}
           </Text>
           <Text style={[styles.value, {color: colors[themeColor].main}]}>
-            {16}
+            {'##'}
           </Text>
         </View>
         {tier1 && tier2 ? (

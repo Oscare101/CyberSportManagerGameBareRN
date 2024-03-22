@@ -23,7 +23,10 @@ import {
   AvailableTransfer,
   Player,
 } from '../constants/interfaces/playerTeamInterfaces';
-import {CurrentTournament} from '../functions/tournamentFunctions';
+import {
+  CurrentTournament,
+  CurrentTournamentStage,
+} from '../functions/tournamentFunctions';
 import {GetPlayersToTransfer} from '../functions/function';
 import {SetPlayersContractsInit} from '../functions/playerFunctions';
 export const storage = new MMKV();
@@ -62,7 +65,7 @@ export default function LaunchScreen({navigation}: any) {
     const tournamentsStorage = storage.getString('tournaments');
     if (tournamentsStorage && tournamentsStorage.length) {
       dispatch(updateTournaments(JSON.parse(tournamentsStorage)));
-      season = CurrentTournament(JSON.parse(tournamentsStorage)).season;
+      season = CurrentTournamentStage(JSON.parse(tournamentsStorage))[0].season;
     } else {
       dispatch(updateTournaments(tournamentsDefault));
       season = CurrentTournament(tournamentsDefault).season;
