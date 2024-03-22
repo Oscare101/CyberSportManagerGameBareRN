@@ -53,6 +53,23 @@ export function CurrentPeriodTournament(tournaments: Tournament[]) {
   }
 }
 
+export function CurrentTournamentStage(tournaments: Tournament[]) {
+  const surrentSeason: Tournament[] = OnlyCurrentSeason(tournaments);
+  for (let i = 1; i <= 7; i++) {
+    const currentPeriod: Tournament[] = surrentSeason.filter(
+      (t: Tournament) => t.period === i,
+    );
+    if (
+      currentPeriod.every(
+        (t: Tournament) =>
+          !t.grid.length || (t.grid.length && !TournamentWinner(t)),
+      )
+    ) {
+      return currentPeriod;
+    }
+  }
+}
+
 export function CurrentTournament(tournaments: Tournament[]) {
   const current = tournaments.find(
     (t: Tournament) => t.grid.length && !TournamentWinner(t),

@@ -21,7 +21,7 @@ export default function CardsBlock({
       <Text style={[styles.title, {color: colors[themeColor].greys[2]}]}>
         {title}
       </Text>
-      <View style={styles.block}>{children}</View>
+      <View style={[styles.block]}>{children}</View>
     </>
   );
 }

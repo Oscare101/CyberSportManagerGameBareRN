@@ -57,7 +57,7 @@ export default function MainScreen({navigation}: any) {
           />
         </VerticalMainCard>
       </CardsBlock>
-      <CardsBlock title={text.Tournaments}>
+      {/* <CardsBlock title={text.Tournaments}>
         <TournamentCard />
         <View style={{width: width * 0.015}} />
         <VerticalMainCard>
@@ -74,7 +74,45 @@ export default function MainScreen({navigation}: any) {
             action={() => {}}
           />
         </VerticalMainCard>
-      </CardsBlock>
+      </CardsBlock> */}
+      <Text
+        style={{
+          color: colors[themeColor].greys[2],
+          fontSize: width * 0.05,
+          marginVertical: width * 0.015,
+        }}>
+        {text.Tournaments}
+      </Text>
+      <View
+        style={{
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '92%',
+          backgroundColor: colors[themeColor].card,
+          borderRadius: width * 0.03,
+          paddingBottom: width * 0.02,
+        }}>
+        <TournamentCard />
+        <View
+          style={[
+            globalStyles.rowBetween,
+            {paddingHorizontal: width * 0.02, height: width * 0.08},
+          ]}>
+          <SecondaryButtonCard
+            title={text.Season}
+            icon="practice"
+            iconViewNumber={tournaments[tournaments.length - 1].season}
+            action={() => {}}
+          />
+          <View style={{width: width * 0.02}} />
+          <SecondaryButtonCard
+            title={text.Archived}
+            icon="archive"
+            action={() => {}}
+          />
+        </View>
+      </View>
       <CardsBlock title={text.More}>
         <VerticalMainCard>
           <SecondaryButtonCard

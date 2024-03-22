@@ -14,9 +14,13 @@ import colors from '../../constants/colors';
 import globalStyles from '../../constants/globalStyles';
 import text from '../../constants/text';
 import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
-import {CurrentTournament} from '../../functions/tournamentFunctions';
+import {
+  CurrentTournament,
+  CurrentTournamentStage,
+} from '../../functions/tournamentFunctions';
 import CupsImage from '../icons/CupsImage';
 import {GetMoneyAmountString} from '../../functions/function';
+import {Team} from '../../constants/interfaces/playerTeamInterfaces';
 
 const width = Dimensions.get('screen').width;
 
@@ -32,11 +36,25 @@ export default function TournamentCard() {
 
   const currentTournament = CurrentTournament(tournaments);
 
+  const currentPeriod: Tournament[] = CurrentTournamentStage(
+    tournaments,
+  ) as Tournament[];
+
+  const tier1Invited: boolean = !!currentPeriod
+    .find((t: Tournament) => t.tier === 1)
+    ?.teams?.find((t: Team) => t.yourTeam);
+
+  if (tier1Invited) {
+    console.log('tier 1');
+  } else {
+    console.log('no');
+  }
+
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={() => {}}
-      style={[styles.card, {backgroundColor: colors[themeColor].card}]}>
+      style={styles.card}>
       <View style={globalStyles.columnCenter}>
         <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
           {text.Current}
@@ -45,19 +63,19 @@ export default function TournamentCard() {
           {currentTournament?.name.split(' ')[0]}
         </Text>
       </View>
-      <CupsImage cup={currentTournament.cup} size={width * 0.15} />
+      {/* <CupsImage cup={currentTournament.cup} size={width * 0.15} /> */}
       <View style={globalStyles.columnCenter}>
         <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
           {text.Prize}
         </Text>
-        <Text style={[styles.value, {color: colors[themeColor].main}]}>
+        {/* <Text style={[styles.value, {color: colors[themeColor].main}]}>
           {GetMoneyAmountString(
             currentTournament?.prizes.reduce(
               (a: number, b: number) => a + b,
               0,
             ),
           )}
-        </Text>
+        </Text> */}
       </View>
     </TouchableOpacity>
   );
@@ -66,7 +84,7 @@ export default function TournamentCard() {
 const styles = StyleSheet.create({
   card: {
     padding: width * 0.03,
-    width: '60%',
+    width: '100%',
     height: width * 0.2,
     borderRadius: width * 0.03,
     flexDirection: 'row',

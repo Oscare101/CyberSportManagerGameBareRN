@@ -54,11 +54,13 @@ export default function SecondaryButtonCard(props: {
 const styles = StyleSheet.create({
   card: {
     flex: 1,
+    height: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     borderRadius: width * 0.015,
     paddingHorizontal: '7%',
+    // width: (width * 0.86) / 2,
   },
   title: {
     fontSize: width * 0.04,
