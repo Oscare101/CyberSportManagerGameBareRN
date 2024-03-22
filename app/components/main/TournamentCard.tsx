@@ -81,6 +81,47 @@ export default function TournamentCard() {
     );
   }
 
+  function ChallengerCard() {
+    return (
+      <>
+        <View style={globalStyles.columnCenter}>
+          <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+            {text.ChallengerStage}
+          </Text>
+          <Text style={[styles.value, {color: colors[themeColor].main}]}>
+            {tier1?.name.split(' ')[0]}
+          </Text>
+        </View>
+        <View style={globalStyles.columnCenter}>
+          <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+            {text.Teams}
+          </Text>
+          <Text style={[styles.value, {color: colors[themeColor].main}]}>
+            {16}
+          </Text>
+        </View>
+        {tier1 && tier2 ? (
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+            }}>
+            <View>
+              <CupsImage cup={tier1.cup} size={width * 0.2} />
+            </View>
+            <View style={{opacity: 0.8}}>
+              <CupsImage cup={tier2.cup} size={width * 0.12} />
+            </View>
+          </View>
+        ) : (
+          <></>
+        )}
+      </>
+    );
+  }
+
   return (
     <TouchableOpacity
       activeOpacity={0.8}
@@ -91,7 +132,7 @@ export default function TournamentCard() {
       ) : tier2Invited && tier2 ? (
         <InviterCard tier={2} tournament={tier2} />
       ) : (
-        <></>
+        <ChallengerCard />
       )}
     </TouchableOpacity>
   );
@@ -99,7 +140,7 @@ export default function TournamentCard() {
 
 const styles = StyleSheet.create({
   card: {
-    padding: width * 0.03,
+    paddingHorizontal: width * 0.03,
     width: '100%',
     flex: 1,
     flexDirection: 'row',

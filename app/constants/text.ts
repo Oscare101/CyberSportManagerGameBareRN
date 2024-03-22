@@ -15,6 +15,7 @@ const text: any = {
   Theme: 'Theme',
   Players: 'Players',
   Team: 'Team',
+  Teams: 'Teams',
   NoTeam: 'No team',
   MainRoaster: 'Main roaster',
   Open: 'Open',
@@ -105,6 +106,7 @@ const text: any = {
     "You can terminate the contract with the player at any time. Paid player's salary for the season will not be refunded.",
   TerminateContract: 'Terminate the contract',
   ConfirmTermination: 'Confirm termination',
+  ChallengerStage: 'Challenger stage',
 };
 
 export default text;
