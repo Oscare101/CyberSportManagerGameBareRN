@@ -41,13 +41,27 @@ export function ActiveTournaments(tournaments: Tournament[]) {
   return activeTournaments;
 }
 
-export function CurrentTournament(tournaments: Tournament[]) {
-  const current = OnlyCurrentSeason(tournaments);
-  const filtered = current.filter((c: Tournament) => c.grid.length);
+export function CurrentPeriodTournament(tournaments: Tournament[]) {
+  const current = tournaments.find(
+    (t: Tournament) => t.grid.length && !TournamentWinner(t),
+  );
+  if (current) {
+    return current;
+  } else {
+    const next = tournaments.find((t: Tournament) => t.grid.length);
+    return next;
+  }
+}
 
-  if (!filtered.length) return current[0] as Tournament;
-  else {
-    return filtered[filtered.length - 1] as Tournament;
+export function CurrentTournament(tournaments: Tournament[]) {
+  const current = tournaments.find(
+    (t: Tournament) => t.grid.length && !TournamentWinner(t),
+  );
+  if (current) {
+    return current;
+  } else {
+    const next = tournaments.find((t: Tournament) => !t.grid.length);
+    return next;
   }
 }
 
