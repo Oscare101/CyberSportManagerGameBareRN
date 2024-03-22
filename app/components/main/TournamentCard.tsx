@@ -40,14 +40,45 @@ export default function TournamentCard() {
     tournaments,
   ) as Tournament[];
 
-  const tier1Invited: boolean = !!currentPeriod
-    .find((t: Tournament) => t.tier === 1)
-    ?.teams?.find((t: Team) => t.yourTeam);
+  const tier1 = currentPeriod.find((t: Tournament) => t.tier === 1);
+  const tier2 = currentPeriod.find((t: Tournament) => t.tier === 2);
 
-  if (tier1Invited) {
-    console.log('tier 1');
-  } else {
-    console.log('no');
+  const tier1Invited: boolean = !!tier1?.teams?.find((t: Team) => t.yourTeam);
+
+  const tier2Invited: boolean = !!tier2?.teams?.find((t: Team) => t.yourTeam);
+
+  function InviterCard(props: {tier: number; tournament: Tournament}) {
+    return (
+      <>
+        <View style={globalStyles.columnCenter}>
+          <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+            {text.Current}
+          </Text>
+          <Text style={[styles.value, {color: colors[themeColor].main}]}>
+            {props.tournament?.name.split(' ')[0]}
+          </Text>
+        </View>
+        {props.tournament?.cup ? (
+          <CupsImage cup={props.tournament.cup} size={width * 0.15} />
+        ) : (
+          <></>
+        )}
+        <View style={globalStyles.columnCenter}>
+          <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+            {text.Prize}
+          </Text>
+          <Text style={[styles.value, {color: colors[themeColor].main}]}>
+            {props.tournament?.prizes &&
+              GetMoneyAmountString(
+                props.tournament?.prizes.reduce(
+                  (a: number, b: number) => a + b,
+                  0,
+                ),
+              )}
+          </Text>
+        </View>
+      </>
+    );
   }
 
   return (
@@ -55,28 +86,13 @@ export default function TournamentCard() {
       activeOpacity={0.8}
       onPress={() => {}}
       style={styles.card}>
-      <View style={globalStyles.columnCenter}>
-        <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
-          {text.Current}
-        </Text>
-        <Text style={[styles.value, {color: colors[themeColor].main}]}>
-          {currentTournament?.name.split(' ')[0]}
-        </Text>
-      </View>
-      {/* <CupsImage cup={currentTournament.cup} size={width * 0.15} /> */}
-      <View style={globalStyles.columnCenter}>
-        <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
-          {text.Prize}
-        </Text>
-        {/* <Text style={[styles.value, {color: colors[themeColor].main}]}>
-          {GetMoneyAmountString(
-            currentTournament?.prizes.reduce(
-              (a: number, b: number) => a + b,
-              0,
-            ),
-          )}
-        </Text> */}
-      </View>
+      {tier1Invited && tier1 ? (
+        <InviterCard tier={1} tournament={tier1} />
+      ) : tier2Invited && tier2 ? (
+        <InviterCard tier={2} tournament={tier2} />
+      ) : (
+        <></>
+      )}
     </TouchableOpacity>
   );
 }
@@ -85,11 +101,11 @@ const styles = StyleSheet.create({
   card: {
     padding: width * 0.03,
     width: '100%',
-    height: width * 0.2,
-    borderRadius: width * 0.03,
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    marginBottom: width * 0.02,
   },
   comment: {fontSize: width * 0.04},
   value: {

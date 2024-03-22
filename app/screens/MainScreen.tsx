@@ -92,6 +92,7 @@ export default function MainScreen({navigation}: any) {
           backgroundColor: colors[themeColor].card,
           borderRadius: width * 0.03,
           paddingBottom: width * 0.02,
+          height: width * 0.33,
         }}>
         <TournamentCard />
         <View
