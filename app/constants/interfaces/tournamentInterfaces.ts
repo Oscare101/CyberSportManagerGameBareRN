@@ -1,8 +1,14 @@
 import {Cup} from './iconInterfaces';
 import {Team} from './playerTeamInterfaces';
 
-interface ChallengerRule {
+export interface ChallengerRule {
   value: 'swiss16' | 'swiss12invite' | 'swiss12rating' | 'none';
+}
+
+export interface ChallengerStage {
+  season: number;
+  period: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  teams: Team[];
 }
 
 export interface Tournament {

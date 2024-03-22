@@ -4,6 +4,7 @@ import teamsReducer from './teams';
 import themeReducer from './theme';
 import freePlayersReducer from './freePlayers';
 import availableTransfersReducer from './availableTransfers';
+import challengerStageReducer from './challengerStage';
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     theme: themeReducer,
     freePlayers: freePlayersReducer,
     availableTransfers: availableTransfersReducer,
+    challengerStage: challengerStageReducer,
   },
 });
 

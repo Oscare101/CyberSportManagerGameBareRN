@@ -27,13 +27,13 @@ export default function AppComponent() {
   const availableTransfers: AvailableTransfer = useSelector(
     (state: RootState) => state.availableTransfers,
   );
-
   const freePlayers: Player[] = useSelector(
     (state: RootState) => state.freePlayers,
   );
   const tournaments: Tournament[] = useSelector(
     (state: RootState) => state.tournaments,
   );
+
   useEffect(() => {
     if (teams.length) {
       storage.set('teams', JSON.stringify(teams));
