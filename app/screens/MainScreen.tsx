@@ -91,14 +91,14 @@ export default function MainScreen({navigation}: any) {
           width: '92%',
           backgroundColor: colors[themeColor].card,
           borderRadius: width * 0.03,
-          paddingBottom: width * 0.02,
+          paddingBottom: width * 0.015,
           height: width * 0.33,
         }}>
         <TournamentCard />
         <View
           style={[
             globalStyles.rowBetween,
-            {paddingHorizontal: width * 0.02, height: width * 0.08},
+            {paddingHorizontal: width * 0.015, height: width * 0.08},
           ]}>
           <SecondaryButtonCard
             title={text.Season}
@@ -106,7 +106,7 @@ export default function MainScreen({navigation}: any) {
             iconViewNumber={tournaments[tournaments.length - 1].season}
             action={() => {}}
           />
-          <View style={{width: width * 0.02}} />
+          <View style={{width: width * 0.015}} />
           <SecondaryButtonCard
             title={text.Archived}
             icon="archive"
