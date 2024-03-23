@@ -251,3 +251,28 @@ export function TerminateContract(
     .concat(myTeamData);
   return newTeamsData;
 }
+
+export function AutoSalary(teams: Team[], nextSeason: number) {
+  const newTeamsData = teams.map((t: Team) => {
+    const salaryCost = t.players.reduce(
+      (sum: number, p: Player) => sum + p.contract.salary,
+      0,
+    );
+    return {
+      ...t,
+      bank: {...t.bank, cash: t.bank.cash - salaryCost},
+      players: t.players.map((p: Player) => {
+        return {
+          ...p,
+          contract: {
+            ...p.contract,
+            start: nextSeason,
+            finish: nextSeason,
+            salary: p.contract.salary,
+          },
+        };
+      }),
+    };
+  });
+  return newTeamsData;
+}
