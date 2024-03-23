@@ -22,5 +22,5 @@ export interface Tournament {
   tier: 1 | 2;
   period: 1 | 2 | 3 | 4 | 5 | 6 | 7;
   teams?: Team[];
-  challengerRules: ChallengerRule['value'];
+  // challengerRules: ChallengerRule['value'];
 }

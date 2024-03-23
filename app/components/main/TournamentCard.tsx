@@ -31,21 +31,21 @@ export default function TournamentCard() {
   const tournaments: Tournament[] = useSelector(
     (state: RootState) => state.tournaments,
   );
+  const teams: Team[] = useSelector((state: RootState) => state.teams);
 
   const navigation: any = useNavigation();
 
   const currentTournament = CurrentTournament(tournaments);
 
-  const currentPeriod: Tournament[] = CurrentTournamentStage(
-    tournaments,
-  ) as Tournament[];
+  // const currentPeriod: Tournament[] = CurrentTournamentStage(
+  //   tournaments,
+  // ) as Tournament[];
 
-  const tier1 = currentPeriod.find((t: Tournament) => t.tier === 1);
-  const tier2 = currentPeriod.find((t: Tournament) => t.tier === 2);
+  // const tier1 = currentPeriod.find((t: Tournament) => t.tier === 1);
+  // const tier2 = currentPeriod.find((t: Tournament) => t.tier === 2);
 
-  const tier1Invited: boolean = !!tier1?.teams?.find((t: Team) => t.yourTeam);
-
-  const tier2Invited: boolean = !!tier2?.teams?.find((t: Team) => t.yourTeam);
+  // const tier1Invited: boolean = !!tier1?.teams?.find((t: Team) => t.yourTeam);
+  // const tier2Invited: boolean = !!tier2?.teams?.find((t: Team) => t.yourTeam);
 
   function InviterCard(props: {tier: number; tournament: Tournament}) {
     return (
@@ -59,6 +59,14 @@ export default function TournamentCard() {
           </Text>
           <Text style={[styles.value, {color: colors[themeColor].main}]}>
             {props.tournament?.name.split(' ')[0]}
+          </Text>
+        </View>
+        <View style={globalStyles.columnCenter}>
+          <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+            {text.Teams}
+          </Text>
+          <Text style={[styles.value, {color: colors[themeColor].main}]}>
+            {teams.length}
           </Text>
         </View>
         {props.tournament?.cup ? (
@@ -84,61 +92,62 @@ export default function TournamentCard() {
     );
   }
 
-  function ChallengerCard() {
-    return (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={() => {
-          navigation.navigate('ChallengersScreen');
-        }}
-        style={styles.card}>
-        <View style={globalStyles.columnCenter}>
-          <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
-            {text.ChallengerStage}
-          </Text>
-          <Text style={[styles.value, {color: colors[themeColor].main}]}>
-            {tier1?.name.split(' ')[0]}
-          </Text>
-        </View>
-        <View style={globalStyles.columnCenter}>
-          <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
-            {text.Teams}
-          </Text>
-          <Text style={[styles.value, {color: colors[themeColor].main}]}>
-            {'##'}
-          </Text>
-        </View>
-        {tier1 && tier2 ? (
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%',
-            }}>
-            <View>
-              <CupsImage cup={tier1.cup} size={width * 0.2} />
-            </View>
-            <View style={{opacity: 0.8}}>
-              <CupsImage cup={tier2.cup} size={width * 0.12} />
-            </View>
-          </View>
-        ) : (
-          <></>
-        )}
-      </TouchableOpacity>
-    );
-  }
+  // function ChallengerCard() {
+  //   return (
+  //     <TouchableOpacity
+  //       activeOpacity={0.8}
+  //       onPress={() => {
+  //         navigation.navigate('ChallengersScreen');
+  //       }}
+  //       style={styles.card}>
+  //       <View style={globalStyles.columnCenter}>
+  //         <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+  //           {text.ChallengerStage}
+  //         </Text>
+  //         <Text style={[styles.value, {color: colors[themeColor].main}]}>
+  //           {tier1?.name.split(' ')[0]}
+  //         </Text>
+  //       </View>
+  //       <View style={globalStyles.columnCenter}>
+  //         <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
+  //           {text.Teams}
+  //         </Text>
+  //         <Text style={[styles.value, {color: colors[themeColor].main}]}>
+  //           {'##'}
+  //         </Text>
+  //       </View>
+  //       {tier1 && tier2 ? (
+  //         <View
+  //           style={{
+  //             flexDirection: 'row',
+  //             alignItems: 'center',
+  //             justifyContent: 'center',
+  //             height: '100%',
+  //           }}>
+  //           <View>
+  //             <CupsImage cup={tier1.cup} size={width * 0.2} />
+  //           </View>
+  //           <View style={{opacity: 0.8}}>
+  //             <CupsImage cup={tier2.cup} size={width * 0.12} />
+  //           </View>
+  //         </View>
+  //       ) : (
+  //         <></>
+  //       )}
+  //     </TouchableOpacity>
+  //   );
+  // }
 
   return (
     <>
-      {tier1Invited && tier1 ? (
+      <InviterCard tier={1} tournament={currentTournament} />
+      {/* {tier1Invited && tier1 ? (
         <InviterCard tier={1} tournament={tier1} />
       ) : tier2Invited && tier2 ? (
         <InviterCard tier={2} tournament={tier2} />
       ) : (
         <ChallengerCard />
-      )}
+      )} */}
     </>
   );
 }

@@ -71,15 +71,19 @@ export function CurrentTournamentStage(tournaments: Tournament[]) {
 }
 
 export function CurrentTournament(tournaments: Tournament[]) {
-  const current = tournaments.find(
-    (t: Tournament) => t.grid.length && !TournamentWinner(t),
-  );
-  if (current) {
-    return current;
-  } else {
-    const next = tournaments.find((t: Tournament) => !t.grid.length);
-    return next;
-  }
+  const current = tournaments.filter(
+    (t: Tournament) => !TournamentWinner(t),
+  )[0];
+  return current;
+  // const current = tournaments.find(
+  //   (t: Tournament) => t.grid.length && !TournamentWinner(t),
+  // );
+  // if (current) {
+  //   return current;
+  // } else {
+  //   const next = tournaments.find((t: Tournament) => !t.grid.length);
+  //   return next;
+  // }
 }
 
 export function CanStartTournament(

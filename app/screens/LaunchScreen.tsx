@@ -65,10 +65,15 @@ export default function LaunchScreen({navigation}: any) {
     const tournamentsStorage = storage.getString('tournaments');
     if (tournamentsStorage && tournamentsStorage.length) {
       dispatch(updateTournaments(JSON.parse(tournamentsStorage)));
-      season = CurrentTournamentStage(JSON.parse(tournamentsStorage))[0].season;
+      season =
+        JSON.parse(tournamentsStorage)[
+          JSON.parse(tournamentsStorage).length - 1
+        ].season;
+      // season = CurrentTournamentStage(JSON.parse(tournamentsStorage))[0].season;
     } else {
       dispatch(updateTournaments(tournamentsDefault));
-      season = CurrentTournament(tournamentsDefault).season;
+      season = tournamentsDefault[tournamentsDefault.length - 1].season;
+      // season = CurrentTournament(tournamentsDefault).season;
     }
 
     const availableTransfersStorage = storage.getString('availableTransfers');
