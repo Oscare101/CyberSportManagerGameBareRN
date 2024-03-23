@@ -49,7 +49,10 @@ export default function TournamentCard() {
 
   function InviterCard(props: {tier: number; tournament: Tournament}) {
     return (
-      <>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => {}}
+        style={styles.card}>
         <View style={globalStyles.columnCenter}>
           <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
             {text.Current}
@@ -77,13 +80,18 @@ export default function TournamentCard() {
               )}
           </Text>
         </View>
-      </>
+      </TouchableOpacity>
     );
   }
 
   function ChallengerCard() {
     return (
-      <>
+      <TouchableOpacity
+        activeOpacity={0.8}
+        onPress={() => {
+          navigation.navigate('ChallengersScreen');
+        }}
+        style={styles.card}>
         <View style={globalStyles.columnCenter}>
           <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
             {text.ChallengerStage}
@@ -118,15 +126,12 @@ export default function TournamentCard() {
         ) : (
           <></>
         )}
-      </>
+      </TouchableOpacity>
     );
   }
 
   return (
-    <TouchableOpacity
-      activeOpacity={0.8}
-      onPress={() => {}}
-      style={styles.card}>
+    <>
       {tier1Invited && tier1 ? (
         <InviterCard tier={1} tournament={tier1} />
       ) : tier2Invited && tier2 ? (
@@ -134,7 +139,7 @@ export default function TournamentCard() {
       ) : (
         <ChallengerCard />
       )}
-    </TouchableOpacity>
+    </>
   );
 }
 
