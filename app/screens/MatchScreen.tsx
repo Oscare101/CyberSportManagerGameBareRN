@@ -2,6 +2,8 @@ import {Alert, BackHandler, StyleSheet, Text, View} from 'react-native';
 import React, {useEffect} from 'react';
 
 export default function MatchScreen({navigation, route}: any) {
+  console.log(route.params);
+
   useEffect(() => {
     const backAction = () => {
       Alert.alert('Попередження', 'Ви дійсно хочете вийти?', [

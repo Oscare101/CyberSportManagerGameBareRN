@@ -1,14 +1,23 @@
-import {ScrollView, Text, View} from 'react-native';
+import {Dimensions, ScrollView, Text, View, useColorScheme} from 'react-native';
 import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
 import {GetStageName} from '../../functions/tournamentFunctions';
 import {MapResult} from '../../constants/interfaces/matchInterfaces';
 import MatchPairBlock from './MatchPairBlock';
+import {RootState} from '../../redux';
+import {useSelector} from 'react-redux';
+import colors from '../../constants/colors';
 
 interface TournamentGridProps {
   tournament: Tournament;
 }
 
+const width = Dimensions.get('screen').width;
+
 export default function TournamentGridBlock(props: TournamentGridProps) {
+  const systemTheme = useColorScheme();
+  const theme = useSelector((state: RootState) => state.theme);
+  const themeColor: any = theme === 'system' ? systemTheme : theme;
+
   function OnMatchResults(
     mapResults: MapResult[],
     indexI: number,
@@ -41,7 +50,13 @@ export default function TournamentGridBlock(props: TournamentGridProps) {
                 alignItems: 'center',
                 justifyContent: 'space-around',
               }}>
-              <Text>{GetStageName(grid?.length)}</Text>
+              <Text
+                style={{
+                  fontSize: width * 0.03,
+                  color: colors[themeColor].main,
+                }}>
+                {GetStageName(grid?.length)}
+              </Text>
               {grid?.map((pair: any, indexJ: number) => (
                 <MatchPairBlock
                   key={indexJ}
@@ -56,6 +71,7 @@ export default function TournamentGridBlock(props: TournamentGridProps) {
                   onMatchResults={(value: MapResult[]) => {
                     OnMatchResults(value, indexI, indexJ);
                   }}
+                  theme={themeColor}
                 />
               ))}
             </View>

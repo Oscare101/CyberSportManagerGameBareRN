@@ -8,6 +8,8 @@ import {Team} from '../../constants/interfaces/playerTeamInterfaces';
 import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
 import {MapResult} from '../../constants/interfaces/matchInterfaces';
 import colors from '../../constants/colors';
+import {Theme} from '../../constants/interfaces/iconInterfaces';
+import {useNavigation} from '@react-navigation/native';
 
 interface MatchPairProps {
   team1: Team;
@@ -19,13 +21,14 @@ interface MatchPairProps {
   mapResults: MapResult[];
   onSetModal: any;
   onMatchResults: any;
+  theme: Theme['value'];
 }
 
 const width = Dimensions.get('screen').width;
 
 export default function MatchPairBlock(props: MatchPairProps) {
-  const [modal, setModal] = useState<boolean>(false);
-
+  // const [modal, setModal] = useState<boolean>(false);
+  const navigation: any = useNavigation();
   function PairTeam(pair: any) {
     return (
       <View
@@ -35,9 +38,9 @@ export default function MatchPairBlock(props: MatchPairProps) {
           borderLeftWidth: width * 0.01,
           borderLeftColor:
             GetMatchWinner(props.mapResults) === pair.team.name
-              ? colors.succesColor
+              ? colors[props.theme].green.main
               : GetMatchWinner(props.mapResults) === pair.opponent.name
-              ? colors.errorColor
+              ? colors[props.theme].red.main
               : '#00000000',
           flex: 1,
           alignItems: 'center',
@@ -47,11 +50,11 @@ export default function MatchPairBlock(props: MatchPairProps) {
         <Text
           style={[
             {
-              opacity:
+              color:
                 props.mapResults.length &&
                 GetMatchWinner(props.mapResults) !== pair.team.name
-                  ? 0.3
-                  : 1,
+                  ? colors[props.theme].comment
+                  : colors[props.theme].main,
             },
           ]}>
           {props.mapResults.length
@@ -61,11 +64,12 @@ export default function MatchPairBlock(props: MatchPairProps) {
         <Text
           style={[
             {
-              opacity:
+              color:
                 props.mapResults.length &&
                 GetMatchWinner(props.mapResults) !== pair.team.name
-                  ? 0.3
-                  : 1,
+                  ? colors[props.theme].comment
+                  : colors[props.theme].main,
+
               flex: 1,
             },
           ]}
@@ -97,7 +101,15 @@ export default function MatchPairBlock(props: MatchPairProps) {
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => {
-          setModal(true);
+          navigation.navigate('MatchScreen', {
+            team1: props.team1,
+            team2: props.team2,
+            bestOfMaps: props.bestOfMaps,
+            mapResults: props.mapResults,
+            tournament: props.tournament,
+            indexI: props.indexI,
+            indexJ: props.indexJ,
+          });
         }}
         disabled={
           !(props.team1 && props.team2) ||
