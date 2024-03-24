@@ -40,6 +40,7 @@ export default function TournamentGridBlock(props: TournamentGridProps) {
           alignItems: 'center',
           justifyContent: 'center',
           marginBottom: 40,
+          paddingLeft: width * 0.02,
         }}>
         {props.tournament.grid?.length ? (
           props.tournament.grid.map((grid: any, indexI: number) => (

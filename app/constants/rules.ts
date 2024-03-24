@@ -18,4 +18,21 @@ export default {
 
   maxPlayerPrice: 5000000,
   mapPlayerSalary: 50000,
+
+  MRsystem: 12,
+  MRovertime: 3,
+  playerReactionTimeMaxKoef: 5,
+  playerReactionTimeMinKoef: 0.6,
+  maxPlayerHealth: 100,
+  assistDamageMin: 51,
+  winnBonus: 3000,
+  lossBonus: 1400,
+  defaultGunT: 'Glock-18',
+  defaultGunCT: 'USP-S',
+  defaultCash: 1000,
+  overtimeDefaultCash: 10000,
+  maxCash: 16000,
+  armorCost: 1000,
+  cashNadesPurchaseSkip: 1000,
+  cashToChanceOfSkipBuyGun: 1500,
 };
