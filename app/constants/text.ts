@@ -109,6 +109,7 @@ const text: any = {
   ChallengerStage: 'Challenger stage',
   Start: 'Start',
   PrizePool: 'Prize pool',
+  FinishPreviousTournament: 'Fisrt finish the previous tournament',
 };
 
 export default text;

@@ -34,3 +34,17 @@ export function GetMatchWinner(newMapResults: MapResult[]) {
     return newMapResults[0].team2Players[0].team;
   }
 }
+
+export function GetMatchScoreByTeams(newMapResults: MapResult[]) {
+  const result: any = {};
+  result[`${newMapResults[0].team1Players[0].team}`] = CalculateMapWonByTeam(
+    GetMapsWinners(newMapResults),
+    newMapResults[0].team1Players[0].team,
+  );
+
+  result[`${newMapResults[0].team2Players[0].team}`] = CalculateMapWonByTeam(
+    GetMapsWinners(newMapResults),
+    newMapResults[0].team2Players[0].team,
+  );
+  return result;
+}

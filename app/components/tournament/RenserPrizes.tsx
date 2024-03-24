@@ -1,4 +1,4 @@
-import {Dimensions, FlatList, Text, View} from 'react-native';
+import {Dimensions, FlatList, Text, View, useColorScheme} from 'react-native';
 import {useSelector} from 'react-redux';
 import TournamentWinner, {
   GetTeamsInPlaces,
@@ -7,6 +7,8 @@ import {GetMatchWinner} from '../../functions/gameFunctions';
 import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
 import TeamImage from '../icons/TeamImage';
 import {memo} from 'react';
+import colors from '../../constants/colors';
+import {RootState} from '../../redux';
 
 const width = Dimensions.get('screen').width;
 
@@ -15,11 +17,14 @@ interface PrizesProps {
 }
 
 function RenderPrizes(props: PrizesProps) {
+  const systemTheme = useColorScheme();
+  const theme = useSelector((state: RootState) => state.theme);
+  const themeColor: any = theme === 'system' ? systemTheme : theme;
   function RenderPrizeItem(item: any) {
     return (
       <View
         style={{
-          backgroundColor: '#eee',
+          backgroundColor: colors[themeColor].card,
           width: (width * 0.92) / 2 - width * 0.02,
           marginLeft: item.index % 2 == 1 ? width * 0.04 : 0,
           marginTop: width * 0.04,
@@ -30,7 +35,7 @@ function RenderPrizes(props: PrizesProps) {
           borderRadius: 5,
           overflow: 'hidden',
         }}>
-        <Text style={{fontSize: width * 0.04}}>
+        <Text style={{fontSize: width * 0.04, color: colors[themeColor].main}}>
           {item.index === 0
             ? '1st'
             : item.index === 1
@@ -55,7 +60,12 @@ function RenderPrizes(props: PrizesProps) {
           <></>
         )}
 
-        <Text style={{fontSize: width * 0.05, fontWeight: '500'}}>
+        <Text
+          style={{
+            fontSize: width * 0.05,
+            fontWeight: '500',
+            color: colors[themeColor].main,
+          }}>
           {item.item.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} $
         </Text>
       </View>

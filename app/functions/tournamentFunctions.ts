@@ -221,3 +221,8 @@ export function GetTeamsInPlaces(tournament: Tournament) {
     return [];
   }
 }
+
+export function GetStageName(pairs: number) {
+  const stage: any = ['Final', 'Semi-Final', 'Quarter-Final', 'Qualification'];
+  return stage[Math.log2(pairs)];
+}

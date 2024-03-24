@@ -1,8 +1,15 @@
-import {ScrollView, StyleSheet, Text, View, useColorScheme} from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  useColorScheme,
+} from 'react-native';
 import React, {useCallback, useState} from 'react';
 import globalStyles from '../constants/globalStyles';
 import {RootState} from '../redux';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import colors from '../constants/colors';
 import Header from '../components/Header';
 import text from '../constants/text';
@@ -10,10 +17,21 @@ import TournamentTopBlock from '../components/tournament/TournamentTopBlock';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
 import RenderPrizes from '../components/tournament/RenserPrizes';
 import PageSelectionBlock from '../components/tournament/PageSelectionBlock';
+import {updateTournaments} from '../redux/tournaments';
+import {
+  CanStartTournament,
+  MakeTournamentSingleEliminationGrid,
+} from '../functions/tournamentFunctions';
+import {Team} from '../constants/interfaces/playerTeamInterfaces';
+import TournamentGridBlock from '../components/tournament/TournamentGridBlock';
+import {ScrollView} from 'react-native-gesture-handler';
+import StartTournamentBlock from '../components/tournament/StartTournamentBlock';
 
 interface PageInterface {
-  value: 'grid';
+  value: 'grid' | 'prize';
 }
+
+const width = Dimensions.get('screen').width;
 
 export default function TournamentScreen({navigation, route}: any) {
   const systemTheme = useColorScheme();
@@ -22,7 +40,8 @@ export default function TournamentScreen({navigation, route}: any) {
   const tournaments: Tournament[] = useSelector(
     (state: RootState) => state.tournaments,
   );
-
+  const teams: Team[] = useSelector((state: RootState) => state.teams);
+  const dispatch = useDispatch();
   const [page, setPage] = useState<PageInterface['value']>('grid');
 
   function GetCurrentTournament() {
@@ -41,6 +60,14 @@ export default function TournamentScreen({navigation, route}: any) {
     [page],
   );
 
+  //  function AutoMatch() {
+  //    dispatch(
+  //      updateTournaments(
+  //        AutoMatchColumn(GetCurrentTournament(), tournaments, bestOfMaps),
+  //      ),
+  //    );
+  //  }
+
   return (
     <View
       style={[
@@ -51,7 +78,21 @@ export default function TournamentScreen({navigation, route}: any) {
       <ScrollView showsVerticalScrollIndicator={false} style={{width: '100%'}}>
         <TournamentTopBlock tournament={route.params.tournament} />
         <PageSelectionBlock page={page} setPage={setNewPage} />
-        <RenderPrizes tournament={GetCurrentTournament()} />
+
+        <View style={page === 'grid' ? {} : {display: 'none'}}>
+          {GetCurrentTournament() &&
+          GetCurrentTournament()?.grid &&
+          GetCurrentTournament()?.grid.length ? (
+            <TournamentGridBlock
+              tournament={GetCurrentTournament() as Tournament}
+            />
+          ) : (
+            <StartTournamentBlock tournament={GetCurrentTournament()} />
+          )}
+        </View>
+        <View style={page === 'prize' ? {} : {display: 'none'}}>
+          <RenderPrizes tournament={GetCurrentTournament()} />
+        </View>
       </ScrollView>
     </View>
   );

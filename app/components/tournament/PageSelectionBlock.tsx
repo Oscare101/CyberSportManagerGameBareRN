@@ -24,6 +24,7 @@ export default function PageSelectionBlock(props: {
 
   const data = [
     {title: 'Grid', value: 'grid'},
+    {title: 'Prize', value: 'prize'},
     {title: 'Ratings', value: 'rating'},
   ];
 
@@ -32,7 +33,7 @@ export default function PageSelectionBlock(props: {
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => props.setPage(item.value)}
-        style={[styles.button]}>
+        style={[styles.button, {width: (width * 0.92) / data.length}]}>
         <View
           style={[
             styles.view,
@@ -79,7 +80,6 @@ const styles = StyleSheet.create({
     marginTop: width * 0.02,
   },
   button: {
-    width: '50%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
