@@ -34,27 +34,6 @@ export default function MatchScreen({navigation, route}: any) {
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
 
-  useEffect(() => {
-    const backAction = () => {
-      Alert.alert('Попередження', 'Ви дійсно хочете вийти?', [
-        {
-          text: 'Скасувати',
-          onPress: () => null,
-          style: 'cancel',
-        },
-        {text: 'Так', onPress: () => navigation.goBack()},
-      ]);
-      return true;
-    };
-
-    const backHandler = BackHandler.addEventListener(
-      'hardwareBackPress',
-      backAction,
-    );
-
-    return () => backHandler.remove();
-  }, []);
-
   const [team1Players, setTeam1Players] = useState<InRoundPlayer[]>(
     PrepareTeam(route.params.team1, CalculateSide(1)[0]),
   );
@@ -74,6 +53,21 @@ export default function MatchScreen({navigation, route}: any) {
     route.params.mapResults,
   );
   const [mapsResultsToShow, setMapsResultsToShow] = useState<number>(0);
+
+  useEffect(() => {
+    const backAction = () => {
+      if (isGameActive) {
+        return true;
+      }
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+    return () => backHandler.remove();
+  }, [isGameActive]);
 
   function PrepareForMap() {
     setTeam1Players(

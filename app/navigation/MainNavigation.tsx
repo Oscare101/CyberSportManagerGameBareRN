@@ -163,7 +163,7 @@ export default function MainNavigation() {
           headerLeft: () => null,
           animationEnabled: true,
           gestureDirection: 'horizontal',
-          gestureEnabled: true,
+          gestureEnabled: false,
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}
         name="MatchScreen"
