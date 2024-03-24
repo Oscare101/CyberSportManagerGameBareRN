@@ -196,3 +196,28 @@ export function MakeSwissGrid(teams: any) {
   }
   return grid;
 }
+
+export function GetTeamsInPlaces(tournament: Tournament) {
+  TournamentWinner(tournament);
+  let teamsArr: any = TournamentWinner(tournament)
+    ? [TournamentWinner(tournament)]
+    : [''];
+  if (tournament.grid) {
+    for (let i = tournament.grid.length - 1; i >= 0; i--) {
+      tournament.grid[i].forEach((pair: any) => {
+        if (pair?.mapResults?.length) {
+          teamsArr.push(
+            GetMatchWinner(pair.mapResults) === pair.team1.name
+              ? pair.team2.name
+              : pair.team1.name,
+          );
+        } else {
+          teamsArr.push('');
+        }
+      });
+    }
+    return teamsArr;
+  } else {
+    return [];
+  }
+}
