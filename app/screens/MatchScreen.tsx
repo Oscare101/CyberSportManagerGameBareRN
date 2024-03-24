@@ -25,6 +25,7 @@ import {
   PrepareTeam,
 } from '../functions/gameFunctions';
 import MatchStatPerMapBlock from '../components/match/MatchStatPerMapBlock';
+import RoundsLogBlock from '../components/match/RoundsLogBlock';
 
 const width = Dimensions.get('screen').width;
 
@@ -264,42 +265,15 @@ export default function MatchScreen({navigation, route}: any) {
           }
           teamNumber={1}
         />
-        <View
-          style={{
-            flexDirection: 'row',
-            width: '95%',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-          }}>
-          <FlatList
-            style={{
-              width: '100%',
-              height: width / 12,
-            }}
-            horizontal
-            initialNumToRender={
-              !isGameActive && mapsResults.length
-                ? mapsResults[mapsResultsToShow - 1]?.roundWinLogs.length || 0
-                : roundWinLogs.length
-            }
-            data={
-              !isGameActive && mapsResults.length
-                ? mapsResults[mapsResultsToShow - 1]?.roundWinLogs || []
-                : roundWinLogs
-            }
-            renderItem={({item, index}) =>
-              RenderRoundWiner(
-                item,
-                index,
-                !isGameActive && mapsResults.length
-                  ? mapsResults[mapsResultsToShow - 1]?.roundWinLogs || []
-                  : roundWinLogs,
-                route.params.team1.name,
-                route.params.team2.name,
-              )
-            }
-          />
-        </View>
+        <RoundsLogBlock
+          isGameActive={isGameActive}
+          mapsResults={mapsResults}
+          mapsResultsToShow={mapsResultsToShow}
+          roundWinLogs={roundWinLogs}
+          team1Name={route.params.team1.name}
+          team2Name={route.params.team2.name}
+        />
+
         <TeamBlock
           team={team2Players}
           rounds={team1Score + team2Score}
