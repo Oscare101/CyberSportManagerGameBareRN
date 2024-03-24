@@ -14,6 +14,7 @@ import FinancesScreen from '../screens/FinancesScreen';
 import TransferAgency from '../screens/TransferAgency';
 import ChallengersScreen from '../screens/ChallengersScreen';
 import TournamentScreen from '../screens/TournamentScreen';
+import SeasonScreen from '../screens/SeasonScreen';
 
 const Stack = createStackNavigator();
 
@@ -142,6 +143,18 @@ export default function MainNavigation() {
         }}
         name="TournamentScreen"
         component={TournamentScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+          headerLeft: () => null,
+          animationEnabled: true,
+          gestureDirection: 'horizontal',
+          gestureEnabled: true,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="SeasonScreen"
+        component={SeasonScreen}
       />
     </Stack.Navigator>
   );

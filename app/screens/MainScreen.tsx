@@ -104,7 +104,11 @@ export default function MainScreen({navigation}: any) {
             title={text.Season}
             icon="practice"
             iconViewNumber={tournaments[tournaments.length - 1].season}
-            action={() => {}}
+            action={() => {
+              navigation.navigate('SeasonScreen', {
+                season: tournaments[tournaments.length - 1].season,
+              });
+            }}
           />
           <View style={{width: width * 0.015}} />
           <SecondaryButtonCard
