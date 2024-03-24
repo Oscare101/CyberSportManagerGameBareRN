@@ -62,7 +62,7 @@ export default function RenderTournamentItem(props: {
           {width: '92%', paddingVertical: width * 0.01},
         ]}>
         <CupsImage cup={tournament.cup} size={width * 0.15} />
-        <View style={globalStyles.columnCenter}>
+        <View style={[globalStyles.columnCenter, {width: '25%'}]}>
           <Text style={[styles.value, {color: colors[props.theme].main}]}>
             {GetMoneyAmountString(
               tournament.prizes.reduce((sum: number, p: number) => sum + p, 0),
@@ -72,7 +72,7 @@ export default function RenderTournamentItem(props: {
             {text.Prize}
           </Text>
         </View>
-        <View style={globalStyles.columnCenter}>
+        <View style={[globalStyles.columnCenter, {width: '25%'}]}>
           <Text style={[styles.value, {color: colors[props.theme].main}]}>
             {props.teams.length}
           </Text>
@@ -81,7 +81,7 @@ export default function RenderTournamentItem(props: {
           </Text>
         </View>
         {activeTournament ? (
-          <View style={globalStyles.columnCenter}>
+          <View style={[globalStyles.columnCenter, {width: width * 0.1}]}>
             <Text>-</Text>
           </View>
         ) : canStartTournament ? (
@@ -91,15 +91,14 @@ export default function RenderTournamentItem(props: {
               {borderColor: colors[props.theme].main},
             ]}>
             <Text
-              style={[
-                styles.startButtonTitle,
-                {color: colors[props.theme].main},
-              ]}>
+              style={[styles.startButtonTitle, {color: colors[props.theme].m}]}>
               {text.Start}
             </Text>
           </View>
         ) : (
-          <></>
+          <View style={[globalStyles.columnCenter, {width: width * 0.1}]}>
+            <Text>+</Text>
+          </View>
         )}
       </View>
     </TouchableOpacity>

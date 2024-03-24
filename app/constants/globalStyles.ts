@@ -38,6 +38,11 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  columnEvenly: {
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
   columnEnd: {
     flexDirection: 'column',
     justifyContent: 'center',

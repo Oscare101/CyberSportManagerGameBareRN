@@ -12,6 +12,7 @@ import {useSelector} from 'react-redux';
 import colors from '../constants/colors';
 import Header from '../components/Header';
 import text from '../constants/text';
+import TournamentTopBlock from '../components/tournament/TournamentTopBlock';
 
 export default function TournamentScreen({navigation, route}: any) {
   const systemTheme = useColorScheme();
@@ -25,6 +26,7 @@ export default function TournamentScreen({navigation, route}: any) {
         {backgroundColor: colors[themeColor].bg},
       ]}>
       <Header title={route.params.tournament.name} action="back" />
+      <TournamentTopBlock tournament={route.params.tournament} />
     </SafeAreaView>
   );
 }

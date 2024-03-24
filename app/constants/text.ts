@@ -108,6 +108,7 @@ const text: any = {
   ConfirmTermination: 'Confirm termination',
   ChallengerStage: 'Challenger stage',
   Start: 'Start',
+  PrizePool: 'Prize pool',
 };
 
 export default text;
