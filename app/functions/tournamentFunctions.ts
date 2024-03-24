@@ -86,6 +86,10 @@ export function CurrentTournament(tournaments: Tournament[]) {
   // }
 }
 
+export function IsTournamentActive(tournament: Tournament) {
+  return tournament.grid.length && !TournamentWinner(tournament);
+}
+
 export function CanStartTournament(
   tournaments: Tournament[],
   tournament: Tournament,

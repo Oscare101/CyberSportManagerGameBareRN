@@ -14,6 +14,10 @@ import text from '../../constants/text';
 import CupsImage from '../icons/CupsImage';
 import {GetMoneyAmountString} from '../../functions/function';
 import {Team} from '../../constants/interfaces/playerTeamInterfaces';
+import {
+  CanStartTournament,
+  IsTournamentActive,
+} from '../../functions/tournamentFunctions';
 
 const width = Dimensions.get('screen').width;
 
@@ -22,8 +26,14 @@ export default function RenderTournamentItem(props: {
   theme: Theme['value'];
   teams: Team[];
   navigate: any;
+  tournaments: Tournament[];
 }) {
   const tournament: Tournament = props.item;
+  const activeTournament: boolean = IsTournamentActive(tournament);
+  const canStartTournament: boolean = CanStartTournament(
+    props.tournaments,
+    tournament,
+  );
 
   return (
     <TouchableOpacity
@@ -70,9 +80,27 @@ export default function RenderTournamentItem(props: {
             {text.Teams}
           </Text>
         </View>
-        <View style={globalStyles.columnCenter}>
-          <Text>-</Text>
-        </View>
+        {activeTournament ? (
+          <View style={globalStyles.columnCenter}>
+            <Text>-</Text>
+          </View>
+        ) : canStartTournament ? (
+          <View
+            style={[
+              styles.startButton,
+              {borderColor: colors[props.theme].main},
+            ]}>
+            <Text
+              style={[
+                styles.startButtonTitle,
+                {color: colors[props.theme].main},
+              ]}>
+              {text.Start}
+            </Text>
+          </View>
+        ) : (
+          <></>
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -99,5 +127,16 @@ const styles = StyleSheet.create({
   comment: {
     fontSize: width * 0.04,
     fontWeight: '300',
+  },
+  startButton: {
+    width: width * 0.1,
+    aspectRatio: 1,
+    borderWidth: 1,
+    borderRadius: width * 0.1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  startButtonTitle: {
+    fontSize: width * 0.03,
   },
 });

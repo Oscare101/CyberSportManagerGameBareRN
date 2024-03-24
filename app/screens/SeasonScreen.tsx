@@ -47,6 +47,7 @@ export default function SeasonScreen({navigation, route}: any) {
             navigate={() => {
               navigation.navigate('TournamentScreen', {tournament: item.item});
             }}
+            tournaments={tournaments}
           />
         )}
       />

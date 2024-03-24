@@ -107,6 +107,7 @@ const text: any = {
   TerminateContract: 'Terminate the contract',
   ConfirmTermination: 'Confirm termination',
   ChallengerStage: 'Challenger stage',
+  Start: 'Start',
 };
 
 export default text;
