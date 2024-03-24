@@ -43,7 +43,9 @@ function Header(props: {title: string; action: 'back' | 'none'}) {
       ) : (
         <></>
       )}
-      <Text style={[styles.title, {color: colors[themeColor].main}]}>
+      <Text
+        numberOfLines={1}
+        style={[styles.title, {color: colors[themeColor].main}]}>
         {props.title}
       </Text>
     </View>

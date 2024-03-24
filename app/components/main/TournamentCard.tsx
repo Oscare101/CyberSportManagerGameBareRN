@@ -51,7 +51,11 @@ export default function TournamentCard() {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => {}}
+        onPress={() => {
+          navigation.navigate('TournamentScreen', {
+            tournament: props.tournament,
+          });
+        }}
         style={styles.card}>
         <View style={globalStyles.columnCenter}>
           <Text style={[styles.comment, {color: colors[themeColor].comment}]}>
