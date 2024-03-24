@@ -6,6 +6,7 @@ import TournamentWinner, {
 import {GetMatchWinner} from '../../functions/gameFunctions';
 import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
 import TeamImage from '../icons/TeamImage';
+import {memo} from 'react';
 
 const width = Dimensions.get('screen').width;
 
@@ -13,7 +14,7 @@ interface PrizesProps {
   tournament: Tournament;
 }
 
-export default function RenderPrizes(props: PrizesProps) {
+function RenderPrizes(props: PrizesProps) {
   function RenderPrizeItem(item: any) {
     return (
       <View
@@ -63,7 +64,7 @@ export default function RenderPrizes(props: PrizesProps) {
 
   return (
     <FlatList
-      style={{width: '92%', marginBottom: 20}}
+      style={{width: '92%', marginBottom: 20, alignSelf: 'center'}}
       data={props.tournament.prizes}
       renderItem={RenderPrizeItem}
       numColumns={2}
@@ -71,3 +72,5 @@ export default function RenderPrizes(props: PrizesProps) {
     />
   );
 }
+
+export default memo(RenderPrizes);

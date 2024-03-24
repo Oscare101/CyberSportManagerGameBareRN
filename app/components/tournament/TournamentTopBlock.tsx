@@ -5,6 +5,7 @@ import colors from '../../constants/colors';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
 import {Team} from '../../constants/interfaces/playerTeamInterfaces';
+import {memo} from 'react';
 
 const width = Dimensions.get('screen').width;
 
@@ -12,7 +13,7 @@ interface TournamentInfoProps {
   tournament: Tournament;
 }
 
-export default function TournamentTopBlock(props: TournamentInfoProps) {
+function TournamentTopBlock(props: TournamentInfoProps) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
@@ -98,3 +99,5 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 });
+
+export default memo(TournamentTopBlock);
