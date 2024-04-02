@@ -22,14 +22,19 @@ import {useSelector} from 'react-redux';
 import {
   BuyBeforeRound,
   CalculateSide,
+  InstantMatchResults,
   PrepareTeam,
 } from '../functions/gameFunctions';
 import MatchStatPerMapBlock from '../components/match/MatchStatPerMapBlock';
 import RoundsLogBlock from '../components/match/RoundsLogBlock';
 import Button from '../components/Button';
 import text from '../constants/text';
+import rules from '../constants/rules';
+import MatchHeader from '../components/match/MatchHeader';
+import BackHeader from '../components/match/BackHeader';
 
 const width = Dimensions.get('screen').width;
+const bestOfMaps: number = 3;
 
 export default function MatchScreen({navigation, route}: any) {
   const systemTheme = useColorScheme();
@@ -219,22 +224,26 @@ export default function MatchScreen({navigation, route}: any) {
 
   return (
     <View style={[styles.container, {backgroundColor: colors[themeColor].bg}]}>
-      {/* {!isGameActive && !mapsResults.length ? (
-        <BackHeader onBack={() => props.onBack()} />
+      {!isGameActive && !mapsResults.length ? (
+        <>
+          <BackHeader />
+        </>
       ) : (
-        <MatchHeader
-          team1={team1Players}
-          team2={team2Players}
-          team1Score={team1Score}
-          team2Score={team2Score}
-          bestOfMaps={props.bestOfMaps}
-          mapResults={mapsResults}
-          team1Side={team1Side}
-          team2Side={team2Side}
-          isGameActive={isGameActive}
-          overtimes={overtimeRounds}
-        />
-      )} */}
+        <>
+          <MatchHeader
+            team1={team1Players}
+            team2={team2Players}
+            team1Score={team1Score}
+            team2Score={team2Score}
+            bestOfMaps={bestOfMaps}
+            mapResults={mapsResults}
+            team1Side={team1Side}
+            team2Side={team2Side}
+            isGameActive={isGameActive}
+            overtimes={overtimeRounds}
+          />
+        </>
+      )}
 
       {!isGameActive && mapsResults.length ? (
         <MatchStatPerMapBlock
@@ -288,20 +297,21 @@ export default function MatchScreen({navigation, route}: any) {
         <Button
           title={text.SkipToResults}
           action={() => {
-            // const mapsResultsLog = InstantMatchResults({
-            //   team1: team1Players,
-            //   team2: team2Players,
-            //   score1: team1Score,
-            //   score2: team2Score,
-            //   overtimes: overtimeRounds,
-            //   team1Sideplay: team1Side,
-            //   team2Sideplay: team2Side,
-            //   winLogs: roundWinLogs,
-            //   mapsResultsLog: mapsResults,
-            //   bestOfMaps: route.params.bestOfMaps,
-            // });
-            // setMapsResults(mapsResultsLog);
-            // setIsGameActive(false);
+            const mapsResultsLog = InstantMatchResults({
+              team1: team1Players,
+              team2: team2Players,
+              score1: team1Score,
+              score2: team2Score,
+              overtimes: overtimeRounds,
+              team1Sideplay: team1Side,
+              team2Sideplay: team2Side,
+              winLogs: roundWinLogs,
+              mapsResultsLog: mapsResults,
+              bestOfMaps: route.params.bestOfMaps,
+            });
+
+            setMapsResults(mapsResultsLog);
+            setIsGameActive(false);
           }}
         />
       ) : (
