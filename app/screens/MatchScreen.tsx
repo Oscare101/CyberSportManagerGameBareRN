@@ -26,6 +26,8 @@ import {
 } from '../functions/gameFunctions';
 import MatchStatPerMapBlock from '../components/match/MatchStatPerMapBlock';
 import RoundsLogBlock from '../components/match/RoundsLogBlock';
+import Button from '../components/Button';
+import text from '../constants/text';
 
 const width = Dimensions.get('screen').width;
 
@@ -216,7 +218,7 @@ export default function MatchScreen({navigation, route}: any) {
   }, [lastUpdate, isGameActive]);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colors[themeColor].bg}]}>
       {/* {!isGameActive && !mapsResults.length ? (
         <BackHeader onBack={() => props.onBack()} />
       ) : (
@@ -283,29 +285,25 @@ export default function MatchScreen({navigation, route}: any) {
       </View>
       <View style={{flex: 1}} />
       {isGameActive ? (
-        <>
-          <TouchableOpacity
-            onPress={() => {
-              // const mapsResultsLog = InstantMatchResults({
-              //   team1: team1Players,
-              //   team2: team2Players,
-              //   score1: team1Score,
-              //   score2: team2Score,
-              //   overtimes: overtimeRounds,
-              //   team1Sideplay: team1Side,
-              //   team2Sideplay: team2Side,
-              //   winLogs: roundWinLogs,
-              //   mapsResultsLog: mapsResults,
-              //   bestOfMaps: route.params.bestOfMaps,
-              // });
-              // setMapsResults(mapsResultsLog);
-              // setIsGameActive(false);
-            }}
-            activeOpacity={0.8}
-            style={styles.skipButton}>
-            <Text style={styles.skipTitle}>Skip to results {'>>>'}</Text>
-          </TouchableOpacity>
-        </>
+        <Button
+          title={text.SkipToResults}
+          action={() => {
+            // const mapsResultsLog = InstantMatchResults({
+            //   team1: team1Players,
+            //   team2: team2Players,
+            //   score1: team1Score,
+            //   score2: team2Score,
+            //   overtimes: overtimeRounds,
+            //   team1Sideplay: team1Side,
+            //   team2Sideplay: team2Side,
+            //   winLogs: roundWinLogs,
+            //   mapsResultsLog: mapsResults,
+            //   bestOfMaps: route.params.bestOfMaps,
+            // });
+            // setMapsResults(mapsResultsLog);
+            // setIsGameActive(false);
+          }}
+        />
       ) : (
         <>
           {mapsResults.length ? (
@@ -320,27 +318,18 @@ export default function MatchScreen({navigation, route}: any) {
               ]}>
               <Text
                 style={[styles.skipTitle, {color: colors[themeColor].TSide}]}>
-                Back
+                Back ??????????????
               </Text>
             </TouchableOpacity>
           ) : (
-            <TouchableOpacity
-              onPress={() => {
+            <Button
+              title={text.StartTheMatch}
+              action={() => {
                 setMapsResults([]);
                 PrepareForMap();
-
                 setIsGameActive(true);
               }}
-              activeOpacity={0.8}
-              style={[
-                styles.skipButton,
-                {borderColor: colors[themeColor].CTSide},
-              ]}>
-              <Text
-                style={[styles.skipTitle, {color: colors[themeColor].TSide}]}>
-                Start the match
-              </Text>
-            </TouchableOpacity>
+            />
           )}
         </>
       )}

@@ -110,6 +110,8 @@ const text: any = {
   Start: 'Start',
   PrizePool: 'Prize pool',
   FinishPreviousTournament: 'Fisrt finish the previous tournament',
+  StartTheMatch: 'Start the match',
+  SkipToResults: 'Skip to results',
 };
 
 export default text;
