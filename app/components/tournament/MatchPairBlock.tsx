@@ -127,11 +127,22 @@ export default function MatchPairBlock(props: MatchPairProps) {
           justifyContent: 'center',
           borderRadius: width * 0.01,
           overflow: 'hidden',
-          backgroundColor: '#fff',
+          backgroundColor: colors[props.theme].card,
           margin: width * 0.02,
           elevation: accentPair ? 5 : 1,
           borderWidth: 1,
-          borderColor: accentPair ? '#000' : '#eee',
+          borderColor: accentPair
+            ? colors[props.theme].main
+            : colors[props.theme].greys[4],
+          opacity:
+            !(props.team1 && props.team2) ||
+            !(
+              props.team1.yourTeam ||
+              props.team2.yourTeam ||
+              props.mapResults.length
+            )
+              ? 0.5
+              : 1,
         }}>
         <PairTeam team={props.team1} opponent={props.team2} />
         <PairTeam team={props.team2} opponent={props.team1} />
