@@ -10,29 +10,61 @@ export default function TeamHeader(props: any) {
         styles.teamBlock,
         {
           backgroundColor:
-            props.teamSide === 'CT' ? colors.CTColor : colors.TColor,
+            props.teamSide === 'CT'
+              ? colors[props.theme].CTSide
+              : colors[props.theme].TSide,
         },
       ]}>
-      <Text style={styles.teamName}>{props.teamName}</Text>
-      <Text style={styles.teamStat}>+</Text>
-      <Text style={styles.teamStat}>gun</Text>
-      <Text style={styles.teamStat}>nades</Text>
-      <Text style={styles.teamStat}>$</Text>
-      <Text style={styles.teamStat}>armor</Text>
-      <Text style={styles.teamStat}>K</Text>
-      <Text style={styles.teamStat}>A</Text>
-      <Text style={styles.teamStat}>D</Text>
+      <Text style={[styles.teamName, {color: colors[props.theme].card}]}>
+        {props.teamName}
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        +
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        gun
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        nades
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        $
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        armor
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        K
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        A
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].card}]}>
+        D
+      </Text>
     </View>
   );
 
   const resultHeader = (
     <View style={[styles.teamBlock]}>
-      <Text style={[styles.teamName, {color: '#000'}]}>{props.teamName}</Text>
-      <Text style={[styles.teamStat, {color: '#000'}]}>K-D</Text>
-      <Text style={[styles.teamStat, {color: '#000'}]}>+/-</Text>
-      <Text style={[styles.teamStat, {color: '#000'}]}>ADR</Text>
-      <Text style={[styles.teamStat, {color: '#000'}]}>KAST</Text>
-      <Text style={[styles.teamStat, {color: '#000'}]}>rating</Text>
+      <Text style={[styles.teamName, {color: colors[props.theme].main}]}>
+        {props.teamName}
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].main}]}>
+        K-D
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].main}]}>
+        +/-
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].main}]}>
+        ADR
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].main}]}>
+        KAST
+      </Text>
+      <Text style={[styles.teamStat, {color: colors[props.theme].main}]}>
+        rating
+      </Text>
     </View>
   );
 

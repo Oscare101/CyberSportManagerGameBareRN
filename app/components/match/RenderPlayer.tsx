@@ -23,7 +23,9 @@ export default function RenderPlayer(
             teamSide === 'CT' ? colors[theme].CTSide : colors[theme].TSide,
         },
       ]}>
-      <Text style={styles.playerName}>{player.name}</Text>
+      <Text style={[styles.playerName, {color: colors[theme].card}]}>
+        {player.name}
+      </Text>
       <View style={[styles.healthBlock]}>
         {/* <HealthBlock health={player.health} /> */}
       </View>
@@ -37,7 +39,9 @@ export default function RenderPlayer(
       <View style={{width: '10%', height: '100%'}}>
         {/* <NadesBlock nades={player.nades} /> */}
       </View>
-      <Text style={styles.playerStat}>{player.cash}</Text>
+      <Text style={[styles.playerStat, {color: colors[theme].card}]}>
+        {player.cash}
+      </Text>
       <View
         style={{
           width: '10%',
@@ -55,9 +59,15 @@ export default function RenderPlayer(
           }}
         />
       </View>
-      <Text style={styles.playerStat}>{player.kills}</Text>
-      <Text style={styles.playerStat}>{player.assist}</Text>
-      <Text style={styles.playerStat}>{player.death}</Text>
+      <Text style={[styles.playerStat, {color: colors[theme].card}]}>
+        {player.kills}
+      </Text>
+      <Text style={[styles.playerStat, {color: colors[theme].card}]}>
+        {player.assist}
+      </Text>
+      <Text style={[styles.playerStat, {color: colors[theme].card}]}>
+        {player.death}
+      </Text>
     </View>
   );
 }

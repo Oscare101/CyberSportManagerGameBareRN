@@ -29,8 +29,10 @@ export default function RenderPlayerResults(
           backgroundColor: '#00000010',
         },
       ]}>
-      <Text style={styles.playerName}>{player.name}</Text>
-      <Text style={styles.playerStat}>
+      <Text style={[styles.playerName, {color: colors[theme].main}]}>
+        {player.name}
+      </Text>
+      <Text style={[styles.playerStat, {color: colors[theme].main}]}>
         {kills}-{death}
       </Text>
       <Text
@@ -48,9 +50,15 @@ export default function RenderPlayerResults(
         {kills > death ? '+' : ''}
         {kills - death}
       </Text>
-      <Text style={styles.playerStat}>{ADR}</Text>
-      <Text style={styles.playerStat}>{KAST} %</Text>
-      <Text style={styles.playerStat}>{rating}</Text>
+      <Text style={[styles.playerStat, {color: colors[theme].main}]}>
+        {ADR}
+      </Text>
+      <Text style={[styles.playerStat, {color: colors[theme].main}]}>
+        {KAST} %
+      </Text>
+      <Text style={[styles.playerStat, {color: colors[theme].main}]}>
+        {rating}
+      </Text>
     </View>
   );
 }

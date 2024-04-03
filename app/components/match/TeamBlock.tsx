@@ -37,9 +37,11 @@ export default function TeamBlock(props: teamBlockProps) {
         teamName={props.team[0].team}
         teamSide={props.teamSide}
         result={!props.isGameActive && props.mapResults.length}
+        theme={themeColor}
       />
 
       <FlatList
+        scrollEnabled={false}
         data={
           !props.isGameActive && props.mapResults.length
             ? props.team.sort(
