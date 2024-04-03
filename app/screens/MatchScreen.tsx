@@ -18,7 +18,7 @@ import colors from '../constants/colors';
 import TeamBlock from '../components/match/TeamBlock';
 import RenderRoundWiner from '../components/match/RenderRoundWinner';
 import {RootState} from '../redux';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   BuyBeforeRound,
   CalculateSide,
@@ -32,6 +32,8 @@ import text from '../constants/text';
 import rules from '../constants/rules';
 import MatchHeader from '../components/match/MatchHeader';
 import BackHeader from '../components/match/BackHeader';
+import {Tournament} from '../constants/interfaces/tournamentInterfaces';
+import {updateTournaments} from '../redux/tournaments';
 
 const width = Dimensions.get('screen').width;
 const bestOfMaps: number = 3;
@@ -40,6 +42,10 @@ export default function MatchScreen({navigation, route}: any) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
+  const tournaments: Tournament[] = useSelector(
+    (state: RootState) => state.tournaments,
+  );
+  const dispatch = useDispatch();
 
   const [team1Players, setTeam1Players] = useState<InRoundPlayer[]>(
     PrepareTeam(route.params.team1, CalculateSide(1)[0]),
@@ -222,6 +228,32 @@ export default function MatchScreen({navigation, route}: any) {
     };
   }, [lastUpdate, isGameActive]);
 
+  function OnMatchResults(mapResults: MapResult[]) {
+    const newTournamentData = [...route.params.tournament.grid].map(
+      (column: any, i: number) => {
+        return column.map((row: any, j: number) => {
+          if (i === route.params.indexI && j === route.params.indexJ) {
+            return {...row, mapResults: mapResults};
+          } else {
+            return row;
+          }
+        });
+      },
+    );
+    let newTournaments = tournaments.map((t: Tournament) => {
+      if (
+        t.period === route.params.tournament.period &&
+        t.name === route.params.tournament.name &&
+        t.season === route.params.tournament.season
+      ) {
+        return {...t, grid: newTournamentData};
+      } else {
+        return t;
+      }
+    });
+    dispatch(updateTournaments(newTournaments));
+  }
+
   return (
     <View style={[styles.container, {backgroundColor: colors[themeColor].bg}]}>
       {!isGameActive && !mapsResults.length ? (
@@ -310,7 +342,7 @@ export default function MatchScreen({navigation, route}: any) {
 
             setMapsResults(mapsResultsLog);
             setIsGameActive(false);
-            // props.onMatchResults(mapsResultsLog);
+            OnMatchResults(mapsResultsLog);
           }}
         />
       ) : (

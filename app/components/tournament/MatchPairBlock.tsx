@@ -3,7 +3,6 @@ import {
   GetMatchScoreByTeams,
   GetMatchWinner,
 } from '../../functions/gameFunctions';
-import {useState} from 'react';
 import {Team} from '../../constants/interfaces/playerTeamInterfaces';
 import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
 import {MapResult} from '../../constants/interfaces/matchInterfaces';
@@ -27,7 +26,6 @@ interface MatchPairProps {
 const width = Dimensions.get('screen').width;
 
 export default function MatchPairBlock(props: MatchPairProps) {
-  // const [modal, setModal] = useState<boolean>(false);
   const navigation: any = useNavigation();
   function PairTeam(pair: any) {
     return (
@@ -86,18 +84,6 @@ export default function MatchPairBlock(props: MatchPairProps) {
 
   return (
     <>
-      {/* <MatchModal
-        team1={props.team1}
-        team2={props.team2}
-        bestOfMaps={props.bestOfMaps}
-        mapResults={props.mapResults}
-        modal={modal}
-        setModal={(value: boolean) => setModal(value)}
-        tournament={props.tournament}
-        indexI={props.indexI}
-        indexJ={props.indexJ}
-      /> */}
-
       <TouchableOpacity
         activeOpacity={0.8}
         onPress={() => {
