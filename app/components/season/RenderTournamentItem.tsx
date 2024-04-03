@@ -18,6 +18,7 @@ import {
   CanStartTournament,
   IsTournamentActive,
 } from '../../functions/tournamentFunctions';
+import Icon from '../icons/Icon';
 
 const width = Dimensions.get('screen').width;
 
@@ -82,7 +83,11 @@ export default function RenderTournamentItem(props: {
         </View>
         {activeTournament ? (
           <View style={[globalStyles.columnCenter, {width: width * 0.1}]}>
-            <Text>-</Text>
+            <Icon
+              icon="controller"
+              color={colors[props.theme].main}
+              size={width * 0.07}
+            />
           </View>
         ) : canStartTournament ? (
           <View

@@ -310,6 +310,7 @@ export default function MatchScreen({navigation, route}: any) {
 
             setMapsResults(mapsResultsLog);
             setIsGameActive(false);
+            // props.onMatchResults(mapsResultsLog);
           }}
         />
       ) : (
