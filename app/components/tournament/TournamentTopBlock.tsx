@@ -20,7 +20,11 @@ function TournamentTopBlock(props: TournamentInfoProps) {
   const teams: Team[] = useSelector((state: RootState) => state.teams);
 
   return (
-    <View style={styles.tournamentInfoBlock}>
+    <View
+      style={[
+        styles.tournamentInfoBlock,
+        {backgroundColor: colors[themeColor].card},
+      ]}>
       <View style={styles.cupImage}>
         <CupsImage cup={props.tournament.cup} size={width * 0.5} />
       </View>
@@ -70,7 +74,6 @@ const styles = StyleSheet.create({
   tournamentInfoBlock: {
     width: '100%',
     aspectRatio: 2,
-    backgroundColor: '#eee',
     marginTop: width * 0.05,
     flexDirection: 'row',
     alignItems: 'center',

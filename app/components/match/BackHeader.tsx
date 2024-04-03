@@ -26,7 +26,9 @@ export default function BackHeader() {
         activeOpacity={0.8}
         onPress={() => navigation.goBack()}>
         <Icon icon="back" color={colors[themeColor].main} size={width * 0.05} />
-        <Text style={styles.title}>Back</Text>
+        <Text style={[styles.title, {color: colors[themeColor].main}]}>
+          Back
+        </Text>
       </TouchableOpacity>
     </View>
   );
