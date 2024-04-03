@@ -1,9 +1,11 @@
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, StyleSheet, Text, View, useColorScheme} from 'react-native';
 import React from 'react';
 import {FlatList} from 'react-native-gesture-handler';
 import {MapResult} from '../../constants/interfaces/matchInterfaces';
 import {Team} from '../../constants/interfaces/playerTeamInterfaces';
 import RenderRoundWiner from './RenderRoundWinner';
+import {RootState} from '../../redux';
+import {useSelector} from 'react-redux';
 
 const width = Dimensions.get('screen').width;
 
@@ -15,6 +17,9 @@ export default function RoundsLogBlock(props: {
   team1Name: Team['name'];
   team2Name: Team['name'];
 }) {
+  const systemTheme = useColorScheme();
+  const theme = useSelector((state: RootState) => state.theme);
+  const themeColor: any = theme === 'system' ? systemTheme : theme;
   return (
     <View
       style={{
@@ -50,6 +55,7 @@ export default function RoundsLogBlock(props: {
               : props.roundWinLogs,
             props.team1Name,
             props.team2Name,
+            themeColor,
           )
         }
       />

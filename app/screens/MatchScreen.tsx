@@ -262,11 +262,9 @@ export default function MatchScreen({navigation, route}: any) {
           isGameActive={isGameActive}
           teamSide={team1Side}
           mapResults={
-            !isGameActive && mapsResults.length
-              ? mapsResultsToShow
-                ? [mapsResults[mapsResultsToShow - 1]]
-                : mapsResults
-              : []
+            !isGameActive && mapsResults.length && mapsResultsToShow
+              ? [mapsResults[mapsResultsToShow - 1]]
+              : mapsResults
           }
           teamNumber={1}
         />

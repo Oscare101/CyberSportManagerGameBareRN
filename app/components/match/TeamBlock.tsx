@@ -31,6 +31,7 @@ export default function TeamBlock(props: teamBlockProps) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
+
   return (
     <View style={styles.teamColumn}>
       <TeamHeader

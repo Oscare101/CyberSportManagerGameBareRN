@@ -1,5 +1,14 @@
-import {Dimensions, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Dimensions,
+  Text,
+  TouchableOpacity,
+  View,
+  useColorScheme,
+} from 'react-native';
 import {MapResult} from '../../constants/interfaces/matchInterfaces';
+import colors from '../../constants/colors';
+import {RootState} from '../../redux';
+import {useSelector} from 'react-redux';
 
 interface MatchStatProps {
   mapsResults: MapResult[];
@@ -10,6 +19,9 @@ interface MatchStatProps {
 const width = Dimensions.get('screen').width;
 
 export default function MatchStatPerMapBlock(props: MatchStatProps) {
+  const systemTheme = useColorScheme();
+  const theme = useSelector((state: RootState) => state.theme);
+  const themeColor: any = theme === 'system' ? systemTheme : theme;
   const dataTorender: string[] = [
     'All maps',
     ...props.mapsResults.map(
@@ -43,7 +55,16 @@ export default function MatchStatPerMapBlock(props: MatchStatProps) {
           onPress={() => {
             props.setMapsResultsToShow(index);
           }}>
-          <Text>{item}</Text>
+          <Text
+            style={{
+              fontSize: width * 0.035,
+              color:
+                index === props.mapsResultsToShow
+                  ? colors[themeColor].main
+                  : colors[themeColor].comment,
+            }}>
+            {item}
+          </Text>
         </TouchableOpacity>
       ))}
     </View>
