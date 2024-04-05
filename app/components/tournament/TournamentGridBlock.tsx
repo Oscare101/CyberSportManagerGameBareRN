@@ -6,6 +6,7 @@ import MatchPairBlock from './MatchPairBlock';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
 import colors from '../../constants/colors';
+import rules from '../../constants/rules';
 
 interface TournamentGridProps {
   tournament: Tournament;
@@ -66,7 +67,7 @@ export default function TournamentGridBlock(props: TournamentGridProps) {
                   indexJ={indexJ}
                   team1={pair.team1}
                   team2={pair.team2}
-                  bestOfMaps={3}
+                  bestOfMaps={rules.bestOfMaps}
                   mapResults={pair.mapResults}
                   onSetModal={() => {}}
                   onMatchResults={(value: MapResult[]) => {
