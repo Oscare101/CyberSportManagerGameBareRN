@@ -6,7 +6,7 @@ import {
   View,
   useColorScheme,
 } from 'react-native';
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import globalStyles from '../constants/globalStyles';
 import {RootState} from '../redux';
 import {useDispatch, useSelector} from 'react-redux';
@@ -69,6 +69,8 @@ export default function TournamentScreen({navigation, route}: any) {
       ),
     );
   }
+
+  useEffect(AutoMatch, [tournaments]);
 
   return (
     <View
