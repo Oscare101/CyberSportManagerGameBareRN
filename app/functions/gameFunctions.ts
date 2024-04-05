@@ -78,32 +78,34 @@ export function CalculateSide(roundNumber: number) {
 }
 
 export function PrepareTeam(team: Team, side: string) {
-  const players: InRoundPlayer[] = team.players.map((player: Player) => {
-    return {
-      kills: 0,
-      assist: 0,
-      death: 0,
-      totalDamage: 0,
-      roundsWithKAST: [],
-      alive: true,
-      armor: false,
-      cash: rules.defaultCash,
-      gun: side === 'CT' ? rules.defaultGunCT : rules.defaultGunT,
-      nades: [],
-      health: 100,
-      name: player.name,
-      team: team.name,
-      stat: {
-        role: player.stat.role,
-        reaction: player.stat.reaction,
-        accuracy: player.stat.accuracy,
-        sprayControl: player.stat.sprayControl,
-        flicksControl: player.stat.flicksControl,
-        nades: player.stat.nades,
-        tactics: player.stat.tactics,
-      },
-    } as InRoundPlayer;
-  });
+  const players: InRoundPlayer[] = team.players
+    .filter((p: Player) => p.status === 'active')
+    .map((player: Player) => {
+      return {
+        kills: 0,
+        assist: 0,
+        death: 0,
+        totalDamage: 0,
+        roundsWithKAST: [],
+        alive: true,
+        armor: false,
+        cash: rules.defaultCash,
+        gun: side === 'CT' ? rules.defaultGunCT : rules.defaultGunT,
+        nades: [],
+        health: 100,
+        name: player.name,
+        team: team.name,
+        stat: {
+          role: player.stat.role,
+          reaction: player.stat.reaction,
+          accuracy: player.stat.accuracy,
+          sprayControl: player.stat.sprayControl,
+          flicksControl: player.stat.flicksControl,
+          nades: player.stat.nades,
+          tactics: player.stat.tactics,
+        },
+      } as InRoundPlayer;
+    });
   return players;
 }
 
