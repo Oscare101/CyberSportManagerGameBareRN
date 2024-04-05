@@ -1,6 +1,11 @@
+import {MapResult} from '../constants/interfaces/matchInterfaces';
 import {Team} from '../constants/interfaces/playerTeamInterfaces';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
-import {GetMatchWinner} from './gameFunctions';
+import {
+  GetMatchWinner,
+  InstantMatchResults,
+  PrepareForMapResults,
+} from './gameFunctions';
 
 export function GetTournamentsBySeason(tournaments: Tournament[]) {
   const tArr: any = [];
@@ -225,4 +230,123 @@ export function GetTeamsInPlaces(tournament: Tournament) {
 export function GetStageName(pairs: number) {
   const stage: any = ['Final', 'Semi-Final', 'Quarter-Final', 'Qualification'];
   return stage[Math.log2(pairs)];
+}
+
+export function UpdateGridAfterMatch(
+  tournaments: Tournament[],
+  tournament: Tournament,
+  indexIprop: number,
+  indexJprop: number,
+  mapsResultsLog: MapResult[],
+  team1: Team,
+  team2: Team,
+) {
+  const newTournamentData = tournaments.map((t: Tournament) => {
+    if (JSON.stringify(t) === JSON.stringify(tournament)) {
+      let newGrid = t.grid;
+      newGrid = newGrid.map((gridI: any[], indexI: number) => {
+        return gridI.map((gridJ: any[], indexJ: number) => {
+          if (indexI === indexIprop && indexJ === indexJprop) {
+            return {
+              ...gridJ,
+              mapResults: mapsResultsLog,
+            };
+          } else if (
+            indexI === indexIprop + 1 &&
+            indexJ === Math.floor(indexJprop / 2)
+          ) {
+            if (indexJprop % 2 === 0) {
+              return {
+                ...gridJ,
+                team1:
+                  GetMatchWinner(mapsResultsLog) === team1.name ? team1 : team2,
+              };
+            } else {
+              return {
+                ...gridJ,
+                team2:
+                  GetMatchWinner(mapsResultsLog) === team1.name ? team1 : team2,
+              };
+            }
+          } else {
+            return gridJ;
+          }
+        });
+      });
+
+      return {
+        ...t,
+        grid: newGrid,
+      };
+    } else {
+      return t;
+    }
+  });
+  return newTournamentData;
+}
+
+export function AutoMatchColumn(
+  currentTournament: Tournament,
+  tournaments: Tournament[],
+  bestOfMaps: number,
+) {
+  let tournamentsData: Tournament[] = tournaments;
+  if (
+    currentTournament.grid?.length &&
+    (currentTournament.grid.find(
+      (column: any) =>
+        !column.find(
+          (g: any) =>
+            (g.team1.yourTeam || g.team2.yourTeam) &&
+            GetMatchWinner(g.mapResults),
+        ),
+    ) ||
+      currentTournament.grid.find(
+        (column: any) =>
+          column.find(
+            (g: any) =>
+              (g.team1.yourTeam || g.team2.yourTeam) &&
+              GetMatchWinner(g.mapResults),
+          ) && column.find((g: any) => g.mapResults.length === 0),
+      ))
+  ) {
+    currentTournament.grid.forEach((gridI: any[], indexI: number) => {
+      if (
+        (gridI.find(
+          (g: any) =>
+            (g.team1.yourTeam || g.team2.yourTeam) &&
+            GetMatchWinner(g.mapResults),
+        ) ||
+          !gridI.find((g: any) => g.team1.yourTeam || g.team2.yourTeam)) &&
+        gridI.filter((g: any) => g.team1.name && g.team2.name).length ===
+          gridI.length &&
+        gridI.find((g: any) => g.mapResults.length === 0)
+      ) {
+        gridI.map((pair: any, indexJ: number) => {
+          if (pair.mapResults.length === 0) {
+            tournamentsData = UpdateGridAfterMatch(
+              tournamentsData,
+              tournamentsData.find(
+                (t: Tournament) =>
+                  t.season === currentTournament.season &&
+                  t.name === currentTournament.name &&
+                  t.period === currentTournament.period,
+              ) as Tournament,
+              indexI,
+              indexJ,
+              InstantMatchResults(
+                PrepareForMapResults(pair.team1, pair.team2, bestOfMaps),
+              ),
+              pair.team1,
+              pair.team2,
+            );
+          }
+        });
+      }
+    });
+
+    return tournamentsData;
+  } else {
+    return tournaments;
+  }
 }

@@ -828,3 +828,32 @@ export function InstantMatchResults(props: InstantMatchResultProps) {
 
   return mapsResults;
 }
+
+export function PrepareForMapResults(
+  team1: Team,
+  team2: Team,
+  bestOfMaps: number,
+) {
+  const team1Players: InRoundPlayer[] = BuyBeforeRound(
+    PrepareTeam(team1, CalculateSide(1)[0]),
+    CalculateSide(1)[0],
+  );
+
+  const team2Players: InRoundPlayer[] = BuyBeforeRound(
+    PrepareTeam(team2, CalculateSide(1)[1]),
+    CalculateSide(1)[1],
+  );
+
+  return {
+    team1: team1Players,
+    team2: team2Players,
+    score1: 0,
+    score2: 0,
+    overtimes: 0,
+    team1Sideplay: CalculateSide(1)[0],
+    team2Sideplay: CalculateSide(1)[1],
+    winLogs: [],
+    mapsResultsLog: [],
+    bestOfMaps: bestOfMaps,
+  } as InstantMatchResultProps;
+}

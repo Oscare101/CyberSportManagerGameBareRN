@@ -19,6 +19,7 @@ import RenderPrizes from '../components/tournament/RenserPrizes';
 import PageSelectionBlock from '../components/tournament/PageSelectionBlock';
 import {updateTournaments} from '../redux/tournaments';
 import {
+  AutoMatchColumn,
   CanStartTournament,
   MakeTournamentSingleEliminationGrid,
 } from '../functions/tournamentFunctions';
@@ -26,6 +27,7 @@ import {Team} from '../constants/interfaces/playerTeamInterfaces';
 import TournamentGridBlock from '../components/tournament/TournamentGridBlock';
 import {ScrollView} from 'react-native-gesture-handler';
 import StartTournamentBlock from '../components/tournament/StartTournamentBlock';
+import rules from '../constants/rules';
 
 interface PageInterface {
   value: 'grid' | 'prize';
@@ -60,13 +62,13 @@ export default function TournamentScreen({navigation, route}: any) {
     [page],
   );
 
-  //  function AutoMatch() {
-  //    dispatch(
-  //      updateTournaments(
-  //        AutoMatchColumn(GetCurrentTournament(), tournaments, bestOfMaps),
-  //      ),
-  //    );
-  //  }
+  function AutoMatch() {
+    dispatch(
+      updateTournaments(
+        AutoMatchColumn(GetCurrentTournament(), tournaments, rules.bestOfMaps),
+      ),
+    );
+  }
 
   return (
     <View
