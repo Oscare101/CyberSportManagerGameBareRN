@@ -34,6 +34,8 @@ import MatchHeader from '../components/match/MatchHeader';
 import BackHeader from '../components/match/BackHeader';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
 import {updateTournaments} from '../redux/tournaments';
+import {Team} from '../constants/interfaces/playerTeamInterfaces';
+import {UpdateGridAfterMatch} from '../functions/tournamentFunctions';
 
 const width = Dimensions.get('screen').width;
 const bestOfMaps: number = 3;
@@ -81,6 +83,36 @@ export default function MatchScreen({navigation, route}: any) {
 
     return () => backHandler.remove();
   }, [isGameActive]);
+
+  // function OnMatchResults(
+  //   mapResults: MapResult[],
+  //   indexI: number,
+  //   indexJ: number,
+  //   team1: Team,
+  //   team2: Team,
+  // ) {
+  //   const newTournamentData = route.params.tournament.grid;
+  //   newTournamentData[indexI][indexJ] = {
+  //     ...newTournamentData[indexI][indexJ],
+  //     mapResults: mapResults,
+  //   };
+
+  //   console.log('1', newTournamentData);
+
+  //   let newTournamentData2 = UpdateGridAfterMatch(
+  //     tournaments,
+  //     route.params.tournament,
+  //     indexI,
+  //     indexJ,
+  //     mapResults,
+  //     team1,
+  //     team2,
+  //   );
+
+  //   console.log('1', newTournamentData2);
+
+  //   // dispatch(updateTournaments(newTournamentData));
+  // }
 
   function PrepareForMap() {
     setTeam1Players(
@@ -229,17 +261,32 @@ export default function MatchScreen({navigation, route}: any) {
   }, [lastUpdate, isGameActive]);
 
   function OnMatchResults(mapResults: MapResult[]) {
-    const newTournamentData = [...route.params.tournament.grid].map(
-      (column: any, i: number) => {
-        return column.map((row: any, j: number) => {
-          if (i === route.params.indexI && j === route.params.indexJ) {
-            return {...row, mapResults: mapResults};
-          } else {
-            return row;
-          }
-        });
-      },
-    );
+    // const newTournamentData = [...route.params.tournament.grid].map(
+    //   (column: any, i: number) => {
+    //     return column.map((row: any, j: number) => {
+    //       if (i === route.params.indexI && j === route.params.indexJ) {
+    //         return {...row, mapResults: mapResults};
+    //       } else {
+    //         return row;
+    //       }
+    //     });
+    //   },
+    // );
+    const newTournamentData = UpdateGridAfterMatch(
+      tournaments,
+      route.params.tournament,
+      route.params.indexI,
+      route.params.indexJ,
+      mapResults,
+      route.params.team1,
+      route.params.team2,
+    ).find(
+      (t: Tournament) =>
+        t.period === route.params.tournament.period &&
+        t.name === route.params.tournament.name &&
+        t.season === route.params.tournament.season,
+    )?.grid;
+
     let newTournaments = tournaments.map((t: Tournament) => {
       if (
         t.period === route.params.tournament.period &&

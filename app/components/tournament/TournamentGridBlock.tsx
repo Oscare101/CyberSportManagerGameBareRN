@@ -1,12 +1,16 @@
 import {Dimensions, ScrollView, Text, View, useColorScheme} from 'react-native';
 import {Tournament} from '../../constants/interfaces/tournamentInterfaces';
-import {GetStageName} from '../../functions/tournamentFunctions';
+import {
+  GetStageName,
+  UpdateGridAfterMatch,
+} from '../../functions/tournamentFunctions';
 import {MapResult} from '../../constants/interfaces/matchInterfaces';
 import MatchPairBlock from './MatchPairBlock';
 import {RootState} from '../../redux';
 import {useSelector} from 'react-redux';
 import colors from '../../constants/colors';
 import rules from '../../constants/rules';
+import {Team} from '../../constants/interfaces/playerTeamInterfaces';
 
 interface TournamentGridProps {
   tournament: Tournament;
@@ -18,18 +22,10 @@ export default function TournamentGridBlock(props: TournamentGridProps) {
   const systemTheme = useColorScheme();
   const theme = useSelector((state: RootState) => state.theme);
   const themeColor: any = theme === 'system' ? systemTheme : theme;
+  const tournaments: Tournament[] = useSelector(
+    (state: RootState) => state.tournaments,
+  );
 
-  function OnMatchResults(
-    mapResults: MapResult[],
-    indexI: number,
-    indexJ: number,
-  ) {
-    const newTournamentData = props.tournament.grid;
-    newTournamentData[indexI][indexJ] = {
-      ...newTournamentData[indexI][indexJ],
-      mapResults: mapResults,
-    };
-  }
   return (
     <ScrollView
       showsHorizontalScrollIndicator={false}
@@ -70,9 +66,15 @@ export default function TournamentGridBlock(props: TournamentGridProps) {
                   bestOfMaps={rules.bestOfMaps}
                   mapResults={pair.mapResults}
                   onSetModal={() => {}}
-                  onMatchResults={(value: MapResult[]) => {
-                    OnMatchResults(value, indexI, indexJ);
-                  }}
+                  // onMatchResults={(value: MapResult[]) => {
+                  //   OnMatchResults(
+                  //     value,
+                  //     indexI,
+                  //     indexJ,
+                  //     pair.team1,
+                  //     pair.team2,
+                  //   );
+                  // }}
                   theme={themeColor}
                 />
               ))}

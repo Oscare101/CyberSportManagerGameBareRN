@@ -19,7 +19,7 @@ interface MatchPairProps {
   bestOfMaps: number;
   mapResults: MapResult[];
   onSetModal: any;
-  onMatchResults: any;
+  // onMatchResults: any;
   theme: Theme['value'];
 }
 

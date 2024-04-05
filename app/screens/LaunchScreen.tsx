@@ -63,7 +63,7 @@ export default function LaunchScreen({navigation}: any) {
 
     let season: number;
     const tournamentsStorage = storage.getString('tournaments');
-    if (tournamentsStorage && tournamentsStorage.length) {
+    if (tournamentsStorage && tournamentsStorage.length && false) {
       dispatch(updateTournaments(JSON.parse(tournamentsStorage)));
       season =
         JSON.parse(tournamentsStorage)[
