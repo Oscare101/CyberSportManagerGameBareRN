@@ -10,7 +10,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import colors from '../../constants/colors';
 import text from '../../constants/text';
-import {Team} from '../../constants/interfaces/playerTeamInterfaces';
+import {Player, Team} from '../../constants/interfaces/playerTeamInterfaces';
 import {updateTournaments} from '../../redux/tournaments';
 
 const width = Dimensions.get('screen').width;
@@ -24,28 +24,39 @@ export default function StartTournamentBlock(props: {tournament: Tournament}) {
   );
   const teams: Team[] = useSelector((state: RootState) => state.teams);
   const dispatch = useDispatch();
-  function StartTournament() {
-    const newTournamentsData: Tournament[] = tournaments.map(
-      (t: Tournament) => {
-        if (
-          t.season === props.tournament.season &&
-          t.period === props.tournament.period &&
-          t.name === props.tournament.name
-        ) {
-          return {
-            ...t,
-            grid: MakeTournamentSingleEliminationGrid(teams),
-          };
-        } else {
-          return t;
-        }
-      },
-    );
 
-    dispatch(updateTournaments(newTournamentsData));
+  function EveryTeamHas5Players() {
+    return teams.every(
+      (t: Team) =>
+        t.players.filter((p: Player) => p.status === 'active').length === 5,
+    );
   }
 
-  return CanStartTournament(tournaments, props.tournament) ? (
+  function StartTournament() {
+    if (EveryTeamHas5Players()) {
+      const newTournamentsData: Tournament[] = tournaments.map(
+        (t: Tournament) => {
+          if (
+            t.season === props.tournament.season &&
+            t.period === props.tournament.period &&
+            t.name === props.tournament.name
+          ) {
+            return {
+              ...t,
+              grid: MakeTournamentSingleEliminationGrid(teams),
+            };
+          } else {
+            return t;
+          }
+        },
+      );
+
+      dispatch(updateTournaments(newTournamentsData));
+    }
+  }
+
+  return CanStartTournament(tournaments, props.tournament) &&
+    EveryTeamHas5Players() ? (
     <TouchableOpacity
       style={[
         styles.StartButton,
@@ -61,7 +72,7 @@ export default function StartTournamentBlock(props: {tournament: Tournament}) {
         Prepare and shuffle teams
       </Text>
     </TouchableOpacity>
-  ) : (
+  ) : EveryTeamHas5Players() ? (
     <Text
       style={{
         fontSize: width * 0.04,
@@ -70,6 +81,18 @@ export default function StartTournamentBlock(props: {tournament: Tournament}) {
         marginTop: width * 0.05,
       }}>
       {text.FinishPreviousTournament}
+    </Text>
+  ) : (
+    <Text
+      style={{
+        fontSize: width * 0.04,
+        color: colors[themeColor].main,
+        textAlign: 'center',
+        marginTop: width * 0.05,
+        width: '92%',
+        alignSelf: 'center',
+      }}>
+      {text.SomeTeamHasNot5Players}
     </Text>
   );
 }

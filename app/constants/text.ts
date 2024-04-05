@@ -112,6 +112,8 @@ const text: any = {
   FinishPreviousTournament: 'Fisrt finish the previous tournament',
   StartTheMatch: 'Start the match',
   SkipToResults: 'Skip to results',
+  SomeTeamHasNot5Players:
+    'Some teams has not enought players to playe. 5 active players are needed',
 };
 
 export default text;
