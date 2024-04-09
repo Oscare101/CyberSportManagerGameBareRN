@@ -57,21 +57,36 @@ export default function StartTournamentBlock(props: {tournament: Tournament}) {
 
   return CanStartTournament(tournaments, props.tournament) &&
     EveryTeamHas5Players() ? (
-    <TouchableOpacity
-      style={[
-        styles.StartButton,
-        {backgroundColor: colors[themeColor].header1Bg},
-      ]}
-      activeOpacity={0.8}
-      onPress={StartTournament}>
+    <>
+      <TouchableOpacity
+        style={[
+          styles.StartButton,
+          {backgroundColor: colors[themeColor].header1Bg},
+        ]}
+        activeOpacity={0.8}
+        onPress={StartTournament}>
+        <Text
+          style={{
+            fontSize: width * 0.05,
+            color: colors[themeColor].header1Main,
+          }}>
+          Start the tournament
+        </Text>
+        <Text
+          style={{fontSize: width * 0.04, color: colors[themeColor].comment}}>
+          Prepare and shuffle teams
+        </Text>
+      </TouchableOpacity>
       <Text
-        style={{fontSize: width * 0.05, color: colors[themeColor].header1Main}}>
-        Start the tournament
+        style={{
+          width: '92%',
+          color: colors[themeColor].comment,
+          alignSelf: 'center',
+          marginTop: width * 0.03,
+        }}>
+        {text.TeamsWontBeChanchedDuringTheTournament}
       </Text>
-      <Text style={{fontSize: width * 0.04, color: colors[themeColor].comment}}>
-        Prepare and shuffle teams
-      </Text>
-    </TouchableOpacity>
+    </>
   ) : EveryTeamHas5Players() ? (
     <Text
       style={{

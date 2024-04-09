@@ -114,6 +114,8 @@ const text: any = {
   SkipToResults: 'Skip to results',
   SomeTeamHasNot5Players:
     'Some teams has not enought players to playe. 5 active players are needed',
+  TeamsWontBeChanchedDuringTheTournament:
+    'Your team will be formed for this tournament and will not change until it ends, even if you terminate the contract with the players, they will still play this tournament with the same lineup they started with',
 };
 
 export default text;
