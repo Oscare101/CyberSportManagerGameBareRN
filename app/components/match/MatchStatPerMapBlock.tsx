@@ -35,10 +35,11 @@ export default function MatchStatPerMapBlock(props: MatchStatProps) {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        backgroundColor: '#fff',
+        backgroundColor: colors[themeColor].card,
         borderRadius: width * 0.02,
         padding: '1%',
         margin: width * 0.005,
+        height: width * 0.08,
       }}>
       {dataTorender.map((item: string, index: number) => (
         <TouchableOpacity
@@ -48,8 +49,11 @@ export default function MatchStatPerMapBlock(props: MatchStatProps) {
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor:
-              index === props.mapsResultsToShow ? '#e5e5e5' : '#00000000',
+              index === props.mapsResultsToShow
+                ? colors[themeColor].bg
+                : '#00000000',
             borderRadius: width * 0.01,
+            height: '100%',
           }}
           activeOpacity={0.8}
           onPress={() => {
@@ -57,7 +61,7 @@ export default function MatchStatPerMapBlock(props: MatchStatProps) {
           }}>
           <Text
             style={{
-              fontSize: width * 0.035,
+              fontSize: width * 0.04,
               color:
                 index === props.mapsResultsToShow
                   ? colors[themeColor].main

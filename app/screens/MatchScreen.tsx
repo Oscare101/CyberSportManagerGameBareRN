@@ -395,20 +395,7 @@ export default function MatchScreen({navigation, route}: any) {
       ) : (
         <>
           {mapsResults.length ? (
-            <TouchableOpacity
-              onPress={() => {
-                // props.onMatchResults(mapsResults);
-              }}
-              activeOpacity={0.8}
-              style={[
-                styles.skipButton,
-                {borderColor: colors[themeColor].CTSide},
-              ]}>
-              <Text
-                style={[styles.skipTitle, {color: colors[themeColor].TSide}]}>
-                Back ??????????????
-              </Text>
-            </TouchableOpacity>
+            <></>
           ) : (
             <Button
               title={text.StartTheMatch}
