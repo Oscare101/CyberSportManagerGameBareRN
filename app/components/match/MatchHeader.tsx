@@ -61,9 +61,9 @@ export default function MatchHeader(props: MatchHeaderProps) {
           style={{
             color: props.isGameActive
               ? props.team1Side === 'CT'
-                ? colors.CTColor
-                : colors.TColor
-              : '#000',
+                ? colors[themeColor].CTSide
+                : colors[themeColor].TSide
+              : colors[themeColor].main,
           }}>
           {props.isGameActive
             ? props.team1Score
@@ -77,9 +77,9 @@ export default function MatchHeader(props: MatchHeaderProps) {
           style={{
             color: props.isGameActive
               ? props.team2Side === 'CT'
-                ? colors.CTColor
-                : colors.TColor
-              : '#000',
+                ? colors[themeColor].CTSide
+                : colors[themeColor].TSide
+              : colors[themeColor].main,
           }}>
           {props.isGameActive
             ? props.team2Score

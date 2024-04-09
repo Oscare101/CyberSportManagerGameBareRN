@@ -26,7 +26,7 @@ export default function RenderPlayerResults(
       style={[
         styles.playerBlock,
         {
-          backgroundColor: '#00000010',
+          backgroundColor: colors[theme].card,
         },
       ]}>
       <Text style={[styles.playerName, {color: colors[theme].main}]}>
@@ -41,10 +41,10 @@ export default function RenderPlayerResults(
           {
             color:
               kills > death
-                ? colors.succesColor
+                ? colors[theme].green.main
                 : kills < death
-                ? colors.errorColor
-                : '#000',
+                ? colors[theme].red.main
+                : colors[theme].main,
           },
         ]}>
         {kills > death ? '+' : ''}

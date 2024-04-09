@@ -46,7 +46,11 @@ export default function TeamHeader(props: any) {
   );
 
   const resultHeader = (
-    <View style={[styles.teamBlock]}>
+    <View
+      style={[
+        styles.teamBlock,
+        {backgroundColor: colors[props.theme].comment},
+      ]}>
       <Text style={[styles.teamName, {color: colors[props.theme].main}]}>
         {props.teamName}
       </Text>
@@ -82,7 +86,6 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     margin: width * 0.002,
     borderRadius: width * 0.01,
-    backgroundColor: '#00000020',
   },
   teamName: {width: '20%', color: '#fff', fontSize: width * 0.035},
   teamStat: {
