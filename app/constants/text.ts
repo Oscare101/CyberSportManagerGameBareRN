@@ -116,6 +116,8 @@ const text: any = {
     'Some teams has not enought players to playe. 5 active players are needed',
   TeamsWontBeChanchedDuringTheTournament:
     'Your team will be formed for this tournament and will not change until it ends, even if you terminate the contract with the players, they will still play this tournament with the same lineup they started with',
+  TeamTrophies: 'Team trophies',
+  NoTrophiesYet: 'No trophies yet',
 };
 
 export default text;

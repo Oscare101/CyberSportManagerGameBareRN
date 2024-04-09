@@ -69,23 +69,41 @@ function TeamPage() {
 
   return (
     <View
-      style={[
-        globalStyles.rowBetween,
-        {
-          backgroundColor: colors[themeColor].card,
-          width: '92%',
-          alignSelf: 'center',
-          borderRadius: width * 0.02,
-          padding: width * 0.02,
-          marginTop: width * 0.05,
-        },
-      ]}>
-      <FlatList
-        horizontal
-        data={myTeam.trophies}
-        renderItem={RenderTrophyItem}
-        ItemSeparatorComponent={() => <View style={{width: width * 0.03}} />}
-      />
+      style={{
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        backgroundColor: colors[themeColor].card,
+        width: '92%',
+        alignSelf: 'center',
+        borderRadius: width * 0.02,
+        padding: width * 0.02,
+        marginTop: width * 0.05,
+      }}>
+      <Text
+        style={{
+          fontSize: width * 0.04,
+          color: colors[themeColor].comment,
+          marginBottom: width * 0.02,
+        }}>
+        {text.TeamTrophies}
+      </Text>
+      {myTeam.trophies.length ? (
+        <FlatList
+          horizontal
+          data={myTeam.trophies}
+          renderItem={RenderTrophyItem}
+          ItemSeparatorComponent={() => <View style={{width: width * 0.03}} />}
+        />
+      ) : (
+        <Text
+          style={{
+            fontSize: width * 0.035,
+            color: colors[themeColor].main,
+          }}>
+          {text.NoTrophiesYet}
+        </Text>
+      )}
     </View>
   );
 }
