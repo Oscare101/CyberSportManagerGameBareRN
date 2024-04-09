@@ -16,8 +16,12 @@ import {
   DefaultTheme,
 } from '@react-navigation/native';
 import MainNavigation from '../navigation/MainNavigation';
-import TournamentWinner, {NewSeason} from '../functions/tournamentFunctions';
+import TournamentWinner, {
+  NewSeason,
+  PayPrizesTeams,
+} from '../functions/tournamentFunctions';
 import {updateTournaments} from '../redux/tournaments';
+import {updateTeams} from '../redux/teams';
 
 export const storage = new MMKV();
 
@@ -46,6 +50,30 @@ export default function AppComponent() {
       console.log(NewSeason(tournaments));
 
       dispatch(updateTournaments(NewSeason(tournaments)));
+    }
+    const unpaidTournament = tournaments.find(
+      (t: Tournament) => TournamentWinner(t) && !t.prizesPaid,
+    );
+    if (unpaidTournament) {
+      const teamsAfterPrizesPaid = PayPrizesTeams(
+        unpaidTournament as Tournament,
+        teams,
+      );
+      dispatch(updateTeams(teamsAfterPrizesPaid));
+      dispatch(
+        updateTournaments(
+          tournaments.map((t: Tournament) => {
+            if (
+              t.name === unpaidTournament.name &&
+              t.season === unpaidTournament.season
+            ) {
+              return {...t, prizesPaid: true};
+            } else {
+              return t;
+            }
+          }),
+        ),
+      );
     }
   }
 

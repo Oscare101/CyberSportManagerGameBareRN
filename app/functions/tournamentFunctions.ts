@@ -360,3 +360,21 @@ export function NewSeason(tournaments: Tournament[]) {
     }),
   ];
 }
+
+export function PayPrizesTeams(tournament: Tournament, teams: Team[]) {
+  const prizes = tournament.prizes;
+  const teamsInPlaces = GetTeamsInPlaces(tournament);
+  const newTeamData = teams.map((team: Team) => {
+    return {
+      ...team,
+      bank: {
+        ...team.bank,
+        cash:
+          team.bank.cash +
+          (prizes[teamsInPlaces.findIndex((i: string) => i === team.name)] ||
+            0),
+      },
+    };
+  });
+  return newTeamData;
+}
