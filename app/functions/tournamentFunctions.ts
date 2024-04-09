@@ -1,3 +1,4 @@
+import tournamentsDefault from '../constants/defaultValues/tournaments';
 import {MapResult} from '../constants/interfaces/matchInterfaces';
 import {Team} from '../constants/interfaces/playerTeamInterfaces';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
@@ -349,4 +350,13 @@ export function AutoMatchColumn(
   } else {
     return tournaments;
   }
+}
+
+export function NewSeason(tournaments: Tournament[]) {
+  return [
+    ...tournaments,
+    ...tournamentsDefault.map((t: Tournament) => {
+      return {...t, season: tournaments[tournaments.length - 1].season + 1};
+    }),
+  ];
 }

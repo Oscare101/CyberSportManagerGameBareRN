@@ -1,6 +1,6 @@
 import {StatusBar, useColorScheme} from 'react-native';
 import React, {useEffect} from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../redux';
 import colors from '../constants/colors';
 import {
@@ -16,6 +16,8 @@ import {
   DefaultTheme,
 } from '@react-navigation/native';
 import MainNavigation from '../navigation/MainNavigation';
+import TournamentWinner, {NewSeason} from '../functions/tournamentFunctions';
+import {updateTournaments} from '../redux/tournaments';
 
 export const storage = new MMKV();
 
@@ -34,6 +36,19 @@ export default function AppComponent() {
     (state: RootState) => state.tournaments,
   );
 
+  const dispatch = useDispatch();
+
+  function CheckTournaments() {
+    if (
+      tournaments.length &&
+      tournaments.every((t: Tournament) => TournamentWinner(t))
+    ) {
+      console.log(NewSeason(tournaments));
+
+      dispatch(updateTournaments(NewSeason(tournaments)));
+    }
+  }
+
   useEffect(() => {
     if (teams.length) {
       storage.set('teams', JSON.stringify(teams));
@@ -50,6 +65,7 @@ export default function AppComponent() {
     if (tournaments.length) {
       storage.set('tournaments', JSON.stringify(tournaments));
     }
+    CheckTournaments();
   }, [tournaments]);
 
   useEffect(() => {

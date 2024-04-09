@@ -1,7 +1,6 @@
 import {
   Dimensions,
   SafeAreaView,
-  StyleSheet,
   Text,
   View,
   useColorScheme,
@@ -134,5 +133,3 @@ export default function MainScreen({navigation}: any) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({});
