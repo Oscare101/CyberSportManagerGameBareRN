@@ -47,8 +47,6 @@ export default function AppComponent() {
       tournaments.length &&
       tournaments.every((t: Tournament) => TournamentWinner(t))
     ) {
-      console.log(NewSeason(tournaments));
-
       dispatch(updateTournaments(NewSeason(tournaments)));
     }
     const unpaidTournament = tournaments.find(

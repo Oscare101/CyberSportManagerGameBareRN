@@ -1,6 +1,10 @@
 import tournamentsDefault from '../constants/defaultValues/tournaments';
 import {MapResult} from '../constants/interfaces/matchInterfaces';
-import {Team} from '../constants/interfaces/playerTeamInterfaces';
+import {
+  Player,
+  Team,
+  Trophy,
+} from '../constants/interfaces/playerTeamInterfaces';
 import {Tournament} from '../constants/interfaces/tournamentInterfaces';
 import {
   GetMatchWinner,
@@ -365,8 +369,32 @@ export function PayPrizesTeams(tournament: Tournament, teams: Team[]) {
   const prizes = tournament.prizes;
   const teamsInPlaces = GetTeamsInPlaces(tournament);
   const newTeamData = teams.map((team: Team) => {
+    // let trophies: Trophy[] = [...team.trophies];
+    // if (teamsInPlaces.findIndex((i: string) => i === team.name) === 0) {
+    //   trophies.push({season: tournament.season, tournament: tournament.name});
+    // }
+
+    const winner: boolean =
+      teamsInPlaces.findIndex((i: string) => i === team.name) === 0;
     return {
       ...team,
+      trophies: winner
+        ? [
+            ...team.trophies,
+            {season: tournament.season, tournament: tournament.name},
+          ]
+        : team.trophies,
+      players: winner
+        ? team.players.map((p: Player) => {
+            return {
+              ...p,
+              trophies: [
+                ...p.trophies,
+                {season: tournament.season, tournament: tournament.name},
+              ],
+            };
+          })
+        : team.players,
       bank: {
         ...team.bank,
         cash:
