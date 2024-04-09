@@ -16,6 +16,7 @@ import ChallengersScreen from '../screens/ChallengersScreen';
 import TournamentScreen from '../screens/TournamentScreen';
 import SeasonScreen from '../screens/SeasonScreen';
 import MatchScreen from '../screens/MatchScreen';
+import ArchivedTournamentsScreen from '../screens/ArchivedTournamentsScreen';
 
 const Stack = createStackNavigator();
 
@@ -168,6 +169,18 @@ export default function MainNavigation() {
         }}
         name="MatchScreen"
         component={MatchScreen}
+      />
+      <Stack.Screen
+        options={{
+          headerShown: false,
+          headerLeft: () => null,
+          animationEnabled: true,
+          gestureDirection: 'horizontal',
+          gestureEnabled: false,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}
+        name="ArchiveTournamentsScreen"
+        component={ArchivedTournamentsScreen}
       />
     </Stack.Navigator>
   );

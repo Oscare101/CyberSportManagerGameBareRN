@@ -113,7 +113,9 @@ export default function MainScreen({navigation}: any) {
           <SecondaryButtonCard
             title={text.Archived}
             icon="archive"
-            action={() => {}}
+            action={() => {
+              navigation.navigate('ArchiveTournamentsScreen');
+            }}
           />
         </View>
       </View>
