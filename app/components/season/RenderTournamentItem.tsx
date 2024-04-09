@@ -14,11 +14,12 @@ import text from '../../constants/text';
 import CupsImage from '../icons/CupsImage';
 import {GetMoneyAmountString} from '../../functions/function';
 import {Team} from '../../constants/interfaces/playerTeamInterfaces';
-import {
+import TournamentWinner, {
   CanStartTournament,
   IsTournamentActive,
 } from '../../functions/tournamentFunctions';
 import Icon from '../icons/Icon';
+import TeamImage from '../icons/TeamImage';
 
 const width = Dimensions.get('screen').width;
 
@@ -89,6 +90,11 @@ export default function RenderTournamentItem(props: {
               size={width * 0.07}
             />
           </View>
+        ) : TournamentWinner(tournament) ? (
+          <TeamImage
+            team={TournamentWinner(tournament) as Team['name']}
+            size={width * 0.1}
+          />
         ) : canStartTournament ? (
           <View
             style={[
