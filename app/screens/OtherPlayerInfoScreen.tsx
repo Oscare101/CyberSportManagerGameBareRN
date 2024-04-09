@@ -21,6 +21,7 @@ import BottomModalBlock from '../components/bottomModal/BottomModalBlock';
 import {Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
 import TeamImage from '../components/icons/TeamImage';
+import PlayerTrophies from '../components/player/PlayerTrophies';
 
 const width = Dimensions.get('screen').width;
 
@@ -103,6 +104,7 @@ export default function OtherPlayerInfoScreen({navigation, route}: any) {
             </Text>
           )}
         </View>
+        <PlayerTrophies player={player} />
         <View style={[globalStyles.rowBetween, {width: '92%'}]}>
           <Text style={[styles.comment, {color: colors[themeColor].main}]}>
             {text.Individuals}

@@ -20,6 +20,7 @@ import {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import BottomModalBlock from '../components/bottomModal/BottomModalBlock';
 import {Stat} from '../constants/interfaces/iconInterfaces';
 import {Player, Team} from '../constants/interfaces/playerTeamInterfaces';
+import PlayerTrophies from '../components/player/PlayerTrophies';
 
 const width = Dimensions.get('screen').width;
 
@@ -90,6 +91,7 @@ export default function PlayerInfoScreen({navigation, route}: any) {
           <>
             <Header title={player.name} action="back" />
             <ShortInfoBlock player={player} action={onModal} />
+            <PlayerTrophies player={player} />
             <View style={[globalStyles.rowBetween, {width: '92%'}]}>
               <Text style={[styles.comment, {color: colors[themeColor].main}]}>
                 {text.Individuals}
