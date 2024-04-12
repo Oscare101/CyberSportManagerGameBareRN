@@ -21,9 +21,18 @@ import {RootState} from '../redux';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   BuyBeforeRound,
+  CalculatePlayersAfterDuel,
   CalculateSide,
+  Duel,
+  GetRandomPlayersToExecute,
   InstantMatchResults,
+  IsMatchWinner,
+  IsSideChangeRound,
+  NadeUsage,
   PrepareTeam,
+  SetAlive,
+  TeamAlive,
+  TeamsAlive,
 } from '../functions/gameFunctions';
 import MatchStatPerMapBlock from '../components/match/MatchStatPerMapBlock';
 import RoundsLogBlock from '../components/match/RoundsLogBlock';
@@ -136,122 +145,122 @@ export default function MatchScreen({navigation, route}: any) {
     setMapsResultsToShow(0);
   }
 
-  // function Match() {
-  //   function ActionBetweenTwoPlayers() {
-  //     const team1PlayerExecute = GetRandomPlayersToExecute(team1Players);
-  //     const team2PlayerExecute = GetRandomPlayersToExecute(team2Players);
-  //     const player1NadeUsage = NadeUsage(team1PlayerExecute);
-  //     const player2NadeUsage = NadeUsage(team2PlayerExecute);
-  //     const [player1Health, player2Health] = Duel(
-  //       team1PlayerExecute,
-  //       team2PlayerExecute,
-  //       player1NadeUsage,
-  //       player2NadeUsage,
-  //     );
+  function Match() {
+    function ActionBetweenTwoPlayers() {
+      const team1PlayerExecute = GetRandomPlayersToExecute(team1Players);
+      const team2PlayerExecute = GetRandomPlayersToExecute(team2Players);
+      const player1NadeUsage = NadeUsage(team1PlayerExecute);
+      const player2NadeUsage = NadeUsage(team2PlayerExecute);
+      const [player1Health, player2Health] = Duel(
+        team1PlayerExecute,
+        team2PlayerExecute,
+        player1NadeUsage,
+        player2NadeUsage,
+      );
 
-  //     setTeam1Players(
-  //       CalculatePlayersAfterDuel(
-  //         team1Players,
-  //         team1PlayerExecute,
-  //         team2PlayerExecute,
-  //         player1Health,
-  //         player2Health,
-  //         player1NadeUsage,
-  //         team1Score + team2Score + 1,
-  //         team1Side,
-  //       ),
-  //     );
+      setTeam1Players(
+        CalculatePlayersAfterDuel(
+          team1Players,
+          team1PlayerExecute,
+          team2PlayerExecute,
+          player1Health,
+          player2Health,
+          player1NadeUsage,
+          team1Score + team2Score + 1,
+          team1Side,
+        ),
+      );
 
-  //     setTeam2Players(
-  //       CalculatePlayersAfterDuel(
-  //         team2Players,
-  //         team2PlayerExecute,
-  //         team1PlayerExecute,
-  //         player2Health,
-  //         player1Health,
-  //         player2NadeUsage,
-  //         team1Score + team2Score + 1,
-  //         team2Side,
-  //       ),
-  //     );
-  //   }
+      setTeam2Players(
+        CalculatePlayersAfterDuel(
+          team2Players,
+          team2PlayerExecute,
+          team1PlayerExecute,
+          player2Health,
+          player1Health,
+          player2NadeUsage,
+          team1Score + team2Score + 1,
+          team2Side,
+        ),
+      );
+    }
 
-  //   function RoundAction() {
-  //     if (TeamsAlive(team1Players, team2Players)) {
-  //       ActionBetweenTwoPlayers();
-  //     } else {
-  //       setTeam1Side(CalculateSide(team1Score + team2Score + 2)[0]);
-  //       setTeam2Side(CalculateSide(team1Score + team2Score + 2)[1]);
+    function RoundAction() {
+      if (TeamsAlive(team1Players, team2Players)) {
+        ActionBetweenTwoPlayers();
+      } else {
+        setTeam1Side(CalculateSide(team1Score + team2Score + 2)[0]);
+        setTeam2Side(CalculateSide(team1Score + team2Score + 2)[1]);
 
-  //       if (TeamAlive(team1Players)) {
-  //         setTeam1Score(team1Score + 1);
-  //         setRoundWinLogs([...roundWinLogs, props.team1.name]);
-  //       } else {
-  //         setTeam2Score(team2Score + 1);
-  //         setRoundWinLogs([...roundWinLogs, props.team2.name]);
-  //       }
+        if (TeamAlive(team1Players)) {
+          setTeam1Score(team1Score + 1);
+          setRoundWinLogs([...roundWinLogs, route.params.team1.name]);
+        } else {
+          setTeam2Score(team2Score + 1);
+          setRoundWinLogs([...roundWinLogs, route.params.team2.name]);
+        }
 
-  //       const newTeam1Players = SetAlive(
-  //         team1Players,
-  //         team1Score + team2Score,
-  //         !!TeamAlive(team1Players),
-  //         IsSideChangeRound(team1Score + team2Score + 1),
-  //         CalculateSide(team1Score + team2Score + 2)[0],
-  //       );
-  //       const newTeam1PlayersAfterBuy = BuyBeforeRound(
-  //         newTeam1Players,
-  //         CalculateSide(team1Score + team2Score + 2)[0],
-  //       );
-  //       setTeam1Players(newTeam1PlayersAfterBuy);
-  //       const newTeam2Players = SetAlive(
-  //         team2Players,
-  //         team1Score + team2Score,
-  //         !!TeamAlive(team2Players),
-  //         IsSideChangeRound(team1Score + team2Score + 1),
-  //         CalculateSide(team1Score + team2Score + 2)[1],
-  //       );
-  //       const newTeam2PlayersAfterBuy = BuyBeforeRound(
-  //         newTeam2Players,
-  //         CalculateSide(team1Score + team2Score + 2)[1],
-  //       );
-  //       setTeam2Players(newTeam2PlayersAfterBuy);
-  //     }
-  //   }
+        const newTeam1Players = SetAlive(
+          team1Players,
+          team1Score + team2Score,
+          !!TeamAlive(team1Players),
+          IsSideChangeRound(team1Score + team2Score + 1),
+          CalculateSide(team1Score + team2Score + 2)[0],
+        );
+        const newTeam1PlayersAfterBuy = BuyBeforeRound(
+          newTeam1Players,
+          CalculateSide(team1Score + team2Score + 2)[0],
+        );
+        setTeam1Players(newTeam1PlayersAfterBuy);
+        const newTeam2Players = SetAlive(
+          team2Players,
+          team1Score + team2Score,
+          !!TeamAlive(team2Players),
+          IsSideChangeRound(team1Score + team2Score + 1),
+          CalculateSide(team1Score + team2Score + 2)[1],
+        );
+        const newTeam2PlayersAfterBuy = BuyBeforeRound(
+          newTeam2Players,
+          CalculateSide(team1Score + team2Score + 2)[1],
+        );
+        setTeam2Players(newTeam2PlayersAfterBuy);
+      }
+    }
 
-  //   if (
-  //     team1Score < rules.MRsystem + overtimeRounds + 1 &&
-  //     team2Score < rules.MRsystem + overtimeRounds + 1 &&
-  //     team1Score + team2Score < (rules.MRsystem + overtimeRounds) * 2
-  //   ) {
-  //     RoundAction();
-  //   } else {
-  //     if (team1Score === team2Score) {
-  //       setOvertimeRounds(overtimeRounds + rules.MRovertime);
-  //     } else {
-  //       const newMapResults: MapResult[] = [
-  //         ...mapsResults,
-  //         {
-  //           team1Players: team1Players,
-  //           team2Players: team2Players,
-  //           team1Score: team1Score,
-  //           team2Score: team2Score,
-  //           roundWinLogs: roundWinLogs,
-  //         },
-  //       ];
-  //       setMapsResults(newMapResults);
-  //       if (IsMatchWinner(newMapResults, props.bestOfMaps)) {
-  //         setIsGameActive(false);
-  //       } else {
-  //         PrepareForMap();
-  //       }
-  //     }
-  //   }
-  // }
+    if (
+      team1Score < rules.MRsystem + overtimeRounds + 1 &&
+      team2Score < rules.MRsystem + overtimeRounds + 1 &&
+      team1Score + team2Score < (rules.MRsystem + overtimeRounds) * 2
+    ) {
+      RoundAction();
+    } else {
+      if (team1Score === team2Score) {
+        setOvertimeRounds(overtimeRounds + rules.MRovertime);
+      } else {
+        const newMapResults: MapResult[] = [
+          ...mapsResults,
+          {
+            team1Players: team1Players,
+            team2Players: team2Players,
+            team1Score: team1Score,
+            team2Score: team2Score,
+            roundWinLogs: roundWinLogs,
+          },
+        ];
+        setMapsResults(newMapResults);
+        if (IsMatchWinner(newMapResults, route.params.bestOfMaps)) {
+          setIsGameActive(false);
+        } else {
+          PrepareForMap();
+        }
+      }
+    }
+  }
 
   useEffect(() => {
     let timer = setTimeout(() => {
       if (isGameActive) {
-        // Match();
+        Match();
         setLastUpdate(new Date().getTime());
       }
     }, 100);
@@ -261,17 +270,6 @@ export default function MatchScreen({navigation, route}: any) {
   }, [lastUpdate, isGameActive]);
 
   function OnMatchResults(mapResults: MapResult[]) {
-    // const newTournamentData = [...route.params.tournament.grid].map(
-    //   (column: any, i: number) => {
-    //     return column.map((row: any, j: number) => {
-    //       if (i === route.params.indexI && j === route.params.indexJ) {
-    //         return {...row, mapResults: mapResults};
-    //       } else {
-    //         return row;
-    //       }
-    //     });
-    //   },
-    // );
     const newTournamentData = UpdateGridAfterMatch(
       tournaments,
       route.params.tournament,
